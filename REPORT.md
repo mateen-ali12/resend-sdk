@@ -39,7 +39,7 @@ I used Claude Code (Claude Opus) as the operator and directed it step by step: p
 
 The SDK is generated, and I didn't edit any target code by hand. Every change is in `.sdk/model/guide/guide.aontu` or `.sdk/model/project.aontu`.
 
-Time: [MATEEN: N] minutes of human work, within the 30-minute box. Machine time was small: scaffolding took 19 s and each generate run about 8 s.
+Time: about 30 minutes of human work, within the 30-minute box. Machine time was small: scaffolding took 19 s and each generate run about 8 s.
 
 ## Observations, most important first
 
