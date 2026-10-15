@@ -42,10 +42,6 @@ client = ResendSDK.test()
 
 ### Instance Methods
 
-#### `AddContactToSegmentResponseSuccess(data=None)`
-
-Create a new `AddContactToSegmentResponseSuccessEntity` instance. Pass `None` for no initial data.
-
 #### `ApiKey(data=None)`
 
 Create a new `ApiKeyEntity` instance. Pass `None` for no initial data.
@@ -62,57 +58,37 @@ Create a new `AutomationEntity` instance. Pass `None` for no initial data.
 
 Create a new `AutomationRunEntity` instance. Pass `None` for no initial data.
 
-#### `AutomationRunListItem(data=None)`
-
-Create a new `AutomationRunListItemEntity` instance. Pass `None` for no initial data.
-
-#### `BatchAddSuppressionsResponseSuccess(data=None)`
-
-Create a new `BatchAddSuppressionsResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `BatchRemoveSuppressionsResponseSuccess(data=None)`
-
-Create a new `BatchRemoveSuppressionsResponseSuccessEntity` instance. Pass `None` for no initial data.
-
 #### `Broadcast(data=None)`
 
 Create a new `BroadcastEntity` instance. Pass `None` for no initial data.
+
+#### `BroadcastClickedLink(data=None)`
+
+Create a new `BroadcastClickedLinkEntity` instance. Pass `None` for no initial data.
+
+#### `BroadcastRecipient(data=None)`
+
+Create a new `BroadcastRecipientEntity` instance. Pass `None` for no initial data.
 
 #### `Contact(data=None)`
 
 Create a new `ContactEntity` instance. Pass `None` for no initial data.
 
-#### `ContactImportResponseSuccess(data=None)`
+#### `ContactImport(data=None)`
 
-Create a new `ContactImportResponseSuccessEntity` instance. Pass `None` for no initial data.
+Create a new `ContactImportEntity` instance. Pass `None` for no initial data.
 
 #### `ContactProperty(data=None)`
 
 Create a new `ContactPropertyEntity` instance. Pass `None` for no initial data.
 
-#### `ContactTopicsResponseSuccess(data=None)`
+#### `ContactSegment(data=None)`
 
-Create a new `ContactTopicsResponseSuccessEntity` instance. Pass `None` for no initial data.
+Create a new `ContactSegmentEntity` instance. Pass `None` for no initial data.
 
-#### `CreateApiKey(data=None)`
+#### `ContactTopic(data=None)`
 
-Create a new `CreateApiKeyEntity` instance. Pass `None` for no initial data.
-
-#### `CreateBatchEmail(data=None)`
-
-Create a new `CreateBatchEmailEntity` instance. Pass `None` for no initial data.
-
-#### `CreateBroadcastResponseSuccess(data=None)`
-
-Create a new `CreateBroadcastResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `CreateInboxDraftResponseSuccess(data=None)`
-
-Create a new `CreateInboxDraftResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `CreateInboxLabelResponseSuccess(data=None)`
-
-Create a new `CreateInboxLabelResponseSuccessEntity` instance. Pass `None` for no initial data.
+Create a new `ContactTopicEntity` instance. Pass `None` for no initial data.
 
 #### `Domain(data=None)`
 
@@ -126,6 +102,14 @@ Create a new `DomainClaimEntity` instance. Pass `None` for no initial data.
 
 Create a new `EmailEntity` instance. Pass `None` for no initial data.
 
+#### `EmailAttachment(data=None)`
+
+Create a new `EmailAttachmentEntity` instance. Pass `None` for no initial data.
+
+#### `EmailBatch(data=None)`
+
+Create a new `EmailBatchEntity` instance. Pass `None` for no initial data.
+
 #### `EmailsMetric(data=None)`
 
 Create a new `EmailsMetricEntity` instance. Pass `None` for no initial data.
@@ -138,17 +122,13 @@ Create a new `EventEntity` instance. Pass `None` for no initial data.
 
 Create a new `InboxEntity` instance. Pass `None` for no initial data.
 
-#### `InboxAgentResponseSuccess(data=None)`
+#### `InboxAgent(data=None)`
 
-Create a new `InboxAgentResponseSuccessEntity` instance. Pass `None` for no initial data.
+Create a new `InboxAgentEntity` instance. Pass `None` for no initial data.
 
-#### `InboxDraftListItem(data=None)`
+#### `InboxDraft(data=None)`
 
-Create a new `InboxDraftListItemEntity` instance. Pass `None` for no initial data.
-
-#### `InboxDraftResponseSuccess(data=None)`
-
-Create a new `InboxDraftResponseSuccessEntity` instance. Pass `None` for no initial data.
+Create a new `InboxDraftEntity` instance. Pass `None` for no initial data.
 
 #### `InboxLabel(data=None)`
 
@@ -162,125 +142,37 @@ Create a new `InboxThreadEntity` instance. Pass `None` for no initial data.
 
 Create a new `InboxThreadEmailEntity` instance. Pass `None` for no initial data.
 
-#### `InboxThreadEmailResponseSuccess(data=None)`
-
-Create a new `InboxThreadEmailResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `InboxThreadResponseSuccess(data=None)`
-
-Create a new `InboxThreadResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `ListAttachment(data=None)`
-
-Create a new `ListAttachmentEntity` instance. Pass `None` for no initial data.
-
-#### `ListBroadcastClickedLinksResponseSuccess(data=None)`
-
-Create a new `ListBroadcastClickedLinksResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `ListBroadcastRecipientsResponseSuccess(data=None)`
-
-Create a new `ListBroadcastRecipientsResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `ListContactSegmentsResponseSuccess(data=None)`
-
-Create a new `ListContactSegmentsResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `ListContactsResponseSuccess(data=None)`
-
-Create a new `ListContactsResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `ListWebhookEvent(data=None)`
-
-Create a new `ListWebhookEventEntity` instance. Pass `None` for no initial data.
-
-#### `ListWebhookEventAttempt(data=None)`
-
-Create a new `ListWebhookEventAttemptEntity` instance. Pass `None` for no initial data.
-
 #### `Log(data=None)`
 
 Create a new `LogEntity` instance. Pass `None` for no initial data.
+
+#### `OauthGrant(data=None)`
+
+Create a new `OauthGrantEntity` instance. Pass `None` for no initial data.
 
 #### `ReceivedEmail(data=None)`
 
 Create a new `ReceivedEmailEntity` instance. Pass `None` for no initial data.
 
-#### `RemoveAudienceResponseSuccess(data=None)`
+#### `ReceivedEmailAttachment(data=None)`
 
-Create a new `RemoveAudienceResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `RemoveBroadcastResponseSuccess(data=None)`
-
-Create a new `RemoveBroadcastResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `RemoveContactFromSegmentResponseSuccess(data=None)`
-
-Create a new `RemoveContactFromSegmentResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `RemoveContactPropertyResponseSuccess(data=None)`
-
-Create a new `RemoveContactPropertyResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `RemoveContactResponseSuccess(data=None)`
-
-Create a new `RemoveContactResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `RemoveEvent(data=None)`
-
-Create a new `RemoveEventEntity` instance. Pass `None` for no initial data.
-
-#### `RemoveInboxDraftResponseSuccess(data=None)`
-
-Create a new `RemoveInboxDraftResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `RemoveInboxLabelResponseSuccess(data=None)`
-
-Create a new `RemoveInboxLabelResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `RemoveInboxResponseSuccess(data=None)`
-
-Create a new `RemoveInboxResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `RemoveInboxThreadResponseSuccess(data=None)`
-
-Create a new `RemoveInboxThreadResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `RemoveSegmentResponseSuccess(data=None)`
-
-Create a new `RemoveSegmentResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `RemoveSuppressionResponseSuccess(data=None)`
-
-Create a new `RemoveSuppressionResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `RemoveTemplateResponseSuccess(data=None)`
-
-Create a new `RemoveTemplateResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `RemoveTopicResponseSuccess(data=None)`
-
-Create a new `RemoveTopicResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `RetrievedAttachment(data=None)`
-
-Create a new `RetrievedAttachmentEntity` instance. Pass `None` for no initial data.
-
-#### `RevokeOAuthGrant(data=None)`
-
-Create a new `RevokeOAuthGrantEntity` instance. Pass `None` for no initial data.
-
-#### `Rotate(data=None)`
-
-Create a new `RotateEntity` instance. Pass `None` for no initial data.
+Create a new `ReceivedEmailAttachmentEntity` instance. Pass `None` for no initial data.
 
 #### `Segment(data=None)`
 
 Create a new `SegmentEntity` instance. Pass `None` for no initial data.
 
+#### `SegmentContact(data=None)`
+
+Create a new `SegmentContactEntity` instance. Pass `None` for no initial data.
+
 #### `Suppression(data=None)`
 
 Create a new `SuppressionEntity` instance. Pass `None` for no initial data.
+
+#### `SuppressionBatch(data=None)`
+
+Create a new `SuppressionBatchEntity` instance. Pass `None` for no initial data.
 
 #### `Template(data=None)`
 
@@ -289,70 +181,6 @@ Create a new `TemplateEntity` instance. Pass `None` for no initial data.
 #### `Topic(data=None)`
 
 Create a new `TopicEntity` instance. Pass `None` for no initial data.
-
-#### `UpdateApiKey(data=None)`
-
-Create a new `UpdateApiKeyEntity` instance. Pass `None` for no initial data.
-
-#### `UpdateBroadcastResponseSuccess(data=None)`
-
-Create a new `UpdateBroadcastResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `UpdateContactPropertyResponseSuccess(data=None)`
-
-Create a new `UpdateContactPropertyResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `UpdateContactResponseSuccess(data=None)`
-
-Create a new `UpdateContactResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `UpdateContactTopicsResponseSuccess(data=None)`
-
-Create a new `UpdateContactTopicsResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `UpdateDomainResponseSuccess(data=None)`
-
-Create a new `UpdateDomainResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `UpdateEmailOption(data=None)`
-
-Create a new `UpdateEmailOptionEntity` instance. Pass `None` for no initial data.
-
-#### `UpdateEvent(data=None)`
-
-Create a new `UpdateEventEntity` instance. Pass `None` for no initial data.
-
-#### `UpdateInboxDraftResponseSuccess(data=None)`
-
-Create a new `UpdateInboxDraftResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `UpdateInboxLabelResponseSuccess(data=None)`
-
-Create a new `UpdateInboxLabelResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `UpdateInboxResponseSuccess(data=None)`
-
-Create a new `UpdateInboxResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `UpdateInboxThreadResponseSuccess(data=None)`
-
-Create a new `UpdateInboxThreadResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `UpdateSegmentResponseSuccess(data=None)`
-
-Create a new `UpdateSegmentResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `UpdateTemplateResponseSuccess(data=None)`
-
-Create a new `UpdateTemplateResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `UpdateTopicResponseSuccess(data=None)`
-
-Create a new `UpdateTopicResponseSuccessEntity` instance. Pass `None` for no initial data.
-
-#### `UpdateWebhook(data=None)`
-
-Create a new `UpdateWebhookEntity` instance. Pass `None` for no initial data.
 
 #### `Usage(data=None)`
 
@@ -365,6 +193,10 @@ Create a new `WebhookEntity` instance. Pass `None` for no initial data.
 #### `WebhookEvent(data=None)`
 
 Create a new `WebhookEventEntity` instance. Pass `None` for no initial data.
+
+#### `WebhookEventAttempt(data=None)`
+
+Create a new `WebhookEventAttemptEntity` instance. Pass `None` for no initial data.
 
 #### `options_map() -> dict`
 
@@ -398,62 +230,6 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 
 ---
 
-## AddContactToSegmentResponseSuccessEntity
-
-```python
-add_contact_to_segment_response_success = client.AddContactToSegmentResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `contact_id` | `str` | No | The ID of the contact. |
-| `object` | `str` | No | The object type. |
-| `segment_id` | `str` | No | The ID of the segment. |
-
-### Operations
-
-#### `create(reqdata, ctrl=None) -> AddContactToSegmentResponseSuccessEntity`
-
-Create a new entity with the given data. Returns the created entity and raises on error.
-
-```python
-result = client.AddContactToSegmentResponseSuccess().create({
-    "contact_id": "example_contact_id",  # str
-    "segment_id": "example_segment_id",  # str
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `AddContactToSegmentResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
 ## ApiKeyEntity
 
 ```python
@@ -465,11 +241,36 @@ api_key = client.ApiKey()
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `created_at` | `str` | No | The date and time the API key was created. |
+| `domain_id` | `str` | No | Restrict an API key to send emails only from a specific domain. |
 | `id` | `str` | No | The ID of the API key. |
 | `last_used_at` | `str | None` | No | The date and time the API key was last used. |
-| `name` | `str` | No | The name of the API key. |
+| `name` | `str` | Yes | The API key name. |
+| `object` | `str` | No | The type of object. |
+| `permission` | `str` | No | The API key can have full access to Resend’s API or be only restricted to send emails. |
+
+### Field Usage by Operation
+
+| Field | list | create | update | remove |
+| --- | --- | --- | --- | --- |
+| `created_at` | - | - | - | - |
+| `domain_id` | - | - | - | - |
+| `id` | - | - | - | - |
+| `last_used_at` | - | - | - | - |
+| `name` | Yes | - | - | - |
+| `object` | - | - | - | - |
+| `permission` | - | - | - | - |
 
 ### Operations
+
+#### `create(reqdata, ctrl=None) -> ApiKeyEntity`
+
+Create a new entity with the given data. Returns the created entity and raises on error.
+
+```python
+result = client.ApiKey().create({
+    "name": "example_name",  # str
+})
+```
 
 #### `list(reqmatch=None, ctrl=None) -> list[ApiKeyEntity]`
 
@@ -487,6 +288,17 @@ Remove the entity matching the given criteria. Returns the entity, marked as del
 
 ```python
 result = client.ApiKey().remove({"id": "api_key_id"})
+```
+
+#### `update(reqdata, ctrl=None) -> ApiKeyEntity`
+
+Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
+
+```python
+result = client.ApiKey().update({
+    "id": "api_key_id",
+    # Fields to update
+})
 ```
 
 ### Common Methods
@@ -535,12 +347,12 @@ audience = client.Audience()
 
 ### Field Usage by Operation
 
-| Field | load | list | create |
-| --- | --- | --- | --- |
-| `created_at` | - | - | - |
-| `id` | - | - | - |
-| `name` | - | - | Yes |
-| `object` | - | - | - |
+| Field | load | list | create | remove |
+| --- | --- | --- | --- | --- |
+| `created_at` | - | - | - | - |
+| `id` | - | - | - | - |
+| `name` | - | - | Yes | - |
+| `object` | - | - | - | - |
 
 ### Operations
 
@@ -569,6 +381,14 @@ Load a single entity matching the given criteria. Returns the entity, whose reco
 
 ```python
 result = client.Audience().load({"id": "audience_id"})
+```
+
+#### `remove(reqmatch, ctrl=None) -> AudienceEntity`
+
+Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
+
+```python
+result = client.Audience().remove({"id": "audience_id"})
 ```
 
 ### Common Methods
@@ -729,6 +549,16 @@ automation_run = client.AutomationRun()
 
 ### Operations
 
+#### `list(reqmatch=None, ctrl=None) -> list[AutomationRunEntity]`
+
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
+
+```python
+results = client.AutomationRun().list({"automation_id": "example"})
+for automation_run in results:
+    print(automation_run.data_get())
+```
+
 #### `load(reqmatch, ctrl=None) -> AutomationRunEntity`
 
 Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and raises on error.
@@ -766,170 +596,6 @@ Return the entity name.
 
 ---
 
-## AutomationRunListItemEntity
-
-```python
-automation_run_list_item = client.AutomationRunListItem()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `completed_at` | `str | None` | No | The date and time the run completed. |
-| `created_at` | `str` | No | The date and time the run was created. |
-| `id` | `str` | No | The ID of the automation run. |
-| `started_at` | `str | None` | No | The date and time the run started. |
-| `status` | `str` | No | The current status of the automation run. |
-
-### Operations
-
-#### `list(reqmatch=None, ctrl=None) -> list[AutomationRunListItemEntity]`
-
-List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
-
-```python
-results = client.AutomationRunListItem().list({"id": "example"})
-for automation_run_list_item in results:
-    print(automation_run_list_item.data_get())
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `AutomationRunListItemEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## BatchAddSuppressionsResponseSuccessEntity
-
-```python
-batch_add_suppressions_response_success = client.BatchAddSuppressionsResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `emails` | `list` | Yes | Email addresses to suppress. |
-
-### Operations
-
-#### `create(reqdata, ctrl=None) -> BatchAddSuppressionsResponseSuccessEntity`
-
-Create a new entity with the given data. Returns the created entity and raises on error.
-
-```python
-result = client.BatchAddSuppressionsResponseSuccess().create({
-    "emails": [],  # list
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `BatchAddSuppressionsResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## BatchRemoveSuppressionsResponseSuccessEntity
-
-```python
-batch_remove_suppressions_response_success = client.BatchRemoveSuppressionsResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `data` | `list` | No | Array containing the removed suppressions. |
-| `emails` | `list` | No | Email addresses to remove from the suppression list. |
-| `ids` | `list` | No | Suppression IDs to remove from the suppression list. |
-
-### Operations
-
-#### `create(reqdata, ctrl=None) -> BatchRemoveSuppressionsResponseSuccessEntity`
-
-Create a new entity with the given data. Returns the created entity and raises on error.
-
-```python
-result = client.BatchRemoveSuppressionsResponseSuccess().create({
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `BatchRemoveSuppressionsResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
 ## BroadcastEntity
 
 ```python
@@ -946,21 +612,50 @@ broadcast = client.Broadcast()
 | `html` | `str | None` | No | The HTML version of the broadcast content. |
 | `id` | `str` | No | Unique identifier for the broadcast. |
 | `name` | `str` | No | Name of the broadcast. |
+| `object` | `str` | No | The object type of the response. |
 | `preview_text` | `str` | No | The preview text of the email. |
 | `reply_to` | `list` | No | The email addresses to which replies should be sent. |
 | `scheduled_at` | `str` | No | Timestamp indicating when the broadcast is scheduled to be sent. |
 | `segment_id` | `str | None` | No | Unique identifier of the segment this broadcast will be sent to. |
+| `send` | `bool` | No | Whether to send the broadcast immediately or keep it as a draft. |
 | `sent_at` | `str` | No | Timestamp indicating when the broadcast was sent. |
 | `status` | `str` | No | The status of the broadcast. |
 | `subject` | `str` | No | The subject line of the email. |
 | `text` | `str | None` | No | The plain text version of the broadcast content. |
 | `topic_id` | `str | None` | No | The topic ID that the broadcast is scoped to. |
 
+### Field Usage by Operation
+
+| Field | load | list | create | update | remove |
+| --- | --- | --- | --- | --- | --- |
+| `audience_id` | - | - | - | - | - |
+| `created_at` | - | - | - | - | - |
+| `from` | - | - | Yes | - | - |
+| `html` | - | - | - | - | - |
+| `id` | - | - | - | - | - |
+| `name` | - | - | - | - | - |
+| `object` | - | - | - | - | - |
+| `preview_text` | - | - | - | - | - |
+| `reply_to` | - | - | - | - | - |
+| `scheduled_at` | - | - | - | - | - |
+| `segment_id` | - | - | Yes | - | - |
+| `send` | - | - | - | - | - |
+| `sent_at` | - | - | - | - | - |
+| `status` | - | - | - | - | - |
+| `subject` | - | - | Yes | - | - |
+| `text` | - | - | - | - | - |
+| `topic_id` | - | - | - | - | - |
+
 ### Operations
 
 #### `create(reqdata, ctrl=None) -> BroadcastEntity`
 
 Create a new entity with the given data. Returns the created entity and raises on error.
+
+```python
+result = client.Broadcast().create({
+})
+```
 
 #### `list(reqmatch=None, ctrl=None) -> list[BroadcastEntity]`
 
@@ -978,6 +673,25 @@ Load a single entity matching the given criteria. Returns the entity, whose reco
 
 ```python
 result = client.Broadcast().load({"id": "broadcast_id"})
+```
+
+#### `remove(reqmatch, ctrl=None) -> BroadcastEntity`
+
+Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
+
+```python
+result = client.Broadcast().remove({"id": "broadcast_id"})
+```
+
+#### `update(reqdata, ctrl=None) -> BroadcastEntity`
+
+Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
+
+```python
+result = client.Broadcast().update({
+    "id": "broadcast_id",
+    # Fields to update
+})
 ```
 
 ### Common Methods
@@ -1001,6 +715,120 @@ Set the entity match criteria.
 #### `make() -> Entity`
 
 Create a new `BroadcastEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
+
+
+---
+
+## BroadcastClickedLinkEntity
+
+```python
+broadcast_clicked_link = client.BroadcastClickedLink()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `clicks` | `int` | No | Total number of clicks on this URL. |
+| `id` | `str` | No | An opaque cursor for this row, used only for pagination. |
+| `unique_clicks` | `int` | No | Number of unique clicks on this URL. |
+| `url` | `str` | No | The URL that was clicked. |
+
+### Operations
+
+#### `list(reqmatch=None, ctrl=None) -> list[BroadcastClickedLinkEntity]`
+
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
+
+```python
+results = client.BroadcastClickedLink().list({"broadcast_id": "example"})
+for broadcast_clicked_link in results:
+    print(broadcast_clicked_link.data_get())
+```
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `BroadcastClickedLinkEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
+
+
+---
+
+## BroadcastRecipientEntity
+
+```python
+broadcast_recipient = client.BroadcastRecipient()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `bounce_type` | `str` | No | The type of bounce. |
+| `clicked_links` | `list` | No | The links this recipient clicked. |
+| `contact_id` | `str | None` | No | The ID of the contact associated with this recipient, if one exists. |
+| `count` | `int` | No | The number of times this recipient triggered the event. |
+| `email` | `str` | No | The recipient's email address. |
+| `id` | `str` | No | Opaque cursor identifying this row, used for pagination. |
+
+### Operations
+
+#### `list(reqmatch=None, ctrl=None) -> list[BroadcastRecipientEntity]`
+
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
+
+```python
+results = client.BroadcastRecipient().list({"broadcast_id": "example", "type": "example"})
+for broadcast_recipient in results:
+    print(broadcast_recipient.data_get())
+```
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `BroadcastRecipientEntity` instance with the same options.
 
 #### `get_name() -> str`
 
@@ -1033,19 +861,19 @@ contact = client.Contact()
 
 ### Field Usage by Operation
 
-| Field | load | list | create |
-| --- | --- | --- | --- |
-| `audience_id` | - | - | - |
-| `created_at` | - | - | - |
-| `email` | - | - | Yes |
-| `first_name` | - | - | - |
-| `id` | - | - | - |
-| `last_name` | - | - | - |
-| `object` | - | - | - |
-| `properties` | - | - | - |
-| `segments` | - | - | - |
-| `topics` | - | - | - |
-| `unsubscribed` | - | - | - |
+| Field | load | list | create | update | remove |
+| --- | --- | --- | --- | --- | --- |
+| `audience_id` | - | - | - | - | - |
+| `created_at` | - | - | - | - | - |
+| `email` | - | - | Yes | - | - |
+| `first_name` | - | - | - | - | - |
+| `id` | - | - | - | - | - |
+| `last_name` | - | - | - | - | - |
+| `object` | - | - | - | - | - |
+| `properties` | - | - | - | - | - |
+| `segments` | - | - | - | - | - |
+| `topics` | - | - | - | - | - |
+| `unsubscribed` | - | - | - | - | - |
 
 ### Operations
 
@@ -1074,6 +902,25 @@ Load a single entity matching the given criteria. Returns the entity, whose reco
 
 ```python
 result = client.Contact().load({"id": "contact_id"})
+```
+
+#### `remove(reqmatch, ctrl=None) -> ContactEntity`
+
+Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
+
+```python
+result = client.Contact().remove({"id": "contact_id"})
+```
+
+#### `update(reqdata, ctrl=None) -> ContactEntity`
+
+Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
+
+```python
+result = client.Contact().update({
+    "id": "contact_id",
+    # Fields to update
+})
 ```
 
 ### Common Methods
@@ -1105,10 +952,10 @@ Return the entity name.
 
 ---
 
-## ContactImportResponseSuccessEntity
+## ContactImportEntity
 
 ```python
-contact_import_response_success = client.ContactImportResponseSuccess()
+contact_import = client.ContactImport()
 ```
 
 ### Fields
@@ -1124,33 +971,33 @@ contact_import_response_success = client.ContactImportResponseSuccess()
 
 ### Operations
 
-#### `create(reqdata, ctrl=None) -> ContactImportResponseSuccessEntity`
+#### `create(reqdata, ctrl=None) -> ContactImportEntity`
 
 Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```python
-result = client.ContactImportResponseSuccess().create({
+result = client.ContactImport().create({
 })
 ```
 
 Declares a `multipart/form-data` body, which this SDK does not encode yet: it sends the data as JSON.
 
-#### `list(reqmatch=None, ctrl=None) -> list[ContactImportResponseSuccessEntity]`
+#### `list(reqmatch=None, ctrl=None) -> list[ContactImportEntity]`
 
 List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
 
 ```python
-results = client.ContactImportResponseSuccess().list()
-for contact_import_response_success in results:
-    print(contact_import_response_success.data_get())
+results = client.ContactImport().list()
+for contact_import in results:
+    print(contact_import.data_get())
 ```
 
-#### `load(reqmatch, ctrl=None) -> ContactImportResponseSuccessEntity`
+#### `load(reqmatch, ctrl=None) -> ContactImportEntity`
 
 Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and raises on error.
 
 ```python
-result = client.ContactImportResponseSuccess().load({"id": "contact_import_response_success_id"})
+result = client.ContactImport().load({"id": "contact_import_id"})
 ```
 
 ### Common Methods
@@ -1173,7 +1020,7 @@ Set the entity match criteria.
 
 #### `make() -> Entity`
 
-Create a new `ContactImportResponseSuccessEntity` instance with the same options.
+Create a new `ContactImportEntity` instance with the same options.
 
 #### `get_name() -> str`
 
@@ -1201,14 +1048,14 @@ contact_property = client.ContactProperty()
 
 ### Field Usage by Operation
 
-| Field | load | list | create |
-| --- | --- | --- | --- |
-| `created_at` | - | - | - |
-| `fallback_value` | - | - | - |
-| `id` | - | - | - |
-| `key` | - | - | Yes |
-| `object` | - | - | - |
-| `type` | - | - | Yes |
+| Field | load | list | create | update | remove |
+| --- | --- | --- | --- | --- | --- |
+| `created_at` | - | - | - | - | - |
+| `fallback_value` | - | - | - | - | - |
+| `id` | - | - | - | - | - |
+| `key` | - | - | Yes | - | - |
+| `object` | - | - | - | - | - |
+| `type` | - | - | Yes | - | - |
 
 ### Operations
 
@@ -1237,6 +1084,25 @@ Load a single entity matching the given criteria. Returns the entity, whose reco
 
 ```python
 result = client.ContactProperty().load({"id": "contact_property_id"})
+```
+
+#### `remove(reqmatch, ctrl=None) -> ContactPropertyEntity`
+
+Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
+
+```python
+result = client.ContactProperty().remove({"id": "contact_property_id"})
+```
+
+#### `update(reqdata, ctrl=None) -> ContactPropertyEntity`
+
+Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
+
+```python
+result = client.ContactProperty().update({
+    "id": "contact_property_id",
+    # Fields to update
+})
 ```
 
 ### Common Methods
@@ -1268,28 +1134,52 @@ Return the entity name.
 
 ---
 
-## ContactTopicsResponseSuccessEntity
+## ContactSegmentEntity
 
 ```python
-contact_topics_response_success = client.ContactTopicsResponseSuccess()
+contact_segment = client.ContactSegment()
 ```
 
 ### Fields
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | `str` | No |  |
+| `contact_id` | `str` | No | The ID of the contact. |
+| `created_at` | `str` | No | Timestamp indicating when the contact was added to the segment. |
+| `id` | `str` | No | Unique identifier for the segment. |
+| `name` | `str` | No | Name of the segment. |
+| `object` | `str` | No | The object type. |
+| `segment_id` | `str` | No | The ID of the segment. |
 
 ### Operations
 
-#### `list(reqmatch=None, ctrl=None) -> list[ContactTopicsResponseSuccessEntity]`
+#### `create(reqdata, ctrl=None) -> ContactSegmentEntity`
+
+Create a new entity with the given data. Returns the created entity and raises on error.
+
+```python
+result = client.ContactSegment().create({
+    "contact_id": "example_contact_id",  # str
+    "id": "example_id",  # str
+})
+```
+
+#### `list(reqmatch=None, ctrl=None) -> list[ContactSegmentEntity]`
 
 List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
 
 ```python
-results = client.ContactTopicsResponseSuccess().list({"id": "example"})
-for contact_topics_response_success in results:
-    print(contact_topics_response_success.data_get())
+results = client.ContactSegment().list({"contact_id": "example"})
+for contact_segment in results:
+    print(contact_segment.data_get())
+```
+
+#### `remove(reqmatch, ctrl=None) -> ContactSegmentEntity`
+
+Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
+
+```python
+result = client.ContactSegment().remove({"id": "contact_segment_id", "contact_id": "contact_id"})
 ```
 
 ### Common Methods
@@ -1312,7 +1202,7 @@ Set the entity match criteria.
 
 #### `make() -> Entity`
 
-Create a new `ContactTopicsResponseSuccessEntity` instance with the same options.
+Create a new `ContactSegmentEntity` instance with the same options.
 
 #### `get_name() -> str`
 
@@ -1321,29 +1211,56 @@ Return the entity name.
 
 ---
 
-## CreateApiKeyEntity
+## ContactTopicEntity
 
 ```python
-create_api_key = client.CreateApiKey()
+contact_topic = client.ContactTopic()
 ```
 
 ### Fields
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `domain_id` | `str` | No | Restrict an API key to send emails only from a specific domain. |
-| `name` | `str` | Yes | The API key name. |
-| `permission` | `str` | No | The API key can have full access to Resend’s API or be only restricted to send emails. |
+| `contact_id` | `str` | No | The ID of the contact. |
+| `description` | `str` | No | Description of the topic. |
+| `id` | `str` | No | Unique identifier for the topic. |
+| `name` | `str` | No | Name of the topic. |
+| `object` | `str` | No | The object type. |
+| `subscription` | `str` | No | The subscription status for this topic. |
+| `topics` | `list` | No | Array of updated topic subscriptions. |
+
+### Field Usage by Operation
+
+| Field | list | update |
+| --- | --- | --- |
+| `contact_id` | - | - |
+| `description` | - | - |
+| `id` | - | - |
+| `name` | - | - |
+| `object` | - | - |
+| `subscription` | - | - |
+| `topics` | - | Yes |
 
 ### Operations
 
-#### `create(reqdata, ctrl=None) -> CreateApiKeyEntity`
+#### `list(reqmatch=None, ctrl=None) -> list[ContactTopicEntity]`
 
-Create a new entity with the given data. Returns the created entity and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
 
 ```python
-result = client.CreateApiKey().create({
-    "name": "example_name",  # str
+results = client.ContactTopic().list({"contact_id": "example"})
+for contact_topic in results:
+    print(contact_topic.data_get())
+```
+
+#### `update(reqdata, ctrl=None) -> ContactTopicEntity`
+
+Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
+
+```python
+result = client.ContactTopic().update({
+    "contact_id": "contact_id",
+    # Fields to update
 })
 ```
 
@@ -1367,246 +1284,7 @@ Set the entity match criteria.
 
 #### `make() -> Entity`
 
-Create a new `CreateApiKeyEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## CreateBatchEmailEntity
-
-```python
-create_batch_email = client.CreateBatchEmail()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `data` | `list` | No |  |
-| `send_emails` | `list` | No |  |
-
-### Operations
-
-#### `create(reqdata, ctrl=None) -> CreateBatchEmailEntity`
-
-Create a new entity with the given data. Returns the created entity and raises on error.
-
-```python
-result = client.CreateBatchEmail().create({
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `CreateBatchEmailEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## CreateBroadcastResponseSuccessEntity
-
-```python
-create_broadcast_response_success = client.CreateBroadcastResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `audience_id` | `str` | No | Use `segment_id` instead. |
-| `from` | `str` | Yes | The email address of the sender. |
-| `html` | `str` | No | The HTML version of the message. |
-| `name` | `str` | No | Name of the broadcast. |
-| `preview_text` | `str` | No | The preview text of the email. |
-| `reply_to` | `list` | No | The email addresses to which replies should be sent. |
-| `scheduled_at` | `str` | No | Schedule time to send the broadcast. |
-| `segment_id` | `str` | Yes | Unique identifier of the segment this broadcast will be sent to. |
-| `send` | `bool` | No | Whether to send the broadcast immediately or keep it as a draft. |
-| `subject` | `str` | Yes | The subject line of the email. |
-| `text` | `str` | No | The plain text version of the message. |
-| `topic_id` | `str` | No | The topic ID that the broadcast will be scoped to. |
-
-### Operations
-
-#### `create(reqdata, ctrl=None) -> CreateBroadcastResponseSuccessEntity`
-
-Create a new entity with the given data. Returns the created entity and raises on error.
-
-```python
-result = client.CreateBroadcastResponseSuccess().create({
-    "from": "example_from",  # str
-    "segment_id": "example_segment_id",  # str
-    "subject": "example_subject",  # str
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `CreateBroadcastResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## CreateInboxDraftResponseSuccessEntity
-
-```python
-create_inbox_draft_response_success = client.CreateInboxDraftResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `attachments` | `list | None` | No | Files to store on the draft. |
-| `bcc` | `Any` | No | The BCC recipients. |
-| `cc` | `Any` | No | The CC recipients. |
-| `html` | `str | None` | No | The HTML body. |
-| `id` | `str` | Yes | The ID of the draft. |
-| `object` | `str` | Yes | Type of the response object. |
-| `reply_to_email_id` | `str` | No | The Email ID to reply to, as returned in `data[].id` by the list thread emails endpoint. |
-| `subject` | `str | None` | No | The subject. |
-| `text` | `str | None` | No | The plain text body. |
-| `thread_id` | `str` | No | The Thread ID to reply in. |
-| `to` | `Any` | No | The recipients. |
-
-### Operations
-
-#### `create(reqdata, ctrl=None) -> CreateInboxDraftResponseSuccessEntity`
-
-Create a new entity with the given data. Returns the created entity and raises on error.
-
-```python
-result = client.CreateInboxDraftResponseSuccess().create({
-    "inbox_id": "example_inbox_id",  # str
-    "id": "example_id",  # str
-    "object": "example_object",  # str
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `CreateInboxDraftResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## CreateInboxLabelResponseSuccessEntity
-
-```python
-create_inbox_label_response_success = client.CreateInboxLabelResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `color` | `str` | No | The color of the label, as a `#RRGGBB` hex color. |
-| `name` | `str` | Yes | The name of the label. |
-
-### Operations
-
-#### `create(reqdata, ctrl=None) -> CreateInboxLabelResponseSuccessEntity`
-
-Create a new entity with the given data. Returns the created entity and raises on error.
-
-```python
-result = client.CreateInboxLabelResponseSuccess().create({
-    "inbox_id": "example_inbox_id",  # str
-    "name": "example_name",  # str
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `CreateInboxLabelResponseSuccessEntity` instance with the same options.
+Create a new `ContactTopicEntity` instance with the same options.
 
 #### `get_name() -> str`
 
@@ -1641,21 +1319,21 @@ domain = client.Domain()
 
 ### Field Usage by Operation
 
-| Field | load | list | create | remove |
-| --- | --- | --- | --- | --- |
-| `capabilities` | - | - | - | - |
-| `click_tracking` | - | - | - | - |
-| `created_at` | - | - | - | - |
-| `custom_return_path` | - | - | - | - |
-| `id` | - | - | - | - |
-| `name` | - | - | Yes | - |
-| `object` | - | - | - | - |
-| `open_tracking` | - | - | - | - |
-| `records` | - | - | - | - |
-| `region` | - | - | - | - |
-| `status` | - | - | - | - |
-| `tls` | - | - | - | - |
-| `tracking_subdomain` | - | - | - | - |
+| Field | load | list | create | update | remove |
+| --- | --- | --- | --- | --- | --- |
+| `capabilities` | - | - | - | - | - |
+| `click_tracking` | - | - | - | - | - |
+| `created_at` | - | - | - | - | - |
+| `custom_return_path` | - | - | - | - | - |
+| `id` | - | - | - | - | - |
+| `name` | - | - | Yes | - | - |
+| `object` | - | - | - | - | - |
+| `open_tracking` | - | - | - | - | - |
+| `records` | - | - | - | - | - |
+| `region` | - | - | - | - | - |
+| `status` | - | - | - | - | - |
+| `tls` | - | - | - | - | - |
+| `tracking_subdomain` | - | - | - | - | - |
 
 ### Operations
 
@@ -1692,6 +1370,17 @@ Remove the entity matching the given criteria. Returns the entity, marked as del
 
 ```python
 result = client.Domain().remove({"id": "domain_id"})
+```
+
+#### `update(reqdata, ctrl=None) -> DomainEntity`
+
+Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
+
+```python
+result = client.Domain().update({
+    "id": "domain_id",
+    # Fields to update
+})
 ```
 
 ### Common Methods
@@ -1849,27 +1538,27 @@ email = client.Email()
 
 ### Field Usage by Operation
 
-| Field | load | list | create |
-| --- | --- | --- | --- |
-| `attachments` | - | - | - |
-| `bcc` | - | - | - |
-| `cc` | - | - | - |
-| `created_at` | - | - | - |
-| `from` | - | - | Yes |
-| `headers` | - | - | - |
-| `html` | - | - | - |
-| `id` | - | - | - |
-| `last_event` | - | - | - |
-| `message_id` | - | - | - |
-| `object` | - | - | - |
-| `reply_to` | - | - | - |
-| `scheduled_at` | - | - | - |
-| `subject` | - | - | Yes |
-| `tags` | - | - | - |
-| `template` | - | - | - |
-| `text` | - | - | - |
-| `to` | - | - | Yes |
-| `topic_id` | - | - | - |
+| Field | load | list | create | update |
+| --- | --- | --- | --- | --- |
+| `attachments` | - | - | - | - |
+| `bcc` | - | - | - | - |
+| `cc` | - | - | - | - |
+| `created_at` | - | - | - | - |
+| `from` | - | - | Yes | - |
+| `headers` | - | - | - | - |
+| `html` | - | - | - | - |
+| `id` | - | - | - | - |
+| `last_event` | - | - | - | - |
+| `message_id` | - | - | - | - |
+| `object` | - | - | - | - |
+| `reply_to` | - | - | - | - |
+| `scheduled_at` | - | - | - | - |
+| `subject` | - | - | Yes | - |
+| `tags` | - | - | - | - |
+| `template` | - | - | - | - |
+| `text` | - | - | - | - |
+| `to` | - | - | Yes | - |
+| `topic_id` | - | - | - | - |
 
 ### Operations
 
@@ -1900,6 +1589,17 @@ Load a single entity matching the given criteria. Returns the entity, whose reco
 result = client.Email().load({"id": "email_id"})
 ```
 
+#### `update(reqdata, ctrl=None) -> EmailEntity`
+
+Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
+
+```python
+result = client.Email().update({
+    "id": "email_id",
+    # Fields to update
+})
+```
+
 ### Common Methods
 
 #### `data_get() -> dict`
@@ -1921,6 +1621,128 @@ Set the entity match criteria.
 #### `make() -> Entity`
 
 Create a new `EmailEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
+
+
+---
+
+## EmailAttachmentEntity
+
+```python
+email_attachment = client.EmailAttachment()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `content_disposition` | `str | None` | No | How the attachment should be displayed. |
+| `content_id` | `str` | No | The content ID for inline attachments. |
+| `content_type` | `str` | No | The MIME type of the attachment. |
+| `download_url` | `str` | No | Signed URL to download the attachment content. |
+| `expires_at` | `str` | No | Timestamp when the download URL expires. |
+| `filename` | `str | None` | No | The filename of the attachment. |
+| `id` | `str` | No | The ID of the attachment. |
+| `object` | `str` | No | The type of object. |
+| `size` | `int` | No | Size of the attachment in bytes. |
+
+### Operations
+
+#### `list(reqmatch=None, ctrl=None) -> list[EmailAttachmentEntity]`
+
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
+
+```python
+results = client.EmailAttachment().list({"email_id": "example"})
+for email_attachment in results:
+    print(email_attachment.data_get())
+```
+
+#### `load(reqmatch, ctrl=None) -> EmailAttachmentEntity`
+
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and raises on error.
+
+```python
+result = client.EmailAttachment().load({"id": "email_attachment_id", "email_id": "email_id"})
+```
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `EmailAttachmentEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
+
+
+---
+
+## EmailBatchEntity
+
+```python
+email_batch = client.EmailBatch()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `data` | `list` | No |  |
+| `send_emails` | `list` | No |  |
+
+### Operations
+
+#### `create(reqdata, ctrl=None) -> EmailBatchEntity`
+
+Create a new entity with the given data. Returns the created entity and raises on error.
+
+```python
+result = client.EmailBatch().create({
+})
+```
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `EmailBatchEntity` instance with the same options.
 
 #### `get_name() -> str`
 
@@ -2006,14 +1828,14 @@ event = client.Event()
 
 ### Field Usage by Operation
 
-| Field | load | list | create |
-| --- | --- | --- | --- |
-| `created_at` | - | - | - |
-| `id` | - | - | - |
-| `name` | - | - | Yes |
-| `object` | - | - | - |
-| `schema` | - | - | - |
-| `updated_at` | - | - | - |
+| Field | load | list | create | update | remove |
+| --- | --- | --- | --- | --- | --- |
+| `created_at` | - | - | - | - | - |
+| `id` | - | - | - | - | - |
+| `name` | - | - | Yes | - | - |
+| `object` | - | - | - | - | - |
+| `schema` | - | - | - | Yes | - |
+| `updated_at` | - | - | - | - | - |
 
 ### Operations
 
@@ -2042,6 +1864,25 @@ Load a single entity matching the given criteria. Returns the entity, whose reco
 
 ```python
 result = client.Event().load({"id": "event_id"})
+```
+
+#### `remove(reqmatch, ctrl=None) -> EventEntity`
+
+Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
+
+```python
+result = client.Event().remove({"id": "event_id"})
+```
+
+#### `update(reqdata, ctrl=None) -> EventEntity`
+
+Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
+
+```python
+result = client.Event().update({
+    "id": "event_id",
+    # Fields to update
+})
 ```
 
 ### Common Methods
@@ -2098,20 +1939,20 @@ inbox = client.Inbox()
 
 ### Field Usage by Operation
 
-| Field | load | list | create | update |
-| --- | --- | --- | --- | --- |
-| `created_at` | - | - | - | - |
-| `domain_id` | - | - | - | - |
-| `drafts` | - | - | - | - |
-| `email_address` | - | - | - | - |
-| `forwarding` | - | - | - | - |
-| `from_name` | - | - | Yes | - |
-| `id` | - | - | - | - |
-| `last_received` | - | - | - | - |
-| `name` | - | - | Yes | - |
-| `object` | - | - | - | - |
-| `receiving_address` | - | - | - | - |
-| `unread` | - | - | - | - |
+| Field | load | list | create | update | remove |
+| --- | --- | --- | --- | --- | --- |
+| `created_at` | - | - | - | - | - |
+| `domain_id` | - | - | - | - | - |
+| `drafts` | - | - | - | - | - |
+| `email_address` | - | - | - | - | - |
+| `forwarding` | - | - | - | - | - |
+| `from_name` | - | - | Yes | Yes | - |
+| `id` | - | - | - | - | - |
+| `last_received` | - | - | - | - | - |
+| `name` | - | - | Yes | Yes | - |
+| `object` | - | - | - | - | - |
+| `receiving_address` | - | - | - | - | - |
+| `unread` | - | - | - | - | - |
 
 ### Operations
 
@@ -2151,6 +1992,14 @@ Load a single entity matching the given criteria. Returns the entity, whose reco
 
 ```python
 result = client.Inbox().load({"id": "inbox_id"})
+```
+
+#### `remove(reqmatch, ctrl=None) -> InboxEntity`
+
+Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
+
+```python
+result = client.Inbox().remove({"id": "inbox_id"})
 ```
 
 #### `update(reqdata, ctrl=None) -> InboxEntity`
@@ -2193,28 +2042,51 @@ Return the entity name.
 
 ---
 
-## InboxAgentResponseSuccessEntity
+## InboxAgentEntity
 
 ```python
-inbox_agent_response_success = client.InboxAgentResponseSuccess()
+inbox_agent = client.InboxAgent()
 ```
 
 ### Fields
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `id` | `str` | No |  |
+| `enabled_actions` | `list` | Yes | The actions the agent can take. |
+| `id` | `str` | Yes | The ID of the inbox agent. |
+| `instructions` | `str | None` | Yes | Instructions the agent follows when it handles the threads of the inbox. |
+| `object` | `str` | Yes | The object type. |
+| `tone` | `str | None` | Yes | The tone the agent writes in. |
+
+### Field Usage by Operation
+
+| Field | load | update |
+| --- | --- | --- |
+| `enabled_actions` | - | Yes |
+| `id` | - | - |
+| `instructions` | - | Yes |
+| `object` | - | - |
+| `tone` | - | Yes |
 
 ### Operations
 
-#### `list(reqmatch=None, ctrl=None) -> list[InboxAgentResponseSuccessEntity]`
+#### `load(reqmatch, ctrl=None) -> InboxAgentEntity`
 
-List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and raises on error.
 
 ```python
-results = client.InboxAgentResponseSuccess().list({"id": "example"})
-for inbox_agent_response_success in results:
-    print(inbox_agent_response_success.data_get())
+result = client.InboxAgent().load({"inbox_id": "inbox_id"})
+```
+
+#### `update(reqdata, ctrl=None) -> InboxAgentEntity`
+
+Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
+
+```python
+result = client.InboxAgent().update({
+    "inbox_id": "inbox_id",
+    # Fields to update
+})
 ```
 
 ### Common Methods
@@ -2237,7 +2109,7 @@ Set the entity match criteria.
 
 #### `make() -> Entity`
 
-Create a new `InboxAgentResponseSuccessEntity` instance with the same options.
+Create a new `InboxAgentEntity` instance with the same options.
 
 #### `get_name() -> str`
 
@@ -2246,73 +2118,10 @@ Return the entity name.
 
 ---
 
-## InboxDraftListItemEntity
+## InboxDraftEntity
 
 ```python
-inbox_draft_list_item = client.InboxDraftListItem()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `attachments` | `list` | Yes | The files stored on the draft. |
-| `bcc` | `list` | Yes | The BCC recipients. |
-| `cc` | `list` | Yes | The CC recipients. |
-| `id` | `str` | Yes | The ID of the draft. |
-| `reply_to_email_id` | `str | None` | Yes | The Email ID the draft replies to. |
-| `snippet` | `str | None` | Yes | A short preview of the body. |
-| `subject` | `str | None` | Yes | The subject. |
-| `thread_id` | `str | None` | Yes | The Thread ID when the draft is a reply. |
-| `to` | `list | None` | Yes | The recipients. |
-| `type` | `str` | Yes | `reply` when the draft replies to an email in an existing thread. |
-| `updated_at` | `str` | Yes | Timestamp when the draft was last saved. |
-
-### Operations
-
-#### `list(reqmatch=None, ctrl=None) -> list[InboxDraftListItemEntity]`
-
-List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
-
-```python
-results = client.InboxDraftListItem().list({"id": "example"})
-for inbox_draft_list_item in results:
-    print(inbox_draft_list_item.data_get())
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `InboxDraftListItemEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## InboxDraftResponseSuccessEntity
-
-```python
-inbox_draft_response_success = client.InboxDraftResponseSuccess()
+inbox_draft = client.InboxDraft()
 ```
 
 ### Fields
@@ -2328,6 +2137,7 @@ inbox_draft_response_success = client.InboxDraftResponseSuccess()
 | `id` | `str` | Yes | The ID of the draft. |
 | `object` | `str` | Yes | The object type. |
 | `reply_to_email_id` | `str | None` | Yes | The Email ID the draft replies to. |
+| `snippet` | `str | None` | Yes | A short preview of the body. |
 | `subject` | `str | None` | Yes | The subject. |
 | `text` | `str | None` | Yes | The plain text body. |
 | `thread_id` | `str | None` | Yes | The Thread ID when the draft is a reply. |
@@ -2335,15 +2145,35 @@ inbox_draft_response_success = client.InboxDraftResponseSuccess()
 | `type` | `str` | Yes | `reply` when the draft replies to an email in an existing thread. |
 | `updated_at` | `str` | Yes | Timestamp when the draft was last saved. |
 
+### Field Usage by Operation
+
+| Field | load | list | create | update | remove |
+| --- | --- | --- | --- | --- | --- |
+| `attachments` | - | - | Yes | Yes | - |
+| `bcc` | - | - | Yes | Yes | - |
+| `cc` | - | - | Yes | Yes | - |
+| `created_at` | - | - | - | - | - |
+| `email_id` | - | - | - | - | - |
+| `html` | - | - | Yes | Yes | - |
+| `id` | - | - | - | - | - |
+| `object` | - | - | - | - | - |
+| `reply_to_email_id` | - | - | Yes | - | - |
+| `snippet` | - | - | - | - | - |
+| `subject` | - | - | Yes | Yes | - |
+| `text` | - | - | Yes | Yes | - |
+| `thread_id` | - | - | Yes | - | - |
+| `to` | - | - | Yes | Yes | - |
+| `type` | - | - | - | - | - |
+| `updated_at` | - | - | - | - | - |
+
 ### Operations
 
-#### `create(reqdata, ctrl=None) -> InboxDraftResponseSuccessEntity`
+#### `create(reqdata, ctrl=None) -> InboxDraftEntity`
 
 Create a new entity with the given data. Returns the created entity and raises on error.
 
 ```python
-result = client.InboxDraftResponseSuccess().create({
-    "draft_id": "example_draft_id",  # str
+result = client.InboxDraft().create({
     "inbox_id": "example_inbox_id",  # str
     "attachments": [],  # list
     "bcc": [],  # list
@@ -2354,6 +2184,7 @@ result = client.InboxDraftResponseSuccess().create({
     "id": "example_id",  # str
     "object": "example_object",  # str
     "reply_to_email_id": "example_reply_to_email_id",  # str | None
+    "snippet": "example_snippet",  # str | None
     "subject": "example_subject",  # str | None
     "text": "example_text",  # str | None
     "thread_id": "example_thread_id",  # str | None
@@ -2363,12 +2194,42 @@ result = client.InboxDraftResponseSuccess().create({
 })
 ```
 
-#### `load(reqmatch, ctrl=None) -> InboxDraftResponseSuccessEntity`
+#### `list(reqmatch=None, ctrl=None) -> list[InboxDraftEntity]`
+
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
+
+```python
+results = client.InboxDraft().list({"inbox_id": "example"})
+for inbox_draft in results:
+    print(inbox_draft.data_get())
+```
+
+#### `load(reqmatch, ctrl=None) -> InboxDraftEntity`
 
 Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and raises on error.
 
 ```python
-result = client.InboxDraftResponseSuccess().load({"draft_id": "draft_id", "inbox_id": "inbox_id"})
+result = client.InboxDraft().load({"id": "inbox_draft_id", "inbox_id": "inbox_id"})
+```
+
+#### `remove(reqmatch, ctrl=None) -> InboxDraftEntity`
+
+Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
+
+```python
+result = client.InboxDraft().remove({"id": "inbox_draft_id", "inbox_id": "inbox_id"})
+```
+
+#### `update(reqdata, ctrl=None) -> InboxDraftEntity`
+
+Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
+
+```python
+result = client.InboxDraft().update({
+    "id": "inbox_draft_id",
+    "inbox_id": "inbox_id",
+    # Fields to update
+})
 ```
 
 ### Common Methods
@@ -2391,7 +2252,7 @@ Set the entity match criteria.
 
 #### `make() -> Entity`
 
-Create a new `InboxDraftResponseSuccessEntity` instance with the same options.
+Create a new `InboxDraftEntity` instance with the same options.
 
 #### `get_name() -> str`
 
@@ -2410,12 +2271,36 @@ inbox_label = client.InboxLabel()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `color` | `str` | Yes | The color of the label, as a `#RRGGBB` hex color in uppercase. |
+| `color` | `str` | No | The color of the label, as a `#RRGGBB` hex color. |
 | `created_at` | `str` | Yes | Timestamp when the label was created. |
-| `id` | `str` | Yes | The ID of the label. |
+| `id` | `str` | Yes | The ID of the updated label. |
 | `name` | `str` | Yes | The name of the label. |
+| `object` | `str` | Yes | Type of the response object. |
+
+### Field Usage by Operation
+
+| Field | list | create | update | remove |
+| --- | --- | --- | --- | --- |
+| `color` | Yes | - | - | - |
+| `created_at` | - | - | - | - |
+| `id` | - | - | - | - |
+| `name` | - | - | Yes | - |
+| `object` | - | - | - | - |
 
 ### Operations
+
+#### `create(reqdata, ctrl=None) -> InboxLabelEntity`
+
+Create a new entity with the given data. Returns the created entity and raises on error.
+
+```python
+result = client.InboxLabel().create({
+    "id": "example_id",  # str
+    "created_at": "example_created_at",  # str
+    "name": "example_name",  # str
+    "object": "example_object",  # str
+})
+```
 
 #### `list(reqmatch=None, ctrl=None) -> list[InboxLabelEntity]`
 
@@ -2425,6 +2310,26 @@ List entities matching the given criteria. The match is optional — call `list(
 results = client.InboxLabel().list({"id": "example"})
 for inbox_label in results:
     print(inbox_label.data_get())
+```
+
+#### `remove(reqmatch, ctrl=None) -> InboxLabelEntity`
+
+Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
+
+```python
+result = client.InboxLabel().remove({"id": "inbox_label_id", "inbox_id": "inbox_id"})
+```
+
+#### `update(reqdata, ctrl=None) -> InboxLabelEntity`
+
+Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
+
+```python
+result = client.InboxLabel().update({
+    "id": "inbox_label_id",
+    "inbox_id": "inbox_id",
+    # Fields to update
+})
 ```
 
 ### Common Methods
@@ -2466,6 +2371,7 @@ inbox_thread = client.InboxThread()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `add_label_ids` | `list` | No | Label IDs to apply to the thread. |
 | `bcc` | `list` | Yes | The BCC recipients of the most recent email. |
 | `cc` | `list` | Yes | The CC recipients of the most recent email. |
 | `email_count` | `int` | Yes | The number of emails in the thread. |
@@ -2477,10 +2383,35 @@ inbox_thread = client.InboxThread()
 | `id` | `str` | Yes | The ID of the thread. |
 | `labels` | `list` | Yes | The labels attached to the thread. |
 | `matched_email_id` | `str | None` | Yes | Identifies the email in the thread that matched the search. |
+| `object` | `str` | Yes | The object type. |
 | `read` | `bool` | Yes | True only when every email in the thread is read. |
 | `received_at` | `str` | Yes | Timestamp when the thread was last active. |
+| `remove_label_ids` | `list` | No | Label IDs to remove from the thread. |
 | `subject` | `str | None` | Yes | The subject of the thread. |
 | `to` | `list` | Yes | The recipients of the most recent email. |
+
+### Field Usage by Operation
+
+| Field | load | list | update | remove |
+| --- | --- | --- | --- | --- |
+| `add_label_ids` | - | - | - | - |
+| `bcc` | - | - | - | - |
+| `cc` | - | - | - | - |
+| `email_count` | - | - | - | - |
+| `folder` | - | - | Yes | - |
+| `from` | - | - | - | - |
+| `has_attachment` | - | - | - | - |
+| `has_draft` | - | - | - | - |
+| `highlights` | - | - | - | - |
+| `id` | - | - | - | - |
+| `labels` | - | - | - | - |
+| `matched_email_id` | - | - | - | - |
+| `object` | - | - | - | - |
+| `read` | - | - | Yes | - |
+| `received_at` | - | - | - | - |
+| `remove_label_ids` | - | - | - | - |
+| `subject` | - | - | - | - |
+| `to` | - | - | - | - |
 
 ### Operations
 
@@ -2492,6 +2423,34 @@ List entities matching the given criteria. The match is optional — call `list(
 results = client.InboxThread().list({"id": "example"})
 for inbox_thread in results:
     print(inbox_thread.data_get())
+```
+
+#### `load(reqmatch, ctrl=None) -> InboxThreadEntity`
+
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and raises on error.
+
+```python
+result = client.InboxThread().load({"id": "inbox_thread_id", "inbox_id": "inbox_id"})
+```
+
+#### `remove(reqmatch, ctrl=None) -> InboxThreadEntity`
+
+Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
+
+```python
+result = client.InboxThread().remove({"id": "inbox_thread_id", "inbox_id": "inbox_id"})
+```
+
+#### `update(reqdata, ctrl=None) -> InboxThreadEntity`
+
+Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
+
+```python
+result = client.InboxThread().update({
+    "id": "inbox_thread_id",
+    "inbox_id": "inbox_id",
+    # Fields to update
+})
 ```
 
 ### Common Methods
@@ -2550,6 +2509,10 @@ inbox_thread_email = client.InboxThreadEmail()
 
 ### Operations
 
+#### `create(reqdata, ctrl=None) -> InboxThreadEmailEntity`
+
+Create a new entity with the given data. Returns the created entity and raises on error.
+
 #### `list(reqmatch=None, ctrl=None) -> list[InboxThreadEmailEntity]`
 
 List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
@@ -2558,6 +2521,14 @@ List entities matching the given criteria. The match is optional — call `list(
 results = client.InboxThreadEmail().list({"inbox_id": "example", "thread_id": "example"})
 for inbox_thread_email in results:
     print(inbox_thread_email.data_get())
+```
+
+#### `load(reqmatch, ctrl=None) -> InboxThreadEmailEntity`
+
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and raises on error.
+
+```python
+result = client.InboxThreadEmail().load({"id": "inbox_thread_email_id", "inbox_id": "inbox_id", "thread_id": "thread_id"})
 ```
 
 ### Common Methods
@@ -2581,529 +2552,6 @@ Set the entity match criteria.
 #### `make() -> Entity`
 
 Create a new `InboxThreadEmailEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## InboxThreadEmailResponseSuccessEntity
-
-```python
-inbox_thread_email_response_success = client.InboxThreadEmailResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `attachments` | `list` | Yes | The attachments of the message. |
-| `bcc` | `list` | Yes | The BCC recipients of the message. |
-| `cc` | `list` | Yes | The CC recipients of the message. |
-| `direction` | `str` | Yes | Whether the inbox received the message (`inbound`) or sent it (`outbound`). |
-| `from` | `str` | Yes | Sender email address. |
-| `html` | `str | None` | Yes | The HTML body. |
-| `id` | `str` | Yes | The ID of the message. |
-| `message_id` | `str | None` | Yes | The Message-ID header of the message. |
-| `read` | `bool` | Yes | Whether the message has been read. |
-| `received_at` | `str` | Yes | Timestamp when the inbox received the message, or when the inbox sent it. |
-| `reply_to` | `list` | Yes | The Reply-To addresses of the message. |
-| `subject` | `str | None` | Yes | The subject of the message. |
-| `text` | `str | None` | Yes | The plain-text body. |
-| `to` | `list` | Yes | The recipients of the message. |
-
-### Operations
-
-#### `create(reqdata, ctrl=None) -> InboxThreadEmailResponseSuccessEntity`
-
-Create a new entity with the given data. Returns the created entity and raises on error.
-
-#### `load(reqmatch, ctrl=None) -> InboxThreadEmailResponseSuccessEntity`
-
-Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and raises on error.
-
-```python
-result = client.InboxThreadEmailResponseSuccess().load({"email_id": "email_id", "inbox_id": "inbox_id", "thread_id": "thread_id"})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `InboxThreadEmailResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## InboxThreadResponseSuccessEntity
-
-```python
-inbox_thread_response_success = client.InboxThreadResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `folder` | `str` | Yes | The folder the thread is in. |
-| `id` | `str` | Yes | The ID of the thread. |
-| `labels` | `list` | Yes | The labels attached to the thread. |
-| `object` | `str` | Yes | The object type. |
-| `read` | `bool` | Yes | True only when every email in the thread is read. |
-| `subject` | `str | None` | Yes | The subject of the thread. |
-
-### Operations
-
-#### `load(reqmatch, ctrl=None) -> InboxThreadResponseSuccessEntity`
-
-Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and raises on error.
-
-```python
-result = client.InboxThreadResponseSuccess().load({"inbox_id": "inbox_id", "thread_id": "thread_id"})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `InboxThreadResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## ListAttachmentEntity
-
-```python
-list_attachment = client.ListAttachment()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `content_disposition` | `str | None` | No | How the attachment should be displayed. |
-| `content_id` | `str` | No | The content ID for inline attachments. |
-| `content_type` | `str` | No | The MIME type of the attachment. |
-| `download_url` | `str` | No | Signed URL to download the attachment content. |
-| `expires_at` | `str` | No | Timestamp when the download URL expires. |
-| `filename` | `str | None` | No | The filename of the attachment. |
-| `id` | `str` | No | The ID of the attachment. |
-| `size` | `int` | No | Size of the attachment in bytes. |
-
-### Operations
-
-#### `list(reqmatch=None, ctrl=None) -> list[ListAttachmentEntity]`
-
-List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
-
-```python
-results = client.ListAttachment().list({"email_id": "example"})
-for list_attachment in results:
-    print(list_attachment.data_get())
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `ListAttachmentEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## ListBroadcastClickedLinksResponseSuccessEntity
-
-```python
-list_broadcast_clicked_links_response_success = client.ListBroadcastClickedLinksResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `clicks` | `int` | No | Total number of clicks on this URL. |
-| `id` | `str` | No | An opaque cursor for this row, used only for pagination. |
-| `unique_clicks` | `int` | No | Number of unique clicks on this URL. |
-| `url` | `str` | No | The URL that was clicked. |
-
-### Operations
-
-#### `list(reqmatch=None, ctrl=None) -> list[ListBroadcastClickedLinksResponseSuccessEntity]`
-
-List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
-
-```python
-results = client.ListBroadcastClickedLinksResponseSuccess().list({"broadcast_id": "example"})
-for list_broadcast_clicked_links_response_success in results:
-    print(list_broadcast_clicked_links_response_success.data_get())
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `ListBroadcastClickedLinksResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## ListBroadcastRecipientsResponseSuccessEntity
-
-```python
-list_broadcast_recipients_response_success = client.ListBroadcastRecipientsResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `bounce_type` | `str` | No | The type of bounce. |
-| `clicked_links` | `list` | No | The links this recipient clicked. |
-| `contact_id` | `str | None` | No | The ID of the contact associated with this recipient, if one exists. |
-| `count` | `int` | No | The number of times this recipient triggered the event. |
-| `email` | `str` | No | The recipient's email address. |
-| `id` | `str` | No | Opaque cursor identifying this row, used for pagination. |
-
-### Operations
-
-#### `list(reqmatch=None, ctrl=None) -> list[ListBroadcastRecipientsResponseSuccessEntity]`
-
-List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
-
-```python
-results = client.ListBroadcastRecipientsResponseSuccess().list({"broadcast_id": "example", "type": "example"})
-for list_broadcast_recipients_response_success in results:
-    print(list_broadcast_recipients_response_success.data_get())
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `ListBroadcastRecipientsResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## ListContactSegmentsResponseSuccessEntity
-
-```python
-list_contact_segments_response_success = client.ListContactSegmentsResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `created_at` | `str` | No | Timestamp indicating when the contact was added to the segment. |
-| `id` | `str` | No | Unique identifier for the segment. |
-| `name` | `str` | No | Name of the segment. |
-
-### Operations
-
-#### `list(reqmatch=None, ctrl=None) -> list[ListContactSegmentsResponseSuccessEntity]`
-
-List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
-
-```python
-results = client.ListContactSegmentsResponseSuccess().list({"contact_id": "example"})
-for list_contact_segments_response_success in results:
-    print(list_contact_segments_response_success.data_get())
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `ListContactSegmentsResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## ListContactsResponseSuccessEntity
-
-```python
-list_contacts_response_success = client.ListContactsResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `created_at` | `str` | No | Timestamp indicating when the contact was created. |
-| `email` | `str` | No | Email address of the contact. |
-| `first_name` | `str | None` | No | First name of the contact. |
-| `id` | `str` | No | Unique identifier for the contact. |
-| `last_name` | `str | None` | No | Last name of the contact. |
-| `unsubscribed` | `bool` | No | Indicates if the contact is unsubscribed. |
-
-### Operations
-
-#### `list(reqmatch=None, ctrl=None) -> list[ListContactsResponseSuccessEntity]`
-
-List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
-
-```python
-results = client.ListContactsResponseSuccess().list({"segment_id": "example"})
-for list_contacts_response_success in results:
-    print(list_contacts_response_success.data_get())
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `ListContactsResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## ListWebhookEventEntity
-
-```python
-list_webhook_event = client.ListWebhookEvent()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `created_at` | `str` | No | Timestamp indicating when the event was created. |
-| `id` | `str` | No | The ID of the webhook event. |
-| `status` | `str` | No | The delivery status of the event for this webhook. |
-| `type` | `str` | No | The type of the event. |
-
-### Operations
-
-#### `list(reqmatch=None, ctrl=None) -> list[ListWebhookEventEntity]`
-
-List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
-
-```python
-results = client.ListWebhookEvent().list({"webhook_id": "example"})
-for list_webhook_event in results:
-    print(list_webhook_event.data_get())
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `ListWebhookEventEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## ListWebhookEventAttemptEntity
-
-```python
-list_webhook_event_attempt = client.ListWebhookEventAttempt()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `http_status_code` | `int` | No | The HTTP status code returned by the webhook endpoint. |
-| `id` | `str` | No | The ID of the webhook event attempt. |
-| `response` | `str` | No | The response body returned by the webhook endpoint. |
-| `sent_at` | `str` | No | Timestamp indicating when the attempt was sent. |
-
-### Operations
-
-#### `list(reqmatch=None, ctrl=None) -> list[ListWebhookEventAttemptEntity]`
-
-List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
-
-```python
-results = client.ListWebhookEventAttempt().list({"event_id": "example", "webhook_id": "example"})
-for list_webhook_event_attempt in results:
-    print(list_webhook_event_attempt.data_get())
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `ListWebhookEventAttemptEntity` instance with the same options.
 
 #### `get_name() -> str`
 
@@ -3173,6 +2621,73 @@ Set the entity match criteria.
 #### `make() -> Entity`
 
 Create a new `LogEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
+
+
+---
+
+## OauthGrantEntity
+
+```python
+oauth_grant = client.OauthGrant()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `client` | `dict` | No | The OAuth client the grant was issued to. |
+| `client_id` | `str` | No | The ID of the OAuth client the grant was issued to. |
+| `created_at` | `str` | No | The date and time the OAuth grant was created. |
+| `id` | `str` | No | The ID of the OAuth grant. |
+| `revoked_at` | `str | None` | No | The date and time the OAuth grant was revoked, or null if it is still active. |
+| `revoked_reason` | `str | None` | No | The reason the OAuth grant was revoked, or null if it is still active. |
+| `scopes` | `list` | No | The scopes granted to the OAuth client. |
+
+### Operations
+
+#### `list(reqmatch=None, ctrl=None) -> list[OauthGrantEntity]`
+
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
+
+```python
+results = client.OauthGrant().list()
+for oauth_grant in results:
+    print(oauth_grant.data_get())
+```
+
+#### `remove(reqmatch, ctrl=None) -> OauthGrantEntity`
+
+Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
+
+```python
+result = client.OauthGrant().remove({"id": "oauth_grant_id"})
+```
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `OauthGrantEntity` instance with the same options.
 
 #### `get_name() -> str`
 
@@ -3256,850 +2771,10 @@ Return the entity name.
 
 ---
 
-## RemoveAudienceResponseSuccessEntity
+## ReceivedEmailAttachmentEntity
 
 ```python
-remove_audience_response_success = client.RemoveAudienceResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | `str` | No |  |
-
-### Operations
-
-#### `remove(reqmatch, ctrl=None) -> RemoveAudienceResponseSuccessEntity`
-
-Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
-
-```python
-result = client.RemoveAudienceResponseSuccess().remove({"id": "remove_audience_response_success_id"})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `RemoveAudienceResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## RemoveBroadcastResponseSuccessEntity
-
-```python
-remove_broadcast_response_success = client.RemoveBroadcastResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | `str` | No |  |
-
-### Operations
-
-#### `remove(reqmatch, ctrl=None) -> RemoveBroadcastResponseSuccessEntity`
-
-Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
-
-```python
-result = client.RemoveBroadcastResponseSuccess().remove({"id": "remove_broadcast_response_success_id"})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `RemoveBroadcastResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## RemoveContactFromSegmentResponseSuccessEntity
-
-```python
-remove_contact_from_segment_response_success = client.RemoveContactFromSegmentResponseSuccess()
-```
-
-### Operations
-
-#### `remove(reqmatch, ctrl=None) -> RemoveContactFromSegmentResponseSuccessEntity`
-
-Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
-
-```python
-result = client.RemoveContactFromSegmentResponseSuccess().remove({"contact_id": "contact_id", "segment_id": "segment_id"})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `RemoveContactFromSegmentResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## RemoveContactPropertyResponseSuccessEntity
-
-```python
-remove_contact_property_response_success = client.RemoveContactPropertyResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | `str` | No |  |
-
-### Operations
-
-#### `remove(reqmatch, ctrl=None) -> RemoveContactPropertyResponseSuccessEntity`
-
-Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
-
-```python
-result = client.RemoveContactPropertyResponseSuccess().remove({"id": "remove_contact_property_response_success_id"})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `RemoveContactPropertyResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## RemoveContactResponseSuccessEntity
-
-```python
-remove_contact_response_success = client.RemoveContactResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | `str` | No |  |
-
-### Operations
-
-#### `remove(reqmatch, ctrl=None) -> RemoveContactResponseSuccessEntity`
-
-Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
-
-```python
-result = client.RemoveContactResponseSuccess().remove({"id": "remove_contact_response_success_id"})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `RemoveContactResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## RemoveEventEntity
-
-```python
-remove_event = client.RemoveEvent()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | `str` | No |  |
-
-### Operations
-
-#### `remove(reqmatch, ctrl=None) -> RemoveEventEntity`
-
-Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
-
-```python
-result = client.RemoveEvent().remove({"id": "remove_event_id"})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `RemoveEventEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## RemoveInboxDraftResponseSuccessEntity
-
-```python
-remove_inbox_draft_response_success = client.RemoveInboxDraftResponseSuccess()
-```
-
-### Operations
-
-#### `remove(reqmatch, ctrl=None) -> RemoveInboxDraftResponseSuccessEntity`
-
-Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
-
-```python
-result = client.RemoveInboxDraftResponseSuccess().remove({"draft_id": "draft_id", "inbox_id": "inbox_id"})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `RemoveInboxDraftResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## RemoveInboxLabelResponseSuccessEntity
-
-```python
-remove_inbox_label_response_success = client.RemoveInboxLabelResponseSuccess()
-```
-
-### Operations
-
-#### `remove(reqmatch, ctrl=None) -> RemoveInboxLabelResponseSuccessEntity`
-
-Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
-
-```python
-result = client.RemoveInboxLabelResponseSuccess().remove({"inbox_id": "inbox_id", "label_id": "label_id"})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `RemoveInboxLabelResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## RemoveInboxResponseSuccessEntity
-
-```python
-remove_inbox_response_success = client.RemoveInboxResponseSuccess()
-```
-
-### Operations
-
-#### `remove(reqmatch, ctrl=None) -> RemoveInboxResponseSuccessEntity`
-
-Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
-
-```python
-result = client.RemoveInboxResponseSuccess().remove({"inbox_id": "inbox_id"})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `RemoveInboxResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## RemoveInboxThreadResponseSuccessEntity
-
-```python
-remove_inbox_thread_response_success = client.RemoveInboxThreadResponseSuccess()
-```
-
-### Operations
-
-#### `remove(reqmatch, ctrl=None) -> RemoveInboxThreadResponseSuccessEntity`
-
-Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
-
-```python
-result = client.RemoveInboxThreadResponseSuccess().remove({"inbox_id": "inbox_id", "thread_id": "thread_id"})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `RemoveInboxThreadResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## RemoveSegmentResponseSuccessEntity
-
-```python
-remove_segment_response_success = client.RemoveSegmentResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `audience_id` | `str` | No | The ID of the audience this segment belongs to. |
-| `created_at` | `str` | No | Timestamp indicating when the segment was created. |
-| `filter` | `dict` | No | Filter conditions for the segment. |
-| `id` | `str` | No | Unique identifier for the segment. |
-| `name` | `str` | Yes | The name of the segment. |
-
-### Field Usage by Operation
-
-| Field | list | create | remove |
-| --- | --- | --- | --- |
-| `audience_id` | - | - | - |
-| `created_at` | - | - | - |
-| `filter` | - | - | - |
-| `id` | - | - | - |
-| `name` | Yes | - | - |
-
-### Operations
-
-#### `create(reqdata, ctrl=None) -> RemoveSegmentResponseSuccessEntity`
-
-Create a new entity with the given data. Returns the created entity and raises on error.
-
-```python
-result = client.RemoveSegmentResponseSuccess().create({
-    "name": "example_name",  # str
-})
-```
-
-#### `list(reqmatch=None, ctrl=None) -> list[RemoveSegmentResponseSuccessEntity]`
-
-List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
-
-```python
-results = client.RemoveSegmentResponseSuccess().list()
-for remove_segment_response_success in results:
-    print(remove_segment_response_success.data_get())
-```
-
-#### `remove(reqmatch, ctrl=None) -> RemoveSegmentResponseSuccessEntity`
-
-Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
-
-```python
-result = client.RemoveSegmentResponseSuccess().remove({"id": "remove_segment_response_success_id"})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `RemoveSegmentResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## RemoveSuppressionResponseSuccessEntity
-
-```python
-remove_suppression_response_success = client.RemoveSuppressionResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `created_at` | `str` | No | Timestamp indicating when the suppression was created. |
-| `email` | `str` | Yes | Email address to suppress. |
-| `id` | `str` | No | Unique identifier for the suppression. |
-| `origin` | `str` | No | Origin of the suppression. |
-| `source_id` | `str | None` | No | Identifier of the event that caused the suppression, such as the email that bounced or complained. |
-
-### Field Usage by Operation
-
-| Field | list | create | remove |
-| --- | --- | --- | --- |
-| `created_at` | - | - | - |
-| `email` | Yes | - | - |
-| `id` | - | - | - |
-| `origin` | - | - | - |
-| `source_id` | - | - | - |
-
-### Operations
-
-#### `create(reqdata, ctrl=None) -> RemoveSuppressionResponseSuccessEntity`
-
-Create a new entity with the given data. Returns the created entity and raises on error.
-
-```python
-result = client.RemoveSuppressionResponseSuccess().create({
-    "email": "example_email",  # str
-})
-```
-
-#### `list(reqmatch=None, ctrl=None) -> list[RemoveSuppressionResponseSuccessEntity]`
-
-List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
-
-```python
-results = client.RemoveSuppressionResponseSuccess().list()
-for remove_suppression_response_success in results:
-    print(remove_suppression_response_success.data_get())
-```
-
-#### `remove(reqmatch, ctrl=None) -> RemoveSuppressionResponseSuccessEntity`
-
-Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
-
-```python
-result = client.RemoveSuppressionResponseSuccess().remove({"suppression": "suppression"})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `RemoveSuppressionResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## RemoveTemplateResponseSuccessEntity
-
-```python
-remove_template_response_success = client.RemoveTemplateResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `alias` | `str` | No | The alias of the template. |
-| `created_at` | `str` | No | Timestamp indicating when the template was created. |
-| `from` | `str` | No | Sender email address. |
-| `html` | `str` | Yes | The HTML version of the template. |
-| `id` | `str` | No | The ID of the template. |
-| `name` | `str` | Yes | The name of the template. |
-| `published_at` | `str | None` | No | Timestamp indicating when the template was published. |
-| `reply_to` | `list` | No | Reply-to email addresses. |
-| `status` | `str` | No | The publication status of the template. |
-| `subject` | `str` | No | Email subject. |
-| `text` | `str` | No | The plain text version of the template. |
-| `updated_at` | `str` | No | Timestamp indicating when the template was last updated. |
-| `variables` | `list` | No |  |
-
-### Field Usage by Operation
-
-| Field | list | create | remove |
-| --- | --- | --- | --- |
-| `alias` | - | - | - |
-| `created_at` | - | - | - |
-| `from` | - | - | - |
-| `html` | - | - | - |
-| `id` | - | - | - |
-| `name` | Yes | - | - |
-| `published_at` | - | - | - |
-| `reply_to` | - | - | - |
-| `status` | - | - | - |
-| `subject` | - | - | - |
-| `text` | - | - | - |
-| `updated_at` | - | - | - |
-| `variables` | - | - | - |
-
-### Operations
-
-#### `create(reqdata, ctrl=None) -> RemoveTemplateResponseSuccessEntity`
-
-Create a new entity with the given data. Returns the created entity and raises on error.
-
-```python
-result = client.RemoveTemplateResponseSuccess().create({
-    "html": "example_html",  # str
-    "name": "example_name",  # str
-})
-```
-
-#### `list(reqmatch=None, ctrl=None) -> list[RemoveTemplateResponseSuccessEntity]`
-
-List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
-
-```python
-results = client.RemoveTemplateResponseSuccess().list()
-for remove_template_response_success in results:
-    print(remove_template_response_success.data_get())
-```
-
-#### `remove(reqmatch, ctrl=None) -> RemoveTemplateResponseSuccessEntity`
-
-Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
-
-```python
-result = client.RemoveTemplateResponseSuccess().remove({"id": "remove_template_response_success_id"})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `RemoveTemplateResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## RemoveTopicResponseSuccessEntity
-
-```python
-remove_topic_response_success = client.RemoveTopicResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `created_at` | `str` | No | Timestamp indicating when the topic was created. |
-| `default_subscription` | `str` | Yes | The default subscription status for the topic. |
-| `description` | `str` | No | A description of the topic. |
-| `id` | `str` | No | Unique identifier for the topic. |
-| `name` | `str` | Yes | The name of the topic. |
-| `visibility` | `str` | No | The visibility of the topic. |
-
-### Field Usage by Operation
-
-| Field | list | create | remove |
-| --- | --- | --- | --- |
-| `created_at` | - | - | - |
-| `default_subscription` | Yes | - | - |
-| `description` | - | - | - |
-| `id` | - | - | - |
-| `name` | Yes | - | - |
-| `visibility` | - | - | - |
-
-### Operations
-
-#### `create(reqdata, ctrl=None) -> RemoveTopicResponseSuccessEntity`
-
-Create a new entity with the given data. Returns the created entity and raises on error.
-
-```python
-result = client.RemoveTopicResponseSuccess().create({
-    "default_subscription": "example_default_subscription",  # str
-    "name": "example_name",  # str
-})
-```
-
-#### `list(reqmatch=None, ctrl=None) -> list[RemoveTopicResponseSuccessEntity]`
-
-List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
-
-```python
-results = client.RemoveTopicResponseSuccess().list()
-for remove_topic_response_success in results:
-    print(remove_topic_response_success.data_get())
-```
-
-#### `remove(reqmatch, ctrl=None) -> RemoveTopicResponseSuccessEntity`
-
-Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
-
-```python
-result = client.RemoveTopicResponseSuccess().remove({"id": "remove_topic_response_success_id"})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `RemoveTopicResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## RetrievedAttachmentEntity
-
-```python
-retrieved_attachment = client.RetrievedAttachment()
+received_email_attachment = client.ReceivedEmailAttachment()
 ```
 
 ### Fields
@@ -4118,79 +2793,22 @@ retrieved_attachment = client.RetrievedAttachment()
 
 ### Operations
 
-#### `load(reqmatch, ctrl=None) -> RetrievedAttachmentEntity`
-
-Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and raises on error.
-
-```python
-result = client.RetrievedAttachment().load({"id": "retrieved_attachment_id"})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `RetrievedAttachmentEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## RevokeOAuthGrantEntity
-
-```python
-revoke_o_auth_grant = client.RevokeOAuthGrant()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `client` | `dict` | No | The OAuth client the grant was issued to. |
-| `client_id` | `str` | No | The ID of the OAuth client the grant was issued to. |
-| `created_at` | `str` | No | The date and time the OAuth grant was created. |
-| `id` | `str` | No | The ID of the OAuth grant. |
-| `revoked_at` | `str | None` | No | The date and time the OAuth grant was revoked, or null if it is still active. |
-| `revoked_reason` | `str | None` | No | The reason the OAuth grant was revoked, or null if it is still active. |
-| `scopes` | `list` | No | The scopes granted to the OAuth client. |
-
-### Operations
-
-#### `list(reqmatch=None, ctrl=None) -> list[RevokeOAuthGrantEntity]`
+#### `list(reqmatch=None, ctrl=None) -> list[ReceivedEmailAttachmentEntity]`
 
 List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
 
 ```python
-results = client.RevokeOAuthGrant().list()
-for revoke_o_auth_grant in results:
-    print(revoke_o_auth_grant.data_get())
+results = client.ReceivedEmailAttachment().list({"email_id": "example"})
+for received_email_attachment in results:
+    print(received_email_attachment.data_get())
 ```
 
-#### `remove(reqmatch, ctrl=None) -> RevokeOAuthGrantEntity`
+#### `load(reqmatch, ctrl=None) -> ReceivedEmailAttachmentEntity`
 
-Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
+Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and raises on error.
 
 ```python
-result = client.RevokeOAuthGrant().remove({"id": "revoke_o_auth_grant_id"})
+result = client.ReceivedEmailAttachment().load({"id": "received_email_attachment_id", "email_id": "email_id"})
 ```
 
 ### Common Methods
@@ -4213,62 +2831,7 @@ Set the entity match criteria.
 
 #### `make() -> Entity`
 
-Create a new `RevokeOAuthGrantEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## RotateEntity
-
-```python
-rotate = client.Rotate()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | `str` | No | The ID of the webhook. |
-| `object` | `str` | No | The type of object. |
-| `signing_secret` | `str` | No | The new secret key used to verify webhook payloads. |
-
-### Operations
-
-#### `create(reqdata, ctrl=None) -> RotateEntity`
-
-Create a new entity with the given data. Returns the created entity and raises on error.
-
-```python
-result = client.Rotate().create({
-    "webhook_id": "example_webhook_id",  # str
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `RotateEntity` instance with the same options.
+Create a new `ReceivedEmailAttachmentEntity` instance with the same options.
 
 #### `get_name() -> str`
 
@@ -4294,7 +2857,37 @@ segment = client.Segment()
 | `name` | `str` | No | The name of the segment. |
 | `object` | `str` | No | The object type. |
 
+### Field Usage by Operation
+
+| Field | load | list | create | update | remove |
+| --- | --- | --- | --- | --- | --- |
+| `audience_id` | - | - | - | - | - |
+| `created_at` | - | - | - | - | - |
+| `filter` | - | - | - | - | - |
+| `id` | - | - | - | - | - |
+| `name` | - | - | Yes | Yes | - |
+| `object` | - | - | - | - | - |
+
 ### Operations
+
+#### `create(reqdata, ctrl=None) -> SegmentEntity`
+
+Create a new entity with the given data. Returns the created entity and raises on error.
+
+```python
+result = client.Segment().create({
+})
+```
+
+#### `list(reqmatch=None, ctrl=None) -> list[SegmentEntity]`
+
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
+
+```python
+results = client.Segment().list()
+for segment in results:
+    print(segment.data_get())
+```
 
 #### `load(reqmatch, ctrl=None) -> SegmentEntity`
 
@@ -4302,6 +2895,25 @@ Load a single entity matching the given criteria. Returns the entity, whose reco
 
 ```python
 result = client.Segment().load({"id": "segment_id"})
+```
+
+#### `remove(reqmatch, ctrl=None) -> SegmentEntity`
+
+Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
+
+```python
+result = client.Segment().remove({"id": "segment_id"})
+```
+
+#### `update(reqdata, ctrl=None) -> SegmentEntity`
+
+Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
+
+```python
+result = client.Segment().update({
+    "id": "segment_id",
+    # Fields to update
+})
 ```
 
 ### Common Methods
@@ -4333,6 +2945,64 @@ Return the entity name.
 
 ---
 
+## SegmentContactEntity
+
+```python
+segment_contact = client.SegmentContact()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `created_at` | `str` | No | Timestamp indicating when the contact was created. |
+| `email` | `str` | No | Email address of the contact. |
+| `first_name` | `str | None` | No | First name of the contact. |
+| `id` | `str` | No | Unique identifier for the contact. |
+| `last_name` | `str | None` | No | Last name of the contact. |
+| `unsubscribed` | `bool` | No | Indicates if the contact is unsubscribed. |
+
+### Operations
+
+#### `list(reqmatch=None, ctrl=None) -> list[SegmentContactEntity]`
+
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
+
+```python
+results = client.SegmentContact().list({"segment_id": "example"})
+for segment_contact in results:
+    print(segment_contact.data_get())
+```
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `SegmentContactEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
+
+
+---
+
 ## SuppressionEntity
 
 ```python
@@ -4350,7 +3020,37 @@ suppression = client.Suppression()
 | `origin` | `str` | No | Origin of the suppression. |
 | `source_id` | `str | None` | No | Identifier of the event that caused the suppression, such as the email that bounced or complained. |
 
+### Field Usage by Operation
+
+| Field | load | list | create | remove |
+| --- | --- | --- | --- | --- |
+| `created_at` | - | - | - | - |
+| `email` | - | - | Yes | - |
+| `id` | - | - | - | - |
+| `object` | - | - | - | - |
+| `origin` | - | - | - | - |
+| `source_id` | - | - | - | - |
+
 ### Operations
+
+#### `create(reqdata, ctrl=None) -> SuppressionEntity`
+
+Create a new entity with the given data. Returns the created entity and raises on error.
+
+```python
+result = client.Suppression().create({
+})
+```
+
+#### `list(reqmatch=None, ctrl=None) -> list[SuppressionEntity]`
+
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
+
+```python
+results = client.Suppression().list()
+for suppression in results:
+    print(suppression.data_get())
+```
 
 #### `load(reqmatch, ctrl=None) -> SuppressionEntity`
 
@@ -4358,6 +3058,14 @@ Load a single entity matching the given criteria. Returns the entity, whose reco
 
 ```python
 result = client.Suppression().load({"id": "suppression_id"})
+```
+
+#### `remove(reqmatch, ctrl=None) -> SuppressionEntity`
+
+Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
+
+```python
+result = client.Suppression().remove({"id": "suppression_id"})
 ```
 
 ### Common Methods
@@ -4381,6 +3089,47 @@ Set the entity match criteria.
 #### `make() -> Entity`
 
 Create a new `SuppressionEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
+
+
+---
+
+## SuppressionBatchEntity
+
+```python
+suppression_batch = client.SuppressionBatch()
+```
+
+### Operations
+
+#### `create(reqdata, ctrl=None) -> SuppressionBatchEntity`
+
+Create a new entity with the given data. Returns the created entity and raises on error.
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `SuppressionBatchEntity` instance with the same options.
 
 #### `get_name() -> str`
 
@@ -4416,11 +3165,47 @@ template = client.Template()
 | `updated_at` | `str` | No | Timestamp indicating when the template was last updated. |
 | `variables` | `list` | No |  |
 
+### Field Usage by Operation
+
+| Field | load | list | create | update | remove |
+| --- | --- | --- | --- | --- | --- |
+| `alias` | - | - | - | - | - |
+| `created_at` | - | - | - | - | - |
+| `current_version_id` | - | - | - | - | - |
+| `from` | - | - | - | - | - |
+| `has_unpublished_versions` | - | - | - | - | - |
+| `html` | - | - | Yes | - | - |
+| `id` | - | - | - | - | - |
+| `name` | - | - | Yes | - | - |
+| `object` | - | - | - | - | - |
+| `published_at` | - | - | - | - | - |
+| `reply_to` | - | - | - | - | - |
+| `status` | - | - | - | - | - |
+| `subject` | - | - | - | - | - |
+| `text` | - | - | - | - | - |
+| `updated_at` | - | - | - | - | - |
+| `variables` | - | - | - | - | - |
+
 ### Operations
 
 #### `create(reqdata, ctrl=None) -> TemplateEntity`
 
 Create a new entity with the given data. Returns the created entity and raises on error.
+
+```python
+result = client.Template().create({
+})
+```
+
+#### `list(reqmatch=None, ctrl=None) -> list[TemplateEntity]`
+
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
+
+```python
+results = client.Template().list()
+for template in results:
+    print(template.data_get())
+```
 
 #### `load(reqmatch, ctrl=None) -> TemplateEntity`
 
@@ -4428,6 +3213,25 @@ Load a single entity matching the given criteria. Returns the entity, whose reco
 
 ```python
 result = client.Template().load({"id": "template_id"})
+```
+
+#### `remove(reqmatch, ctrl=None) -> TemplateEntity`
+
+Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
+
+```python
+result = client.Template().remove({"id": "template_id"})
+```
+
+#### `update(reqdata, ctrl=None) -> TemplateEntity`
+
+Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
+
+```python
+result = client.Template().update({
+    "id": "template_id",
+    # Fields to update
+})
 ```
 
 ### Common Methods
@@ -4477,7 +3281,38 @@ topic = client.Topic()
 | `object` | `str` | No | The object type. |
 | `visibility` | `str` | No | The visibility of the topic. |
 
+### Field Usage by Operation
+
+| Field | load | list | create | update | remove |
+| --- | --- | --- | --- | --- | --- |
+| `created_at` | - | - | - | - | - |
+| `default_subscription` | - | - | Yes | - | - |
+| `description` | - | - | - | - | - |
+| `id` | - | - | - | - | - |
+| `name` | - | - | Yes | - | - |
+| `object` | - | - | - | - | - |
+| `visibility` | - | - | - | - | - |
+
 ### Operations
+
+#### `create(reqdata, ctrl=None) -> TopicEntity`
+
+Create a new entity with the given data. Returns the created entity and raises on error.
+
+```python
+result = client.Topic().create({
+})
+```
+
+#### `list(reqmatch=None, ctrl=None) -> list[TopicEntity]`
+
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
+
+```python
+results = client.Topic().list()
+for topic in results:
+    print(topic.data_get())
+```
 
 #### `load(reqmatch, ctrl=None) -> TopicEntity`
 
@@ -4485,6 +3320,25 @@ Load a single entity matching the given criteria. Returns the entity, whose reco
 
 ```python
 result = client.Topic().load({"id": "topic_id"})
+```
+
+#### `remove(reqmatch, ctrl=None) -> TopicEntity`
+
+Remove the entity matching the given criteria. Returns the entity, marked as deleted, and raises on error.
+
+```python
+result = client.Topic().remove({"id": "topic_id"})
+```
+
+#### `update(reqdata, ctrl=None) -> TopicEntity`
+
+Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
+
+```python
+result = client.Topic().update({
+    "id": "topic_id",
+    # Fields to update
+})
 ```
 
 ### Common Methods
@@ -4508,1024 +3362,6 @@ Set the entity match criteria.
 #### `make() -> Entity`
 
 Create a new `TopicEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## UpdateApiKeyEntity
-
-```python
-update_api_key = client.UpdateApiKey()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | `str` | No | The ID of the API key. |
-| `name` | `str` | Yes | The API key name. |
-| `object` | `str` | No | The type of object. |
-
-### Operations
-
-#### `update(reqdata, ctrl=None) -> UpdateApiKeyEntity`
-
-Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
-
-```python
-result = client.UpdateApiKey().update({
-    "id": "id",
-    # Fields to update
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `UpdateApiKeyEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## UpdateBroadcastResponseSuccessEntity
-
-```python
-update_broadcast_response_success = client.UpdateBroadcastResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `audience_id` | `str` | No | Use `segment_id` instead. |
-| `from` | `str` | No | The email address of the sender. |
-| `html` | `str` | No | The HTML version of the message. |
-| `id` | `str` | No | The ID of the broadcast. |
-| `name` | `str` | No | Name of the broadcast. |
-| `object` | `str` | No | The object type of the response. |
-| `preview_text` | `str` | No | The preview text of the email. |
-| `reply_to` | `list` | No | The email addresses to which replies should be sent. |
-| `segment_id` | `str` | No | Unique identifier of the segment this broadcast will be sent to. |
-| `subject` | `str` | No | The subject line of the email. |
-| `text` | `str` | No | The plain text version of the message. |
-| `topic_id` | `str` | No | The topic ID that the broadcast will be scoped to. |
-
-### Operations
-
-#### `update(reqdata, ctrl=None) -> UpdateBroadcastResponseSuccessEntity`
-
-Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
-
-```python
-result = client.UpdateBroadcastResponseSuccess().update({
-    "id": "id",
-    # Fields to update
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `UpdateBroadcastResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## UpdateContactPropertyResponseSuccessEntity
-
-```python
-update_contact_property_response_success = client.UpdateContactPropertyResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `fallback_value` | `Any` | No | The default value to use when the property is not set for a contact. |
-| `id` | `str` | No | The ID of the contact property. |
-| `object` | `str` | No | The object type. |
-
-### Operations
-
-#### `update(reqdata, ctrl=None) -> UpdateContactPropertyResponseSuccessEntity`
-
-Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
-
-```python
-result = client.UpdateContactPropertyResponseSuccess().update({
-    "id": "id",
-    # Fields to update
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `UpdateContactPropertyResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## UpdateContactResponseSuccessEntity
-
-```python
-update_contact_response_success = client.UpdateContactResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `email` | `str` | No | Email address of the contact. |
-| `first_name` | `str` | No | First name of the contact. |
-| `id` | `str` | No | Unique identifier for the updated contact. |
-| `last_name` | `str` | No | Last name of the contact. |
-| `object` | `str` | No | Type of the response object. |
-| `properties` | `dict` | No | A map of custom property keys and values to update. |
-| `unsubscribed` | `bool` | No | The Contact's global subscription status. |
-
-### Operations
-
-#### `update(reqdata, ctrl=None) -> UpdateContactResponseSuccessEntity`
-
-Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
-
-```python
-result = client.UpdateContactResponseSuccess().update({
-    "id": "id",
-    # Fields to update
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `UpdateContactResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## UpdateContactTopicsResponseSuccessEntity
-
-```python
-update_contact_topics_response_success = client.UpdateContactTopicsResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `contact_id` | `str` | No | The ID of the contact. |
-| `object` | `str` | No | The object type. |
-| `topics` | `list` | No | Array of updated topic subscriptions. |
-
-### Field Usage by Operation
-
-| Field | update |
-| --- | --- |
-| `contact_id` | - |
-| `object` | - |
-| `topics` | Yes |
-
-### Operations
-
-#### `update(reqdata, ctrl=None) -> UpdateContactTopicsResponseSuccessEntity`
-
-Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
-
-```python
-result = client.UpdateContactTopicsResponseSuccess().update({
-    "contact_id": "contact_id",
-    # Fields to update
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `UpdateContactTopicsResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## UpdateDomainResponseSuccessEntity
-
-```python
-update_domain_response_success = client.UpdateDomainResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `capabilities` | `dict` | No | Configure the domain capabilities for sending and receiving emails. |
-| `click_tracking` | `bool` | No | Track clicks within the body of each HTML email. |
-| `id` | `str` | No | The ID of the updated domain. |
-| `object` | `str` | No | The object type representing the updated domain. |
-| `open_tracking` | `bool` | No | Track the open rate of each email. |
-| `tls` | `str` | No | enforced | opportunistic. |
-| `tracking_subdomain` | `str` | No | The subdomain to use for click and open tracking. |
-
-### Operations
-
-#### `update(reqdata, ctrl=None) -> UpdateDomainResponseSuccessEntity`
-
-Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
-
-```python
-result = client.UpdateDomainResponseSuccess().update({
-    "domain_id": "domain_id",
-    # Fields to update
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `UpdateDomainResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## UpdateEmailOptionEntity
-
-```python
-update_email_option = client.UpdateEmailOption()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `scheduled_at` | `str` | No | Schedule email to be sent later. |
-
-### Operations
-
-#### `update(reqdata, ctrl=None) -> UpdateEmailOptionEntity`
-
-Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
-
-```python
-result = client.UpdateEmailOption().update({
-    "email_id": "email_id",
-    # Fields to update
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `UpdateEmailOptionEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## UpdateEventEntity
-
-```python
-update_event = client.UpdateEvent()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | `str` | No | The ID of the updated event. |
-| `object` | `str` | No | Type of the response object. |
-| `schema` | `dict | None` | Yes | A flat key/type map defining the event payload schema. |
-
-### Operations
-
-#### `update(reqdata, ctrl=None) -> UpdateEventEntity`
-
-Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
-
-```python
-result = client.UpdateEvent().update({
-    "id": "id",
-    # Fields to update
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `UpdateEventEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## UpdateInboxDraftResponseSuccessEntity
-
-```python
-update_inbox_draft_response_success = client.UpdateInboxDraftResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `attachments` | `list` | Yes | The files stored on the draft. |
-| `bcc` | `list` | Yes | The BCC recipients. |
-| `cc` | `list` | Yes | The CC recipients. |
-| `created_at` | `str` | Yes | Timestamp when the draft was created. |
-| `email_id` | `str | None` | Yes | The ID of the outbound email queued when the draft was sent. |
-| `html` | `str | None` | Yes | The HTML body. |
-| `id` | `str` | Yes | The ID of the draft. |
-| `object` | `str` | Yes | The object type. |
-| `reply_to_email_id` | `str | None` | Yes | The Email ID the draft replies to. |
-| `subject` | `str | None` | Yes | The subject. |
-| `text` | `str | None` | Yes | The plain text body. |
-| `thread_id` | `str | None` | Yes | The Thread ID when the draft is a reply. |
-| `to` | `list | None` | Yes | The recipients. |
-| `type` | `str` | Yes | `reply` when the draft replies to an email in an existing thread. |
-| `updated_at` | `str` | Yes | Timestamp when the draft was last saved. |
-
-### Field Usage by Operation
-
-| Field | update |
-| --- | --- |
-| `attachments` | Yes |
-| `bcc` | Yes |
-| `cc` | Yes |
-| `created_at` | - |
-| `email_id` | - |
-| `html` | Yes |
-| `id` | - |
-| `object` | - |
-| `reply_to_email_id` | - |
-| `subject` | Yes |
-| `text` | Yes |
-| `thread_id` | - |
-| `to` | Yes |
-| `type` | - |
-| `updated_at` | - |
-
-### Operations
-
-#### `update(reqdata, ctrl=None) -> UpdateInboxDraftResponseSuccessEntity`
-
-Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
-
-```python
-result = client.UpdateInboxDraftResponseSuccess().update({
-    "draft_id": "draft_id",
-    "inbox_id": "inbox_id",
-    # Fields to update
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `UpdateInboxDraftResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## UpdateInboxLabelResponseSuccessEntity
-
-```python
-update_inbox_label_response_success = client.UpdateInboxLabelResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `color` | `str` | No | A new color for the label, as a `#RRGGBB` hex color. |
-| `id` | `str` | Yes | The ID of the updated label. |
-| `name` | `str` | No | A new name for the label. |
-| `object` | `str` | Yes | Type of the response object. |
-
-### Operations
-
-#### `update(reqdata, ctrl=None) -> UpdateInboxLabelResponseSuccessEntity`
-
-Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
-
-```python
-result = client.UpdateInboxLabelResponseSuccess().update({
-    "inbox_id": "inbox_id",
-    "label_id": "label_id",
-    # Fields to update
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `UpdateInboxLabelResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## UpdateInboxResponseSuccessEntity
-
-```python
-update_inbox_response_success = client.UpdateInboxResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `from_name` | `str` | No | The name recipients see when mail is sent from this inbox. |
-| `id` | `str` | Yes | The ID of the inbox. |
-| `name` | `str` | No | New internal name for the inbox. |
-| `object` | `str` | Yes | The object type. |
-
-### Operations
-
-#### `update(reqdata, ctrl=None) -> UpdateInboxResponseSuccessEntity`
-
-Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
-
-```python
-result = client.UpdateInboxResponseSuccess().update({
-    "inbox_id": "inbox_id",
-    # Fields to update
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `UpdateInboxResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## UpdateInboxThreadResponseSuccessEntity
-
-```python
-update_inbox_thread_response_success = client.UpdateInboxThreadResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `add_label_ids` | `list` | No | Label IDs to apply to the thread. |
-| `folder` | `str` | Yes | The folder the thread is in. |
-| `id` | `str` | Yes | The ID of the thread. |
-| `labels` | `list` | Yes | The labels attached to the thread. |
-| `object` | `str` | Yes | The object type. |
-| `read` | `bool` | Yes | True only when every email in the thread is read. |
-| `remove_label_ids` | `list` | No | Label IDs to remove from the thread. |
-| `subject` | `str | None` | Yes | The subject of the thread. |
-
-### Field Usage by Operation
-
-| Field | update |
-| --- | --- |
-| `add_label_ids` | - |
-| `folder` | Yes |
-| `id` | - |
-| `labels` | - |
-| `object` | - |
-| `read` | Yes |
-| `remove_label_ids` | - |
-| `subject` | - |
-
-### Operations
-
-#### `update(reqdata, ctrl=None) -> UpdateInboxThreadResponseSuccessEntity`
-
-Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
-
-```python
-result = client.UpdateInboxThreadResponseSuccess().update({
-    "inbox_id": "inbox_id",
-    "thread_id": "thread_id",
-    # Fields to update
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `UpdateInboxThreadResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## UpdateSegmentResponseSuccessEntity
-
-```python
-update_segment_response_success = client.UpdateSegmentResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `id` | `str` | No | The ID of the segment. |
-| `name` | `str` | Yes | The name of the segment. |
-| `object` | `str` | No | The object type. |
-
-### Operations
-
-#### `update(reqdata, ctrl=None) -> UpdateSegmentResponseSuccessEntity`
-
-Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
-
-```python
-result = client.UpdateSegmentResponseSuccess().update({
-    "id": "id",
-    # Fields to update
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `UpdateSegmentResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## UpdateTemplateResponseSuccessEntity
-
-```python
-update_template_response_success = client.UpdateTemplateResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `alias` | `str` | No | The alias of the template. |
-| `from` | `str` | No | Sender email address. |
-| `html` | `str` | No | The HTML version of the template. |
-| `id` | `str` | No | The ID of the template. |
-| `name` | `str` | No | The name of the template. |
-| `object` | `str` | No | The object type of the response. |
-| `reply_to` | `list` | No | Reply-to email addresses. |
-| `subject` | `str` | No | Email subject. |
-| `text` | `str` | No | The plain text version of the template. |
-| `variables` | `list` | No |  |
-
-### Operations
-
-#### `update(reqdata, ctrl=None) -> UpdateTemplateResponseSuccessEntity`
-
-Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
-
-```python
-result = client.UpdateTemplateResponseSuccess().update({
-    "id": "id",
-    # Fields to update
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `UpdateTemplateResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## UpdateTopicResponseSuccessEntity
-
-```python
-update_topic_response_success = client.UpdateTopicResponseSuccess()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `description` | `str` | No | A description of the topic. |
-| `id` | `str` | No | The ID of the topic. |
-| `name` | `str` | No | The name of the topic. |
-| `object` | `str` | No | The object type. |
-| `visibility` | `str` | No | The visibility of the topic. |
-
-### Operations
-
-#### `update(reqdata, ctrl=None) -> UpdateTopicResponseSuccessEntity`
-
-Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
-
-```python
-result = client.UpdateTopicResponseSuccess().update({
-    "id": "id",
-    # Fields to update
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `UpdateTopicResponseSuccessEntity` instance with the same options.
-
-#### `get_name() -> str`
-
-Return the entity name.
-
-
----
-
-## UpdateWebhookEntity
-
-```python
-update_webhook = client.UpdateWebhook()
-```
-
-### Fields
-
-| Field | Type | Required | Description |
-| --- | --- | --- | --- |
-| `created_at` | `str` | No | Timestamp indicating when the webhook was created. |
-| `endpoint` | `str` | Yes | The URL where webhook events will be sent. |
-| `events` | `list` | Yes | Array of event types to subscribe to. |
-| `id` | `str` | No | The ID of the updated webhook. |
-| `object` | `str` | No | The type of object. |
-| `status` | `str` | No | The status of the webhook. |
-
-### Field Usage by Operation
-
-| Field | list | create | update |
-| --- | --- | --- | --- |
-| `created_at` | - | - | - |
-| `endpoint` | Yes | - | Yes |
-| `events` | Yes | - | Yes |
-| `id` | - | - | - |
-| `object` | - | - | - |
-| `status` | - | - | - |
-
-### Operations
-
-#### `create(reqdata, ctrl=None) -> UpdateWebhookEntity`
-
-Create a new entity with the given data. Returns the created entity and raises on error.
-
-```python
-result = client.UpdateWebhook().create({
-    "endpoint": "example_endpoint",  # str
-    "events": [],  # list
-})
-```
-
-#### `list(reqmatch=None, ctrl=None) -> list[UpdateWebhookEntity]`
-
-List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
-
-```python
-results = client.UpdateWebhook().list()
-for update_webhook in results:
-    print(update_webhook.data_get())
-```
-
-#### `update(reqdata, ctrl=None) -> UpdateWebhookEntity`
-
-Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
-
-```python
-result = client.UpdateWebhook().update({
-    "id": "id",
-    # Fields to update
-})
-```
-
-### Common Methods
-
-#### `data_get() -> dict`
-
-Get the entity data.
-
-#### `data_set(data)`
-
-Set the entity data.
-
-#### `match_get() -> dict`
-
-Get the entity match criteria.
-
-#### `match_set(match)`
-
-Set the entity match criteria.
-
-#### `make() -> Entity`
-
-Create a new `UpdateWebhookEntity` instance with the same options.
 
 #### `get_name() -> str`
 
@@ -5611,7 +3447,38 @@ webhook = client.Webhook()
 | `signing_secret` | `str` | No | The secret key used to verify webhook payloads. |
 | `status` | `str` | No | The status of the webhook. |
 
+### Field Usage by Operation
+
+| Field | load | list | create | update | remove |
+| --- | --- | --- | --- | --- | --- |
+| `created_at` | - | - | - | - | - |
+| `endpoint` | - | - | Yes | - | - |
+| `events` | - | - | Yes | - | - |
+| `id` | - | - | - | - | - |
+| `object` | - | - | - | - | - |
+| `signing_secret` | - | - | - | - | - |
+| `status` | - | - | - | - | - |
+
 ### Operations
+
+#### `create(reqdata, ctrl=None) -> WebhookEntity`
+
+Create a new entity with the given data. Returns the created entity and raises on error.
+
+```python
+result = client.Webhook().create({
+})
+```
+
+#### `list(reqmatch=None, ctrl=None) -> list[WebhookEntity]`
+
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
+
+```python
+results = client.Webhook().list()
+for webhook in results:
+    print(webhook.data_get())
+```
 
 #### `load(reqmatch, ctrl=None) -> WebhookEntity`
 
@@ -5627,6 +3494,17 @@ Remove the entity matching the given criteria. Returns the entity, marked as del
 
 ```python
 result = client.Webhook().remove({"id": "webhook_id"})
+```
+
+#### `update(reqdata, ctrl=None) -> WebhookEntity`
+
+Update an existing entity. The data must include the entity `id`. Returns the updated entity and raises on error.
+
+```python
+result = client.Webhook().update({
+    "id": "webhook_id",
+    # Fields to update
+})
 ```
 
 ### Common Methods
@@ -5689,6 +3567,16 @@ result = client.WebhookEvent().create({
 })
 ```
 
+#### `list(reqmatch=None, ctrl=None) -> list[WebhookEventEntity]`
+
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
+
+```python
+results = client.WebhookEvent().list({"webhook_id": "example"})
+for webhook_event in results:
+    print(webhook_event.data_get())
+```
+
 #### `load(reqmatch, ctrl=None) -> WebhookEventEntity`
 
 Load a single entity matching the given criteria. Returns the entity, whose record `data_get()` reads, and raises on error.
@@ -5718,6 +3606,62 @@ Set the entity match criteria.
 #### `make() -> Entity`
 
 Create a new `WebhookEventEntity` instance with the same options.
+
+#### `get_name() -> str`
+
+Return the entity name.
+
+
+---
+
+## WebhookEventAttemptEntity
+
+```python
+webhook_event_attempt = client.WebhookEventAttempt()
+```
+
+### Fields
+
+| Field | Type | Required | Description |
+| --- | --- | --- | --- |
+| `http_status_code` | `int` | No | The HTTP status code returned by the webhook endpoint. |
+| `id` | `str` | No | The ID of the webhook event attempt. |
+| `response` | `str` | No | The response body returned by the webhook endpoint. |
+| `sent_at` | `str` | No | Timestamp indicating when the attempt was sent. |
+
+### Operations
+
+#### `list(reqmatch=None, ctrl=None) -> list[WebhookEventAttemptEntity]`
+
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list of entities, one per record, and raises on error.
+
+```python
+results = client.WebhookEventAttempt().list({"event_id": "example", "webhook_id": "example"})
+for webhook_event_attempt in results:
+    print(webhook_event_attempt.data_get())
+```
+
+### Common Methods
+
+#### `data_get() -> dict`
+
+Get the entity data.
+
+#### `data_set(data)`
+
+Set the entity data.
+
+#### `match_get() -> dict`
+
+Get the entity match criteria.
+
+#### `match_set(match)`
+
+Set the entity match criteria.
+
+#### `make() -> Entity`
+
+Create a new `WebhookEventAttemptEntity` instance with the same options.
 
 #### `get_name() -> str`
 

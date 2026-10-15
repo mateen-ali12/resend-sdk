@@ -2,6 +2,7 @@ package sdktest
 
 import (
 	"encoding/json"
+	"fmt"
 	"os"
 	"path/filepath"
 	"runtime"
@@ -9,10 +10,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/resend-sdk/go"
-	"github.com/voxgig-sdk/resend-sdk/go/core"
+	sdk "github.com/mateen-ali12/resend-sdk/go"
+	"github.com/mateen-ali12/resend-sdk/go/core"
 
-	vs "github.com/voxgig-sdk/resend-sdk/go/utility/struct"
+	vs "github.com/mateen-ali12/resend-sdk/go/utility/struct"
 )
 
 // main.kit.test.live.strict is true (the default is true): a live
@@ -53,7 +54,7 @@ func TestInboxLabelEntity(t *testing.T) {
 		if setup.live {
 			_mode = "live"
 		}
-		for _, _op := range []string{} {
+		for _, _op := range []string{"update", "remove", "list"} {
 			if _shouldSkip, _reason := isControlSkipped("entityOp", "inbox_label." + _op, _mode); _shouldSkip {
 				if _reason == "" {
 					_reason = "skipped via sdk-test-control.json"
@@ -62,6 +63,19 @@ func TestInboxLabelEntity(t *testing.T) {
 				return
 			}
 		}
+		if setup.live {
+			for _, _liveKey := range []string{"inbox01"} {
+				if setup.syntheticOnly || setup.idmap[_liveKey] == nil {
+					liveMiss(t, inbox_labelEntityLiveStrict, "Live entity test blocked: needs %s via RESEND_TEST_INBOX_LABEL_ENTID", _liveKey)
+				}
+			}
+		}
+		if setup.live {
+			liveMiss(t, inbox_labelEntityLiveStrict, "Live entity test blocked: %s", "the flow updates a inbox_label record it did not create")
+		}
+		client := setup.client
+		_ = client
+
 		// Bootstrap entity data from existing test data (no create step in flow).
 		inboxLabelRef01DataRaw := vs.Items(core.ToMapAny(vs.GetPath(setup.data, "existing.inbox_label")))
 		var inboxLabelRef01Data map[string]any
@@ -71,6 +85,32 @@ func TestInboxLabelEntity(t *testing.T) {
 		// Discard guards against Go's unused-var check when the flow's steps
 		// happen not to consume the bootstrap data (e.g. list-only flows).
 		_ = inboxLabelRef01Data
+
+		// UPDATE
+		inboxLabelRef01Ent := client.InboxLabel(nil)
+		inboxLabelRef01DataUp0Up := map[string]any{
+			"id": inboxLabelRef01Data["id"],
+			"inbox_id": setup.idmap["inbox_id"],
+		}
+
+		inboxLabelRef01MarkdefUp0Name := "color"
+		inboxLabelRef01MarkdefUp0Value := fmt.Sprintf("Mark01-inbox_label_ref01_%d", setup.now)
+		inboxLabelRef01DataUp0Up[inboxLabelRef01MarkdefUp0Name] = inboxLabelRef01MarkdefUp0Value
+
+		inboxLabelRef01ResdataUp0Result, err := inboxLabelRef01Ent.Update(inboxLabelRef01DataUp0Up, nil)
+		if err != nil {
+			t.Fatalf("update failed: %v", err)
+		}
+		inboxLabelRef01ResdataUp0 := core.ToMapAny(entityData(inboxLabelRef01ResdataUp0Result))
+		if inboxLabelRef01ResdataUp0 == nil {
+			t.Fatal("expected update result to be a map")
+		}
+		if inboxLabelRef01ResdataUp0["id"] != inboxLabelRef01DataUp0Up["id"] {
+			t.Fatal("expected update result id to match")
+		}
+		if inboxLabelRef01ResdataUp0[inboxLabelRef01MarkdefUp0Name] != inboxLabelRef01MarkdefUp0Value {
+			t.Fatalf("expected %s to be updated, got %v", inboxLabelRef01MarkdefUp0Name, inboxLabelRef01ResdataUp0[inboxLabelRef01MarkdefUp0Name])
+		}
 
 	})
 }
@@ -100,7 +140,7 @@ func inbox_labelBasicSetup(extra map[string]any) *entityTestSetup {
 
 	// Generate idmap via transform, matching TS pattern.
 	idmap, _ := vs.Transform(
-		[]any{"inbox_label01", "inbox_label02", "inbox_label03"},
+		[]any{"inbox_label01", "inbox_label02", "inbox_label03", "inbox01", "inbox02", "inbox03"},
 		map[string]any{
 			"`$PACK`": []any{"", map[string]any{
 				"`$KEY`": "`$COPY`",
@@ -124,6 +164,10 @@ func inbox_labelBasicSetup(extra map[string]any) *entityTestSetup {
 	idmapResolved := core.ToMapAny(env["RESEND_TEST_INBOX_LABEL_ENTID"])
 	if idmapResolved == nil {
 		idmapResolved = core.ToMapAny(idmap)
+	}
+	// Add inbox_id alias for update test.
+	if idmapResolved["inbox_id"] == nil {
+		idmapResolved["inbox_id"] = idmapResolved["inbox01"]
 	}
 
 	if env["RESEND_TEST_LIVE"] == "TRUE" {

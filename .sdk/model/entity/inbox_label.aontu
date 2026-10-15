@@ -8,8 +8,14 @@ main: kit: entity: inbox_label: {
     color: {
       h: "Color"
       n: "color"
-      r: true
-      sh: "The color of the label, as a `#RRGGBB` hex color in uppercase."
+      op: {
+        list: {
+          req: true
+          type: "`$STRING`"
+        }
+      }
+      r: false
+      sh: "The color of the label, as a `#RRGGBB` hex color."
       t: "`$STRING`"
     }
     created_at: {
@@ -25,14 +31,27 @@ main: kit: entity: inbox_label: {
       h: "Id"
       n: "id"
       r: true
-      sh: "The ID of the label."
+      sh: "The ID of the updated label."
       t: "`$STRING`"
     }
     name: {
       h: "Name"
       n: "name"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
       r: true
       sh: "The name of the label."
+      t: "`$STRING`"
+    }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "Type of the response object."
       t: "`$STRING`"
     }
   }
@@ -44,6 +63,64 @@ main: kit: entity: inbox_label: {
 
   name: "inbox_label"
   op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          bf: [
+            "color"
+            "name"
+          ]
+          co: {
+            id: "POST /inboxes/{inbox_id}/labels"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "inbox_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/inboxes/{inbox_id}/labels"
+          q: {
+            exist: [
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              inbox_id: "id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "inboxes"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "labels"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
     list: {
       name: "list"
       points: [
@@ -98,8 +175,145 @@ main: kit: entity: inbox_label: {
         }
       ]
     }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /inboxes/{inbox_id}/labels/{label_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "label_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "inbox_id"
+                or: "inbox_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/inboxes/{inbox_id}/labels/{label_id}"
+          q: {
+            exist: [
+              "id"
+              "inbox_id"
+            ]
+          }
+          r: {
+            param: {
+              label_id: "id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "inboxes"
+            }
+            {
+              var: "inbox_id"
+            }
+            {
+              lit: "labels"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          bf: [
+            "color"
+            "name"
+          ]
+          co: {
+            id: "PATCH /inboxes/{inbox_id}/labels/{label_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "label_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "inbox_id"
+                or: "inbox_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/inboxes/{inbox_id}/labels/{label_id}"
+          q: {
+            exist: [
+              "id"
+              "inbox_id"
+            ]
+          }
+          r: {
+            param: {
+              label_id: "id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "inboxes"
+            }
+            {
+              var: "inbox_id"
+            }
+            {
+              lit: "labels"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
   }
 
 
+  relations: ancestors: [
+    [path("$.main.kit.entity.inbox")]
+  ]
 
 }

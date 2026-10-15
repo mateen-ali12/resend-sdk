@@ -4,9 +4,9 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/voxgig-sdk/resend-sdk/go/core"
+	"github.com/mateen-ali12/resend-sdk/go/core"
 
-	vs "github.com/voxgig-sdk/resend-sdk/go/utility/struct"
+	vs "github.com/mateen-ali12/resend-sdk/go/utility/struct"
 )
 
 type TemplateEntity struct {
@@ -332,9 +332,37 @@ func (e *TemplateEntity) LoadTyped(reqmatch TemplateLoadMatch, ctrl map[string]a
 
 
 
-func (e *TemplateEntity) List(_ map[string]any, _ map[string]any) (any, error) {
-	return core.UnsupportedOp("list", e.name)
+
+func (e *TemplateEntity) List(reqmatch map[string]any, ctrl map[string]any) (any, error) {
+	utility := e.utility
+	ctx := utility.MakeContext(map[string]any{
+		"opname":   "list",
+		"ctrl":     ctrl,
+		"match":    e.match,
+		"data":     e.data,
+		"reqmatch": reqmatch,
+	}, e.entctx)
+
+	return e.runOp(ctx, func() {
+		if ctx.Result != nil {
+			if ctx.Result.Resmatch != nil {
+				e.match = ctx.Result.Resmatch
+			}
+		}
+	})
 }
+
+// ListTyped is the statically-typed variant of List: it takes an
+// TemplateListMatch and returns []Template. It delegates to the untyped
+// List (identical runtime) and converts at the typed boundary.
+func (e *TemplateEntity) ListTyped(reqmatch TemplateListMatch, ctrl map[string]any) ([]Template, error) {
+	res, err := e.List(asMap(reqmatch), ctrl)
+	if err != nil {
+		return nil, err
+	}
+	return typedSliceFrom[Template](res), nil
+}
+
 
 
 
@@ -373,9 +401,43 @@ func (e *TemplateEntity) CreateTyped(reqdata TemplateCreateData, ctrl map[string
 
 
 
-func (e *TemplateEntity) Update(_ map[string]any, _ map[string]any) (any, error) {
-	return core.UnsupportedOp("update", e.name)
+
+func (e *TemplateEntity) Update(reqdata map[string]any, ctrl map[string]any) (any, error) {
+	utility := e.utility
+	ctx := utility.MakeContext(map[string]any{
+		"opname":  "update",
+		"ctrl":    ctrl,
+		"match":   e.match,
+		"data":    e.data,
+		"reqdata": reqdata,
+	}, e.entctx)
+
+	return e.runOp(ctx, func() {
+		if ctx.Result != nil {
+			if ctx.Result.Resmatch != nil {
+				e.match = ctx.Result.Resmatch
+			}
+			if ctx.Result.Resdata != nil {
+				e.data = core.ToMapAny(vs.Clone(ctx.Result.Resdata))
+				if e.data == nil {
+					e.data = map[string]any{}
+				}
+			}
+		}
+	})
 }
+
+// UpdateTyped is the statically-typed variant of Update: it takes an
+// TemplateUpdateData and returns an Template. It delegates to the untyped
+// Update (identical runtime) and converts at the typed boundary.
+func (e *TemplateEntity) UpdateTyped(reqdata TemplateUpdateData, ctrl map[string]any) (Template, error) {
+	res, err := e.Update(asMap(reqdata), ctrl)
+	if err != nil {
+		return Template{}, err
+	}
+	return typedFrom[Template](res), nil
+}
+
 
 
 func (e *TemplateEntity) Patch(_ map[string]any, _ map[string]any) (any, error) {
@@ -383,9 +445,43 @@ func (e *TemplateEntity) Patch(_ map[string]any, _ map[string]any) (any, error) 
 }
 
 
-func (e *TemplateEntity) Remove(_ map[string]any, _ map[string]any) (any, error) {
-	return core.UnsupportedOp("remove", e.name)
+
+func (e *TemplateEntity) Remove(reqmatch map[string]any, ctrl map[string]any) (any, error) {
+	utility := e.utility
+	ctx := utility.MakeContext(map[string]any{
+		"opname":   "remove",
+		"ctrl":     ctrl,
+		"match":    e.match,
+		"data":     e.data,
+		"reqmatch": reqmatch,
+	}, e.entctx)
+
+	return e.runOp(ctx, func() {
+		if ctx.Result != nil {
+			if ctx.Result.Resmatch != nil {
+				e.match = ctx.Result.Resmatch
+			}
+			if ctx.Result.Resdata != nil {
+				e.data = core.ToMapAny(vs.Clone(ctx.Result.Resdata))
+				if e.data == nil {
+					e.data = map[string]any{}
+				}
+			}
+		}
+	})
 }
+
+// RemoveTyped is the statically-typed variant of Remove: it takes an
+// TemplateRemoveMatch and returns an Template. It delegates to the untyped
+// Remove (identical runtime) and converts at the typed boundary.
+func (e *TemplateEntity) RemoveTyped(reqmatch TemplateRemoveMatch, ctrl map[string]any) (Template, error) {
+	res, err := e.Remove(asMap(reqmatch), ctrl)
+	if err != nil {
+		return Template{}, err
+	}
+	return typedFrom[Template](res), nil
+}
+
 
 
 func (e *TemplateEntity) runOp(ctx *core.Context, postDone func()) (out any, err error) {

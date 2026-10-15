@@ -21,6 +21,73 @@ const utility_1 = require("../../utility");
         (0, node_assert_1.default)('function' === typeof sdk.direct);
         (0, node_assert_1.default)('function' === typeof sdk.prepare);
     });
+    (0, node_test_1.test)('direct-load-inbox_thread', async (t) => {
+        if (liveScenariosActive()) {
+            t.skip('Covered by live operation scenarios');
+            return;
+        }
+        const setup = directSetup({ id: 'direct01' });
+        if ((0, utility_1.maybeSkipControl)(t, 'direct', 'direct-load-inbox_thread', setup.live))
+            return;
+        if ((0, utility_1.skipIfMissingIds)(t, setup, ["inbox_thread01", "inbox01"], LIVE_STRICT))
+            return;
+        const { client, calls } = setup;
+        const params = {};
+        const query = {};
+        if (setup.live) {
+            const listResult = await client.direct({
+                path: 'inboxes/{id}/threads',
+                method: 'GET',
+                params: {
+                    id: setup.idmap['inbox_thread01'],
+                },
+            });
+            if (!listResult.ok || listResult.status < 200 || listResult.status >= 300) {
+                return void (0, utility_1.liveMiss)(t, LIVE_STRICT, 'Live list discovery failed: ' + (0, utility_1.describeLive)(listResult));
+            }
+            const listArr = unwrapListData(listResult.data);
+            if (null == listArr) {
+                return void (0, utility_1.liveMiss)(t, LIVE_STRICT, 'Live list discovery returned no list: ' + (0, utility_1.describeLive)(listResult));
+            }
+            if (0 === listArr.length) {
+                return void (0, utility_1.liveEmpty)(t, 'The account has no inbox_thread record to load');
+            }
+            const candidateId = listArr[0]?.id ?? listArr[0]?.id;
+            if (null == candidateId) {
+                return void (0, utility_1.liveMiss)(t, LIVE_STRICT, 'Live load blocked: discovery returned no usable identity');
+            }
+            params.id = candidateId;
+            params.inbox_id = setup.idmap['inbox01'];
+        }
+        else {
+            params.id = 'direct01';
+            params.inbox_id = 'direct02';
+        }
+        const result = await client.direct({
+            path: 'inboxes/{inbox_id}/threads/{id}',
+            method: 'GET',
+            params,
+            query,
+        });
+        if (setup.live) {
+            if (!result.ok || result.status < 200 || result.status >= 300) {
+                return void (0, utility_1.liveMiss)(t, LIVE_STRICT, 'Live load failed: ' + (0, utility_1.describeLive)(result));
+            }
+            if (!(null != result.data)) {
+                return void (0, utility_1.liveMiss)(t, LIVE_STRICT, 'Live load returned no data: ' + (0, utility_1.describeLive)(result));
+            }
+        }
+        else {
+            (0, node_assert_1.default)(result.ok === true);
+            (0, node_assert_1.default)(result.status === 200);
+            (0, node_assert_1.default)(null != result.data);
+            (0, node_assert_1.default)(result.data.id === 'direct01');
+            (0, node_assert_1.default)(calls.length === 1);
+            (0, node_assert_1.default)(calls[0].init.method === 'GET');
+            (0, node_assert_1.default)(calls[0].url.includes('direct01'));
+            (0, node_assert_1.default)(calls[0].url.includes('direct02'));
+        }
+    });
     (0, node_test_1.test)('direct-list-inbox_thread', async (t) => {
         if (liveScenariosActive()) {
             t.skip('Covered by live operation scenarios');

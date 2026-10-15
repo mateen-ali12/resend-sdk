@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/resend-sdk/go/core"
+	"github.com/mateen-ali12/resend-sdk/go/core"
 )
 
 type BaseFeature struct {

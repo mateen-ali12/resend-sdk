@@ -1,0 +1,90 @@
+# Entity: suppression_batch
+
+main: kit: entity: suppression_batch: {
+
+  alias: field: {}
+
+  name: "suppression_batch"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          bf: [
+            "emails"
+          ]
+          co: {
+            id: "POST /suppressions/batch/add"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/suppressions/batch/add"
+          q: {
+            "$action": "add"
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "suppressions"
+            }
+            {
+              lit: "batch"
+            }
+            {
+              lit: "add"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          bf: [
+            "emails"
+            "ids"
+          ]
+          co: {
+            id: "POST /suppressions/batch/remove"
+            source: "openapi3"
+            version: 2
+          }
+          m: "POST"
+          o: "/suppressions/batch/remove"
+          q: {
+            "$action": "remove"
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "suppressions"
+            }
+            {
+              lit: "batch"
+            }
+            {
+              lit: "remove"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+
+}

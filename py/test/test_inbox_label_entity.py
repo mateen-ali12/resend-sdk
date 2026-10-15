@@ -46,11 +46,17 @@ class TestInboxLabelEntity:
         # multiple ops; skipping any one skips the whole flow (steps depend
         # on each other).
         _live = setup.get("live", False)
-        for _op in []:
+        for _op in ["update", "remove", "list"]:
             _skip, _reason = runner.is_control_skipped("entityOp", "inbox_label." + _op, "live" if _live else "unit")
             if _skip:
                 pytest.skip(_reason or "skipped via sdk-test-control.json")
                 return
+        if setup["live"]:
+            for _live_key in ["inbox01"]:
+                if setup.get("synthetic_only") or setup["idmap"].get(_live_key) is None:
+                    runner.live_miss(LIVE_STRICT, f"Live entity test blocked: needs {_live_key} via RESEND_TEST_INBOX_LABEL_ENTID")
+        if setup["live"]:
+            runner.live_miss(LIVE_STRICT, "Live entity test blocked: " + "the flow updates a inbox_label record it did not create")
         client = setup["client"]
 
         # Bootstrap entity data from existing test data.
@@ -59,6 +65,22 @@ class TestInboxLabelEntity:
         inbox_label_ref01_data = None
         if len(inbox_label_ref01_data_raw) > 0:
             inbox_label_ref01_data = helpers.to_map(inbox_label_ref01_data_raw[0][1])
+
+        # UPDATE
+        inbox_label_ref01_ent = client.InboxLabel(None)
+        inbox_label_ref01_data_up0_up = {
+            "id": inbox_label_ref01_data["id"],
+            "inbox_id": setup["idmap"]["inbox_id"],
+        }
+
+        inbox_label_ref01_markdef_up0_name = "color"
+        inbox_label_ref01_markdef_up0_value = "Mark01-inbox_label_ref01_" + str(setup["now"])
+        inbox_label_ref01_data_up0_up[inbox_label_ref01_markdef_up0_name] = inbox_label_ref01_markdef_up0_value
+
+        inbox_label_ref01_resdata_up0 = helpers.to_map(runner.entity_data(inbox_label_ref01_ent.update(inbox_label_ref01_data_up0_up, None)))
+        assert inbox_label_ref01_resdata_up0 is not None
+        assert inbox_label_ref01_resdata_up0["id"] == inbox_label_ref01_data_up0_up["id"]
+        assert inbox_label_ref01_resdata_up0[inbox_label_ref01_markdef_up0_name] == inbox_label_ref01_markdef_up0_value
 
 
 
@@ -78,7 +100,7 @@ def _inbox_label_basic_setup(extra):
 
     # Generate idmap via transform.
     idmap = vs.transform(
-        ["inbox_label01", "inbox_label02", "inbox_label03"],
+        ["inbox_label01", "inbox_label02", "inbox_label03", "inbox01", "inbox02", "inbox03"],
         {
             "`$PACK`": ["", {
                 "`$KEY`": "`$COPY`",
@@ -104,6 +126,8 @@ def _inbox_label_basic_setup(extra):
         env.get("RESEND_TEST_INBOX_LABEL_ENTID"))
     if idmap_resolved is None:
         idmap_resolved = helpers.to_map(idmap)
+    if idmap_resolved.get("inbox_id") is None:
+        idmap_resolved["inbox_id"] = idmap_resolved.get("inbox01")
 
     if env.get("RESEND_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([

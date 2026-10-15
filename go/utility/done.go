@@ -3,7 +3,7 @@ package utility
 import (
 	"reflect"
 
-	"github.com/voxgig-sdk/resend-sdk/go/core"
+	"github.com/mateen-ali12/resend-sdk/go/core"
 )
 
 func doneUtil(ctx *core.Context) (any, error) {

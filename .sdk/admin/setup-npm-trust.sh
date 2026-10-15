@@ -9,6 +9,6 @@ if [[ ! -f "$trust" ]]; then
   exit 1
 fi
 exec node "$trust" \
-  --repository 'voxgig-sdk/resend-sdk' \
+  --repository 'mateen-ali12/resend-sdk' \
   --publish '@voxgig-sdk/resend-sdk=publish-ts.yml' \
   "$@"

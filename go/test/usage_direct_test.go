@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/resend-sdk/go"
-	"github.com/voxgig-sdk/resend-sdk/go/core"
+	sdk "github.com/mateen-ali12/resend-sdk/go"
+	"github.com/mateen-ali12/resend-sdk/go/core"
 )
 
 // main.kit.test.live.strict is true (the default is true): a live

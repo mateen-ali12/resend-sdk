@@ -1,0 +1,32 @@
+{
+  "existing": {
+    "suppression_batch": {
+      "SUPPRESSION_BATCH00": {
+        "id": "SUPPRESSION_BATCH00"
+      },
+      "SUPPRESSION_BATCH01": {
+        "id": "SUPPRESSION_BATCH01"
+      },
+      "SUPPRESSION_BATCH02": {
+        "id": "SUPPRESSION_BATCH02"
+      }
+    }
+  },
+  "new": {
+    "suppression_batch": {
+      "suppression_batch_ref01": {}
+    }
+  },
+  "requests": {
+    "POST /suppressions/batch/add": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /suppressions/batch/remove": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

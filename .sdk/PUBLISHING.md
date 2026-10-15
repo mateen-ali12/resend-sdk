@@ -67,7 +67,7 @@ above and leaves a package that is already set up alone; for the
 `ts` target it runs:
 
     npm trust github @voxgig-sdk/resend-sdk \
-      --repository voxgig-sdk/resend-sdk \
+      --repository mateen-ali12/resend-sdk \
       --file publish-ts.yml \
       --allow-publish
 

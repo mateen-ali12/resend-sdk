@@ -3,9 +3,9 @@ package utility
 import (
 	"strings"
 
-	vs "github.com/voxgig-sdk/resend-sdk/go/utility/struct"
+	vs "github.com/mateen-ali12/resend-sdk/go/utility/struct"
 
-	"github.com/voxgig-sdk/resend-sdk/go/core"
+	"github.com/mateen-ali12/resend-sdk/go/core"
 )
 
 func prepareMethodUtil(ctx *core.Context) string {

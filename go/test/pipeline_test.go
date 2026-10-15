@@ -5,7 +5,7 @@ import (
 	"regexp"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/resend-sdk/go"
+	sdk "github.com/mateen-ali12/resend-sdk/go"
 )
 
 // plClient builds a client + isolated utility + context factory for

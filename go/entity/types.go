@@ -9,19 +9,8 @@ package entity
 import (
 	"encoding/json"
 
-	"github.com/voxgig-sdk/resend-sdk/go/core"
+	"github.com/mateen-ali12/resend-sdk/go/core"
 )
-
-// AddContactToSegmentResponseSuccess is the typed data model for the add_contact_to_segment_response_success entity.
-type AddContactToSegmentResponseSuccess struct {
-}
-
-// AddContactToSegmentResponseSuccessCreateData is the typed request payload for AddContactToSegmentResponseSuccess.CreateTyped.
-type AddContactToSegmentResponseSuccessCreateData struct {
-	ContactId string `json:"contact_id"`
-	SegmentId string `json:"segment_id"`
-	Object *string `json:"object,omitempty"`
-}
 
 // ApiKey is the typed data model for the api_key entity.
 type ApiKey struct {
@@ -32,6 +21,28 @@ type ApiKeyListMatch struct {
 	After *string `json:"after,omitempty"`
 	Before *string `json:"before,omitempty"`
 	Limit *int `json:"limit,omitempty"`
+}
+
+// ApiKeyCreateData is the typed request payload for ApiKey.CreateTyped.
+type ApiKeyCreateData struct {
+	CreatedAt *string `json:"created_at,omitempty"`
+	DomainId *string `json:"domain_id,omitempty"`
+	Id *string `json:"id,omitempty"`
+	LastUsedAt *any `json:"last_used_at,omitempty"`
+	Name string `json:"name"`
+	Object *string `json:"object,omitempty"`
+	Permission *string `json:"permission,omitempty"`
+}
+
+// ApiKeyUpdateData is the typed request payload for ApiKey.UpdateTyped.
+type ApiKeyUpdateData struct {
+	Id string `json:"id"`
+	CreatedAt *string `json:"created_at,omitempty"`
+	DomainId *string `json:"domain_id,omitempty"`
+	LastUsedAt *any `json:"last_used_at,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Object *string `json:"object,omitempty"`
+	Permission *string `json:"permission,omitempty"`
 }
 
 // ApiKeyRemoveMatch is the typed request payload for ApiKey.RemoveTyped.
@@ -62,6 +73,11 @@ type AudienceCreateData struct {
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Object *string `json:"object,omitempty"`
+}
+
+// AudienceRemoveMatch is the typed request payload for Audience.RemoveTyped.
+type AudienceRemoveMatch struct {
+	Id string `json:"id"`
 }
 
 // Automation is the typed data model for the automation entity.
@@ -120,37 +136,13 @@ type AutomationRunLoadMatch struct {
 	Id string `json:"id"`
 }
 
-// AutomationRunListItem is the typed data model for the automation_run_list_item entity.
-type AutomationRunListItem struct {
-}
-
-// AutomationRunListItemListMatch is the typed request payload for AutomationRunListItem.ListTyped.
-type AutomationRunListItemListMatch struct {
-	Id string `json:"id"`
+// AutomationRunListMatch is the typed request payload for AutomationRun.ListTyped.
+type AutomationRunListMatch struct {
+	AutomationId string `json:"automation_id"`
 	After *string `json:"after,omitempty"`
 	Before *string `json:"before,omitempty"`
 	Limit *int `json:"limit,omitempty"`
 	Status *string `json:"status,omitempty"`
-}
-
-// BatchAddSuppressionsResponseSuccess is the typed data model for the batch_add_suppressions_response_success entity.
-type BatchAddSuppressionsResponseSuccess struct {
-}
-
-// BatchAddSuppressionsResponseSuccessCreateData is the typed request payload for BatchAddSuppressionsResponseSuccess.CreateTyped.
-type BatchAddSuppressionsResponseSuccessCreateData struct {
-	Emails []any `json:"emails"`
-}
-
-// BatchRemoveSuppressionsResponseSuccess is the typed data model for the batch_remove_suppressions_response_success entity.
-type BatchRemoveSuppressionsResponseSuccess struct {
-}
-
-// BatchRemoveSuppressionsResponseSuccessCreateData is the typed request payload for BatchRemoveSuppressionsResponseSuccess.CreateTyped.
-type BatchRemoveSuppressionsResponseSuccessCreateData struct {
-	Data *[]any `json:"data,omitempty"`
-	Emails *[]any `json:"emails,omitempty"`
-	Ids *[]any `json:"ids,omitempty"`
 }
 
 // Broadcast is the typed data model for the broadcast entity.
@@ -171,21 +163,76 @@ type BroadcastListMatch struct {
 
 // BroadcastCreateData is the typed request payload for Broadcast.CreateTyped.
 type BroadcastCreateData struct {
+	AudienceId *any `json:"audience_id,omitempty"`
+	CreatedAt *string `json:"created_at,omitempty"`
+	From *string `json:"from,omitempty"`
+	Html *any `json:"html,omitempty"`
+	Id *string `json:"id,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Object *string `json:"object,omitempty"`
+	PreviewText *string `json:"preview_text,omitempty"`
+	ReplyTo *[]any `json:"reply_to,omitempty"`
+	ScheduledAt *string `json:"scheduled_at,omitempty"`
+	SegmentId *any `json:"segment_id,omitempty"`
+	Send *bool `json:"send,omitempty"`
+	SentAt *string `json:"sent_at,omitempty"`
+	Status *string `json:"status,omitempty"`
+	Subject *string `json:"subject,omitempty"`
+	Text *any `json:"text,omitempty"`
+	TopicId *any `json:"topic_id,omitempty"`
+}
+
+// BroadcastUpdateData is the typed request payload for Broadcast.UpdateTyped.
+type BroadcastUpdateData struct {
 	Id string `json:"id"`
 	AudienceId *any `json:"audience_id,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
 	From *string `json:"from,omitempty"`
 	Html *any `json:"html,omitempty"`
 	Name *string `json:"name,omitempty"`
+	Object *string `json:"object,omitempty"`
 	PreviewText *string `json:"preview_text,omitempty"`
 	ReplyTo *[]any `json:"reply_to,omitempty"`
 	ScheduledAt *string `json:"scheduled_at,omitempty"`
 	SegmentId *any `json:"segment_id,omitempty"`
+	Send *bool `json:"send,omitempty"`
 	SentAt *string `json:"sent_at,omitempty"`
 	Status *string `json:"status,omitempty"`
 	Subject *string `json:"subject,omitempty"`
 	Text *any `json:"text,omitempty"`
 	TopicId *any `json:"topic_id,omitempty"`
+}
+
+// BroadcastRemoveMatch is the typed request payload for Broadcast.RemoveTyped.
+type BroadcastRemoveMatch struct {
+	Id string `json:"id"`
+}
+
+// BroadcastClickedLink is the typed data model for the broadcast_clicked_link entity.
+type BroadcastClickedLink struct {
+}
+
+// BroadcastClickedLinkListMatch is the typed request payload for BroadcastClickedLink.ListTyped.
+type BroadcastClickedLinkListMatch struct {
+	BroadcastId string `json:"broadcast_id"`
+	After *string `json:"after,omitempty"`
+	Before *string `json:"before,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+}
+
+// BroadcastRecipient is the typed data model for the broadcast_recipient entity.
+type BroadcastRecipient struct {
+}
+
+// BroadcastRecipientListMatch is the typed request payload for BroadcastRecipient.ListTyped.
+type BroadcastRecipientListMatch struct {
+	BroadcastId string `json:"broadcast_id"`
+	After *string `json:"after,omitempty"`
+	Before *string `json:"before,omitempty"`
+	BounceType *string `json:"bounce_type,omitempty"`
+	Email *string `json:"email,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	Type string `json:"type"`
 }
 
 // Contact is the typed data model for the contact entity.
@@ -219,25 +266,45 @@ type ContactCreateData struct {
 	Unsubscribed *bool `json:"unsubscribed,omitempty"`
 }
 
-// ContactImportResponseSuccess is the typed data model for the contact_import_response_success entity.
-type ContactImportResponseSuccess struct {
+// ContactUpdateData is the typed request payload for Contact.UpdateTyped.
+type ContactUpdateData struct {
+	Id string `json:"id"`
+	AudienceId *string `json:"audience_id,omitempty"`
+	CreatedAt *string `json:"created_at,omitempty"`
+	Email *string `json:"email,omitempty"`
+	FirstName *any `json:"first_name,omitempty"`
+	LastName *any `json:"last_name,omitempty"`
+	Object *string `json:"object,omitempty"`
+	Properties *map[string]any `json:"properties,omitempty"`
+	Segments *[]any `json:"segments,omitempty"`
+	Topics *[]any `json:"topics,omitempty"`
+	Unsubscribed *bool `json:"unsubscribed,omitempty"`
 }
 
-// ContactImportResponseSuccessLoadMatch is the typed request payload for ContactImportResponseSuccess.LoadTyped.
-type ContactImportResponseSuccessLoadMatch struct {
+// ContactRemoveMatch is the typed request payload for Contact.RemoveTyped.
+type ContactRemoveMatch struct {
 	Id string `json:"id"`
 }
 
-// ContactImportResponseSuccessListMatch is the typed request payload for ContactImportResponseSuccess.ListTyped.
-type ContactImportResponseSuccessListMatch struct {
+// ContactImport is the typed data model for the contact_import entity.
+type ContactImport struct {
+}
+
+// ContactImportLoadMatch is the typed request payload for ContactImport.LoadTyped.
+type ContactImportLoadMatch struct {
+	Id string `json:"id"`
+}
+
+// ContactImportListMatch is the typed request payload for ContactImport.ListTyped.
+type ContactImportListMatch struct {
 	After *string `json:"after,omitempty"`
 	Before *string `json:"before,omitempty"`
 	Limit *int `json:"limit,omitempty"`
 	Status *string `json:"status,omitempty"`
 }
 
-// ContactImportResponseSuccessCreateData is the typed request payload for ContactImportResponseSuccess.CreateTyped.
-type ContactImportResponseSuccessCreateData struct {
+// ContactImportCreateData is the typed request payload for ContactImport.CreateTyped.
+type ContactImportCreateData struct {
 	CompletedAt *any `json:"completed_at,omitempty"`
 	Counts *map[string]any `json:"counts,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
@@ -272,88 +339,70 @@ type ContactPropertyCreateData struct {
 	Type *string `json:"type,omitempty"`
 }
 
-// ContactTopicsResponseSuccess is the typed data model for the contact_topics_response_success entity.
-type ContactTopicsResponseSuccess struct {
+// ContactPropertyUpdateData is the typed request payload for ContactProperty.UpdateTyped.
+type ContactPropertyUpdateData struct {
+	Id string `json:"id"`
+	CreatedAt *string `json:"created_at,omitempty"`
+	FallbackValue *any `json:"fallback_value,omitempty"`
+	Key *string `json:"key,omitempty"`
+	Object *string `json:"object,omitempty"`
+	Type *string `json:"type,omitempty"`
 }
 
-// ContactTopicsResponseSuccessListMatch is the typed request payload for ContactTopicsResponseSuccess.ListTyped.
-type ContactTopicsResponseSuccessListMatch struct {
+// ContactPropertyRemoveMatch is the typed request payload for ContactProperty.RemoveTyped.
+type ContactPropertyRemoveMatch struct {
 	Id string `json:"id"`
+}
+
+// ContactSegment is the typed data model for the contact_segment entity.
+type ContactSegment struct {
+}
+
+// ContactSegmentListMatch is the typed request payload for ContactSegment.ListTyped.
+type ContactSegmentListMatch struct {
+	ContactId string `json:"contact_id"`
 	After *string `json:"after,omitempty"`
 	Before *string `json:"before,omitempty"`
 	Limit *int `json:"limit,omitempty"`
 }
 
-// CreateApiKey is the typed data model for the create_api_key entity.
-type CreateApiKey struct {
-}
-
-// CreateApiKeyCreateData is the typed request payload for CreateApiKey.CreateTyped.
-type CreateApiKeyCreateData struct {
-	DomainId *string `json:"domain_id,omitempty"`
-	Name string `json:"name"`
-	Permission *string `json:"permission,omitempty"`
-}
-
-// CreateBatchEmail is the typed data model for the create_batch_email entity.
-type CreateBatchEmail struct {
-}
-
-// CreateBatchEmailCreateData is the typed request payload for CreateBatchEmail.CreateTyped.
-type CreateBatchEmailCreateData struct {
-	Data *[]any `json:"data,omitempty"`
-	SendEmails *[]any `json:"send_emails,omitempty"`
-}
-
-// CreateBroadcastResponseSuccess is the typed data model for the create_broadcast_response_success entity.
-type CreateBroadcastResponseSuccess struct {
-}
-
-// CreateBroadcastResponseSuccessCreateData is the typed request payload for CreateBroadcastResponseSuccess.CreateTyped.
-type CreateBroadcastResponseSuccessCreateData struct {
-	AudienceId *string `json:"audience_id,omitempty"`
-	From string `json:"from"`
-	Html *string `json:"html,omitempty"`
-	Name *string `json:"name,omitempty"`
-	PreviewText *string `json:"preview_text,omitempty"`
-	ReplyTo *[]any `json:"reply_to,omitempty"`
-	ScheduledAt *string `json:"scheduled_at,omitempty"`
-	SegmentId string `json:"segment_id"`
-	Send *bool `json:"send,omitempty"`
-	Subject string `json:"subject"`
-	Text *string `json:"text,omitempty"`
-	TopicId *string `json:"topic_id,omitempty"`
-}
-
-// CreateInboxDraftResponseSuccess is the typed data model for the create_inbox_draft_response_success entity.
-type CreateInboxDraftResponseSuccess struct {
-}
-
-// CreateInboxDraftResponseSuccessCreateData is the typed request payload for CreateInboxDraftResponseSuccess.CreateTyped.
-type CreateInboxDraftResponseSuccessCreateData struct {
-	InboxId string `json:"inbox_id"`
-	Attachments *any `json:"attachments,omitempty"`
-	Bcc *any `json:"bcc,omitempty"`
-	Cc *any `json:"cc,omitempty"`
-	Html *any `json:"html,omitempty"`
+// ContactSegmentCreateData is the typed request payload for ContactSegment.CreateTyped.
+type ContactSegmentCreateData struct {
+	ContactId string `json:"contact_id"`
 	Id string `json:"id"`
-	Object string `json:"object"`
-	ReplyToEmailId *string `json:"reply_to_email_id,omitempty"`
-	Subject *any `json:"subject,omitempty"`
-	Text *any `json:"text,omitempty"`
-	ThreadId *string `json:"thread_id,omitempty"`
-	To *any `json:"to,omitempty"`
+	CreatedAt *string `json:"created_at,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Object *string `json:"object,omitempty"`
+	SegmentId *string `json:"segment_id,omitempty"`
 }
 
-// CreateInboxLabelResponseSuccess is the typed data model for the create_inbox_label_response_success entity.
-type CreateInboxLabelResponseSuccess struct {
+// ContactSegmentRemoveMatch is the typed request payload for ContactSegment.RemoveTyped.
+type ContactSegmentRemoveMatch struct {
+	ContactId string `json:"contact_id"`
+	Id string `json:"id"`
 }
 
-// CreateInboxLabelResponseSuccessCreateData is the typed request payload for CreateInboxLabelResponseSuccess.CreateTyped.
-type CreateInboxLabelResponseSuccessCreateData struct {
-	InboxId string `json:"inbox_id"`
-	Color *string `json:"color,omitempty"`
-	Name string `json:"name"`
+// ContactTopic is the typed data model for the contact_topic entity.
+type ContactTopic struct {
+}
+
+// ContactTopicListMatch is the typed request payload for ContactTopic.ListTyped.
+type ContactTopicListMatch struct {
+	ContactId string `json:"contact_id"`
+	After *string `json:"after,omitempty"`
+	Before *string `json:"before,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+}
+
+// ContactTopicUpdateData is the typed request payload for ContactTopic.UpdateTyped.
+type ContactTopicUpdateData struct {
+	ContactId string `json:"contact_id"`
+	Description *string `json:"description,omitempty"`
+	Id *string `json:"id,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Object *string `json:"object,omitempty"`
+	Subscription *string `json:"subscription,omitempty"`
+	Topics *[]any `json:"topics,omitempty"`
 }
 
 // Domain is the typed data model for the domain entity.
@@ -379,6 +428,23 @@ type DomainCreateData struct {
 	CreatedAt *string `json:"created_at,omitempty"`
 	CustomReturnPath *string `json:"custom_return_path,omitempty"`
 	Id *string `json:"id,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Object *string `json:"object,omitempty"`
+	OpenTracking *bool `json:"open_tracking,omitempty"`
+	Records *[]any `json:"records,omitempty"`
+	Region *string `json:"region,omitempty"`
+	Status *string `json:"status,omitempty"`
+	Tls *string `json:"tls,omitempty"`
+	TrackingSubdomain *string `json:"tracking_subdomain,omitempty"`
+}
+
+// DomainUpdateData is the typed request payload for Domain.UpdateTyped.
+type DomainUpdateData struct {
+	Id string `json:"id"`
+	Capabilities *map[string]any `json:"capabilities,omitempty"`
+	ClickTracking *bool `json:"click_tracking,omitempty"`
+	CreatedAt *string `json:"created_at,omitempty"`
+	CustomReturnPath *string `json:"custom_return_path,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Object *string `json:"object,omitempty"`
 	OpenTracking *bool `json:"open_tracking,omitempty"`
@@ -461,6 +527,57 @@ type EmailCreateData struct {
 	TopicId *string `json:"topic_id,omitempty"`
 }
 
+// EmailUpdateData is the typed request payload for Email.UpdateTyped.
+type EmailUpdateData struct {
+	Id string `json:"id"`
+	Attachments *[]any `json:"attachments,omitempty"`
+	Bcc *[]any `json:"bcc,omitempty"`
+	Cc *[]any `json:"cc,omitempty"`
+	CreatedAt *string `json:"created_at,omitempty"`
+	From *string `json:"from,omitempty"`
+	Headers *map[string]any `json:"headers,omitempty"`
+	Html *string `json:"html,omitempty"`
+	LastEvent *string `json:"last_event,omitempty"`
+	MessageId *string `json:"message_id,omitempty"`
+	Object *string `json:"object,omitempty"`
+	ReplyTo *[]any `json:"reply_to,omitempty"`
+	ScheduledAt *string `json:"scheduled_at,omitempty"`
+	Subject *string `json:"subject,omitempty"`
+	Tags *[]any `json:"tags,omitempty"`
+	Template *any `json:"template,omitempty"`
+	Text *string `json:"text,omitempty"`
+	To *[]any `json:"to,omitempty"`
+	TopicId *string `json:"topic_id,omitempty"`
+}
+
+// EmailAttachment is the typed data model for the email_attachment entity.
+type EmailAttachment struct {
+}
+
+// EmailAttachmentLoadMatch is the typed request payload for EmailAttachment.LoadTyped.
+type EmailAttachmentLoadMatch struct {
+	EmailId string `json:"email_id"`
+	Id string `json:"id"`
+}
+
+// EmailAttachmentListMatch is the typed request payload for EmailAttachment.ListTyped.
+type EmailAttachmentListMatch struct {
+	EmailId string `json:"email_id"`
+	After *string `json:"after,omitempty"`
+	Before *string `json:"before,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+}
+
+// EmailBatch is the typed data model for the email_batch entity.
+type EmailBatch struct {
+}
+
+// EmailBatchCreateData is the typed request payload for EmailBatch.CreateTyped.
+type EmailBatchCreateData struct {
+	Data *[]any `json:"data,omitempty"`
+	SendEmails *[]any `json:"send_emails,omitempty"`
+}
+
 // EmailsMetric is the typed data model for the emails_metric entity.
 type EmailsMetric struct {
 }
@@ -502,6 +619,21 @@ type EventCreateData struct {
 	Object *string `json:"object,omitempty"`
 	Schema *any `json:"schema,omitempty"`
 	UpdatedAt *any `json:"updated_at,omitempty"`
+}
+
+// EventUpdateData is the typed request payload for Event.UpdateTyped.
+type EventUpdateData struct {
+	Id string `json:"id"`
+	CreatedAt *string `json:"created_at,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Object *string `json:"object,omitempty"`
+	Schema *any `json:"schema,omitempty"`
+	UpdatedAt *any `json:"updated_at,omitempty"`
+}
+
+// EventRemoveMatch is the typed request payload for Event.RemoveTyped.
+type EventRemoveMatch struct {
+	Id string `json:"id"`
 }
 
 // Inbox is the typed data model for the inbox entity.
@@ -552,40 +684,50 @@ type InboxUpdateData struct {
 	Unread *int `json:"unread,omitempty"`
 }
 
-// InboxAgentResponseSuccess is the typed data model for the inbox_agent_response_success entity.
-type InboxAgentResponseSuccess struct {
-}
-
-// InboxAgentResponseSuccessListMatch is the typed request payload for InboxAgentResponseSuccess.ListTyped.
-type InboxAgentResponseSuccessListMatch struct {
+// InboxRemoveMatch is the typed request payload for Inbox.RemoveTyped.
+type InboxRemoveMatch struct {
 	Id string `json:"id"`
 }
 
-// InboxDraftListItem is the typed data model for the inbox_draft_list_item entity.
-type InboxDraftListItem struct {
+// InboxAgent is the typed data model for the inbox_agent entity.
+type InboxAgent struct {
 }
 
-// InboxDraftListItemListMatch is the typed request payload for InboxDraftListItem.ListTyped.
-type InboxDraftListItemListMatch struct {
+// InboxAgentLoadMatch is the typed request payload for InboxAgent.LoadTyped.
+type InboxAgentLoadMatch struct {
+	InboxId string `json:"inbox_id"`
+}
+
+// InboxAgentUpdateData is the typed request payload for InboxAgent.UpdateTyped.
+type InboxAgentUpdateData struct {
+	InboxId string `json:"inbox_id"`
+	EnabledActions *[]any `json:"enabled_actions,omitempty"`
+	Id *string `json:"id,omitempty"`
+	Instructions *any `json:"instructions,omitempty"`
+	Object *string `json:"object,omitempty"`
+	Tone *any `json:"tone,omitempty"`
+}
+
+// InboxDraft is the typed data model for the inbox_draft entity.
+type InboxDraft struct {
+}
+
+// InboxDraftLoadMatch is the typed request payload for InboxDraft.LoadTyped.
+type InboxDraftLoadMatch struct {
 	Id string `json:"id"`
+	InboxId string `json:"inbox_id"`
+}
+
+// InboxDraftListMatch is the typed request payload for InboxDraft.ListTyped.
+type InboxDraftListMatch struct {
+	InboxId string `json:"inbox_id"`
 	After *string `json:"after,omitempty"`
 	Before *string `json:"before,omitempty"`
 	Limit *int `json:"limit,omitempty"`
 }
 
-// InboxDraftResponseSuccess is the typed data model for the inbox_draft_response_success entity.
-type InboxDraftResponseSuccess struct {
-}
-
-// InboxDraftResponseSuccessLoadMatch is the typed request payload for InboxDraftResponseSuccess.LoadTyped.
-type InboxDraftResponseSuccessLoadMatch struct {
-	DraftId string `json:"draft_id"`
-	InboxId string `json:"inbox_id"`
-}
-
-// InboxDraftResponseSuccessCreateData is the typed request payload for InboxDraftResponseSuccess.CreateTyped.
-type InboxDraftResponseSuccessCreateData struct {
-	DraftId string `json:"draft_id"`
+// InboxDraftCreateData is the typed request payload for InboxDraft.CreateTyped.
+type InboxDraftCreateData struct {
 	InboxId string `json:"inbox_id"`
 	Attachments []any `json:"attachments"`
 	Bcc []any `json:"bcc"`
@@ -596,12 +738,40 @@ type InboxDraftResponseSuccessCreateData struct {
 	Id string `json:"id"`
 	Object string `json:"object"`
 	ReplyToEmailId any `json:"reply_to_email_id"`
+	Snippet any `json:"snippet"`
 	Subject any `json:"subject"`
 	Text any `json:"text"`
 	ThreadId any `json:"thread_id"`
 	To any `json:"to"`
 	Type string `json:"type"`
 	UpdatedAt string `json:"updated_at"`
+}
+
+// InboxDraftUpdateData is the typed request payload for InboxDraft.UpdateTyped.
+type InboxDraftUpdateData struct {
+	Id string `json:"id"`
+	InboxId string `json:"inbox_id"`
+	Attachments *[]any `json:"attachments,omitempty"`
+	Bcc *[]any `json:"bcc,omitempty"`
+	Cc *[]any `json:"cc,omitempty"`
+	CreatedAt *string `json:"created_at,omitempty"`
+	EmailId *any `json:"email_id,omitempty"`
+	Html *any `json:"html,omitempty"`
+	Object *string `json:"object,omitempty"`
+	ReplyToEmailId *any `json:"reply_to_email_id,omitempty"`
+	Snippet *any `json:"snippet,omitempty"`
+	Subject *any `json:"subject,omitempty"`
+	Text *any `json:"text,omitempty"`
+	ThreadId *any `json:"thread_id,omitempty"`
+	To *any `json:"to,omitempty"`
+	Type *string `json:"type,omitempty"`
+	UpdatedAt *string `json:"updated_at,omitempty"`
+}
+
+// InboxDraftRemoveMatch is the typed request payload for InboxDraft.RemoveTyped.
+type InboxDraftRemoveMatch struct {
+	Id string `json:"id"`
+	InboxId string `json:"inbox_id"`
 }
 
 // InboxLabel is the typed data model for the inbox_label entity.
@@ -613,8 +783,39 @@ type InboxLabelListMatch struct {
 	Id string `json:"id"`
 }
 
+// InboxLabelCreateData is the typed request payload for InboxLabel.CreateTyped.
+type InboxLabelCreateData struct {
+	Id string `json:"id"`
+	Color *string `json:"color,omitempty"`
+	CreatedAt string `json:"created_at"`
+	Name string `json:"name"`
+	Object string `json:"object"`
+}
+
+// InboxLabelUpdateData is the typed request payload for InboxLabel.UpdateTyped.
+type InboxLabelUpdateData struct {
+	Id string `json:"id"`
+	InboxId string `json:"inbox_id"`
+	Color *string `json:"color,omitempty"`
+	CreatedAt *string `json:"created_at,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Object *string `json:"object,omitempty"`
+}
+
+// InboxLabelRemoveMatch is the typed request payload for InboxLabel.RemoveTyped.
+type InboxLabelRemoveMatch struct {
+	Id string `json:"id"`
+	InboxId string `json:"inbox_id"`
+}
+
 // InboxThread is the typed data model for the inbox_thread entity.
 type InboxThread struct {
+}
+
+// InboxThreadLoadMatch is the typed request payload for InboxThread.LoadTyped.
+type InboxThreadLoadMatch struct {
+	Id string `json:"id"`
+	InboxId string `json:"inbox_id"`
 }
 
 // InboxThreadListMatch is the typed request payload for InboxThread.ListTyped.
@@ -628,8 +829,44 @@ type InboxThreadListMatch struct {
 	Read *bool `json:"read,omitempty"`
 }
 
+// InboxThreadUpdateData is the typed request payload for InboxThread.UpdateTyped.
+type InboxThreadUpdateData struct {
+	Id string `json:"id"`
+	InboxId string `json:"inbox_id"`
+	AddLabelIds *[]any `json:"add_label_ids,omitempty"`
+	Bcc *[]any `json:"bcc,omitempty"`
+	Cc *[]any `json:"cc,omitempty"`
+	EmailCount *int `json:"email_count,omitempty"`
+	Folder *string `json:"folder,omitempty"`
+	From *any `json:"from,omitempty"`
+	HasAttachment *bool `json:"has_attachment,omitempty"`
+	HasDraft *bool `json:"has_draft,omitempty"`
+	Highlights *map[string]any `json:"highlights,omitempty"`
+	Labels *[]any `json:"labels,omitempty"`
+	MatchedEmailId *any `json:"matched_email_id,omitempty"`
+	Object *string `json:"object,omitempty"`
+	Read *bool `json:"read,omitempty"`
+	ReceivedAt *string `json:"received_at,omitempty"`
+	RemoveLabelIds *[]any `json:"remove_label_ids,omitempty"`
+	Subject *any `json:"subject,omitempty"`
+	To *[]any `json:"to,omitempty"`
+}
+
+// InboxThreadRemoveMatch is the typed request payload for InboxThread.RemoveTyped.
+type InboxThreadRemoveMatch struct {
+	Id string `json:"id"`
+	InboxId string `json:"inbox_id"`
+}
+
 // InboxThreadEmail is the typed data model for the inbox_thread_email entity.
 type InboxThreadEmail struct {
+}
+
+// InboxThreadEmailLoadMatch is the typed request payload for InboxThreadEmail.LoadTyped.
+type InboxThreadEmailLoadMatch struct {
+	Id string `json:"id"`
+	InboxId string `json:"inbox_id"`
+	ThreadId string `json:"thread_id"`
 }
 
 // InboxThreadEmailListMatch is the typed request payload for InboxThreadEmail.ListTyped.
@@ -641,20 +878,9 @@ type InboxThreadEmailListMatch struct {
 	Limit *int `json:"limit,omitempty"`
 }
 
-// InboxThreadEmailResponseSuccess is the typed data model for the inbox_thread_email_response_success entity.
-type InboxThreadEmailResponseSuccess struct {
-}
-
-// InboxThreadEmailResponseSuccessLoadMatch is the typed request payload for InboxThreadEmailResponseSuccess.LoadTyped.
-type InboxThreadEmailResponseSuccessLoadMatch struct {
-	EmailId string `json:"email_id"`
-	InboxId string `json:"inbox_id"`
-	ThreadId string `json:"thread_id"`
-}
-
-// InboxThreadEmailResponseSuccessCreateData is the typed request payload for InboxThreadEmailResponseSuccess.CreateTyped.
-type InboxThreadEmailResponseSuccessCreateData struct {
-	EmailId string `json:"email_id"`
+// InboxThreadEmailCreateData is the typed request payload for InboxThreadEmail.CreateTyped.
+type InboxThreadEmailCreateData struct {
+	Id string `json:"id"`
 	InboxId string `json:"inbox_id"`
 	ThreadId string `json:"thread_id"`
 	Attachments []any `json:"attachments"`
@@ -663,7 +889,6 @@ type InboxThreadEmailResponseSuccessCreateData struct {
 	Direction string `json:"direction"`
 	From string `json:"from"`
 	Html any `json:"html"`
-	Id string `json:"id"`
 	MessageId any `json:"message_id"`
 	Read bool `json:"read"`
 	ReceivedAt string `json:"received_at"`
@@ -671,102 +896,6 @@ type InboxThreadEmailResponseSuccessCreateData struct {
 	Subject any `json:"subject"`
 	Text any `json:"text"`
 	To []any `json:"to"`
-}
-
-// InboxThreadResponseSuccess is the typed data model for the inbox_thread_response_success entity.
-type InboxThreadResponseSuccess struct {
-}
-
-// InboxThreadResponseSuccessLoadMatch is the typed request payload for InboxThreadResponseSuccess.LoadTyped.
-type InboxThreadResponseSuccessLoadMatch struct {
-	InboxId string `json:"inbox_id"`
-	ThreadId string `json:"thread_id"`
-}
-
-// ListAttachment is the typed data model for the list_attachment entity.
-type ListAttachment struct {
-}
-
-// ListAttachmentListMatch is the typed request payload for ListAttachment.ListTyped.
-type ListAttachmentListMatch struct {
-	EmailId string `json:"email_id"`
-	After *string `json:"after,omitempty"`
-	Before *string `json:"before,omitempty"`
-	Limit *int `json:"limit,omitempty"`
-}
-
-// ListBroadcastClickedLinksResponseSuccess is the typed data model for the list_broadcast_clicked_links_response_success entity.
-type ListBroadcastClickedLinksResponseSuccess struct {
-}
-
-// ListBroadcastClickedLinksResponseSuccessListMatch is the typed request payload for ListBroadcastClickedLinksResponseSuccess.ListTyped.
-type ListBroadcastClickedLinksResponseSuccessListMatch struct {
-	BroadcastId string `json:"broadcast_id"`
-	After *string `json:"after,omitempty"`
-	Before *string `json:"before,omitempty"`
-	Limit *int `json:"limit,omitempty"`
-}
-
-// ListBroadcastRecipientsResponseSuccess is the typed data model for the list_broadcast_recipients_response_success entity.
-type ListBroadcastRecipientsResponseSuccess struct {
-}
-
-// ListBroadcastRecipientsResponseSuccessListMatch is the typed request payload for ListBroadcastRecipientsResponseSuccess.ListTyped.
-type ListBroadcastRecipientsResponseSuccessListMatch struct {
-	BroadcastId string `json:"broadcast_id"`
-	After *string `json:"after,omitempty"`
-	Before *string `json:"before,omitempty"`
-	BounceType *string `json:"bounce_type,omitempty"`
-	Email *string `json:"email,omitempty"`
-	Limit *int `json:"limit,omitempty"`
-	Type string `json:"type"`
-}
-
-// ListContactSegmentsResponseSuccess is the typed data model for the list_contact_segments_response_success entity.
-type ListContactSegmentsResponseSuccess struct {
-}
-
-// ListContactSegmentsResponseSuccessListMatch is the typed request payload for ListContactSegmentsResponseSuccess.ListTyped.
-type ListContactSegmentsResponseSuccessListMatch struct {
-	ContactId string `json:"contact_id"`
-	After *string `json:"after,omitempty"`
-	Before *string `json:"before,omitempty"`
-	Limit *int `json:"limit,omitempty"`
-}
-
-// ListContactsResponseSuccess is the typed data model for the list_contacts_response_success entity.
-type ListContactsResponseSuccess struct {
-}
-
-// ListContactsResponseSuccessListMatch is the typed request payload for ListContactsResponseSuccess.ListTyped.
-type ListContactsResponseSuccessListMatch struct {
-	SegmentId string `json:"segment_id"`
-	After *string `json:"after,omitempty"`
-	Before *string `json:"before,omitempty"`
-	Limit *int `json:"limit,omitempty"`
-}
-
-// ListWebhookEvent is the typed data model for the list_webhook_event entity.
-type ListWebhookEvent struct {
-}
-
-// ListWebhookEventListMatch is the typed request payload for ListWebhookEvent.ListTyped.
-type ListWebhookEventListMatch struct {
-	WebhookId string `json:"webhook_id"`
-	After *string `json:"after,omitempty"`
-	Limit *int `json:"limit,omitempty"`
-}
-
-// ListWebhookEventAttempt is the typed data model for the list_webhook_event_attempt entity.
-type ListWebhookEventAttempt struct {
-}
-
-// ListWebhookEventAttemptListMatch is the typed request payload for ListWebhookEventAttempt.ListTyped.
-type ListWebhookEventAttemptListMatch struct {
-	EventId string `json:"event_id"`
-	WebhookId string `json:"webhook_id"`
-	After *string `json:"after,omitempty"`
-	Limit *int `json:"limit,omitempty"`
 }
 
 // Log is the typed data model for the log entity.
@@ -785,6 +914,22 @@ type LogListMatch struct {
 	Limit *int `json:"limit,omitempty"`
 }
 
+// OauthGrant is the typed data model for the oauth_grant entity.
+type OauthGrant struct {
+}
+
+// OauthGrantListMatch is the typed request payload for OauthGrant.ListTyped.
+type OauthGrantListMatch struct {
+	After *string `json:"after,omitempty"`
+	Before *string `json:"before,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+}
+
+// OauthGrantRemoveMatch is the typed request payload for OauthGrant.RemoveTyped.
+type OauthGrantRemoveMatch struct {
+	Id string `json:"id"`
+}
+
 // ReceivedEmail is the typed data model for the received_email entity.
 type ReceivedEmail struct {
 }
@@ -801,247 +946,22 @@ type ReceivedEmailListMatch struct {
 	Limit *int `json:"limit,omitempty"`
 }
 
-// RemoveAudienceResponseSuccess is the typed data model for the remove_audience_response_success entity.
-type RemoveAudienceResponseSuccess struct {
+// ReceivedEmailAttachment is the typed data model for the received_email_attachment entity.
+type ReceivedEmailAttachment struct {
 }
 
-// RemoveAudienceResponseSuccessRemoveMatch is the typed request payload for RemoveAudienceResponseSuccess.RemoveTyped.
-type RemoveAudienceResponseSuccessRemoveMatch struct {
+// ReceivedEmailAttachmentLoadMatch is the typed request payload for ReceivedEmailAttachment.LoadTyped.
+type ReceivedEmailAttachmentLoadMatch struct {
+	EmailId string `json:"email_id"`
 	Id string `json:"id"`
 }
 
-// RemoveBroadcastResponseSuccess is the typed data model for the remove_broadcast_response_success entity.
-type RemoveBroadcastResponseSuccess struct {
-}
-
-// RemoveBroadcastResponseSuccessRemoveMatch is the typed request payload for RemoveBroadcastResponseSuccess.RemoveTyped.
-type RemoveBroadcastResponseSuccessRemoveMatch struct {
-	Id string `json:"id"`
-}
-
-// RemoveContactFromSegmentResponseSuccess is the typed data model for the remove_contact_from_segment_response_success entity.
-type RemoveContactFromSegmentResponseSuccess struct {
-}
-
-// RemoveContactFromSegmentResponseSuccessRemoveMatch is the typed request payload for RemoveContactFromSegmentResponseSuccess.RemoveTyped.
-type RemoveContactFromSegmentResponseSuccessRemoveMatch struct {
-	ContactId string `json:"contact_id"`
-	SegmentId string `json:"segment_id"`
-}
-
-// RemoveContactPropertyResponseSuccess is the typed data model for the remove_contact_property_response_success entity.
-type RemoveContactPropertyResponseSuccess struct {
-}
-
-// RemoveContactPropertyResponseSuccessRemoveMatch is the typed request payload for RemoveContactPropertyResponseSuccess.RemoveTyped.
-type RemoveContactPropertyResponseSuccessRemoveMatch struct {
-	Id string `json:"id"`
-}
-
-// RemoveContactResponseSuccess is the typed data model for the remove_contact_response_success entity.
-type RemoveContactResponseSuccess struct {
-}
-
-// RemoveContactResponseSuccessRemoveMatch is the typed request payload for RemoveContactResponseSuccess.RemoveTyped.
-type RemoveContactResponseSuccessRemoveMatch struct {
-	Id string `json:"id"`
-}
-
-// RemoveEvent is the typed data model for the remove_event entity.
-type RemoveEvent struct {
-}
-
-// RemoveEventRemoveMatch is the typed request payload for RemoveEvent.RemoveTyped.
-type RemoveEventRemoveMatch struct {
-	Id string `json:"id"`
-}
-
-// RemoveInboxDraftResponseSuccess is the typed data model for the remove_inbox_draft_response_success entity.
-type RemoveInboxDraftResponseSuccess struct {
-}
-
-// RemoveInboxDraftResponseSuccessRemoveMatch is the typed request payload for RemoveInboxDraftResponseSuccess.RemoveTyped.
-type RemoveInboxDraftResponseSuccessRemoveMatch struct {
-	DraftId string `json:"draft_id"`
-	InboxId string `json:"inbox_id"`
-}
-
-// RemoveInboxLabelResponseSuccess is the typed data model for the remove_inbox_label_response_success entity.
-type RemoveInboxLabelResponseSuccess struct {
-}
-
-// RemoveInboxLabelResponseSuccessRemoveMatch is the typed request payload for RemoveInboxLabelResponseSuccess.RemoveTyped.
-type RemoveInboxLabelResponseSuccessRemoveMatch struct {
-	InboxId string `json:"inbox_id"`
-	LabelId string `json:"label_id"`
-}
-
-// RemoveInboxResponseSuccess is the typed data model for the remove_inbox_response_success entity.
-type RemoveInboxResponseSuccess struct {
-}
-
-// RemoveInboxResponseSuccessRemoveMatch is the typed request payload for RemoveInboxResponseSuccess.RemoveTyped.
-type RemoveInboxResponseSuccessRemoveMatch struct {
-	InboxId string `json:"inbox_id"`
-}
-
-// RemoveInboxThreadResponseSuccess is the typed data model for the remove_inbox_thread_response_success entity.
-type RemoveInboxThreadResponseSuccess struct {
-}
-
-// RemoveInboxThreadResponseSuccessRemoveMatch is the typed request payload for RemoveInboxThreadResponseSuccess.RemoveTyped.
-type RemoveInboxThreadResponseSuccessRemoveMatch struct {
-	InboxId string `json:"inbox_id"`
-	ThreadId string `json:"thread_id"`
-}
-
-// RemoveSegmentResponseSuccess is the typed data model for the remove_segment_response_success entity.
-type RemoveSegmentResponseSuccess struct {
-}
-
-// RemoveSegmentResponseSuccessListMatch is the typed request payload for RemoveSegmentResponseSuccess.ListTyped.
-type RemoveSegmentResponseSuccessListMatch struct {
+// ReceivedEmailAttachmentListMatch is the typed request payload for ReceivedEmailAttachment.ListTyped.
+type ReceivedEmailAttachmentListMatch struct {
+	EmailId string `json:"email_id"`
 	After *string `json:"after,omitempty"`
 	Before *string `json:"before,omitempty"`
 	Limit *int `json:"limit,omitempty"`
-}
-
-// RemoveSegmentResponseSuccessCreateData is the typed request payload for RemoveSegmentResponseSuccess.CreateTyped.
-type RemoveSegmentResponseSuccessCreateData struct {
-	AudienceId *string `json:"audience_id,omitempty"`
-	CreatedAt *string `json:"created_at,omitempty"`
-	Filter *map[string]any `json:"filter,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Name string `json:"name"`
-}
-
-// RemoveSegmentResponseSuccessRemoveMatch is the typed request payload for RemoveSegmentResponseSuccess.RemoveTyped.
-type RemoveSegmentResponseSuccessRemoveMatch struct {
-	Id string `json:"id"`
-}
-
-// RemoveSuppressionResponseSuccess is the typed data model for the remove_suppression_response_success entity.
-type RemoveSuppressionResponseSuccess struct {
-}
-
-// RemoveSuppressionResponseSuccessListMatch is the typed request payload for RemoveSuppressionResponseSuccess.ListTyped.
-type RemoveSuppressionResponseSuccessListMatch struct {
-	After *string `json:"after,omitempty"`
-	Before *string `json:"before,omitempty"`
-	Limit *int `json:"limit,omitempty"`
-	Origin *string `json:"origin,omitempty"`
-}
-
-// RemoveSuppressionResponseSuccessCreateData is the typed request payload for RemoveSuppressionResponseSuccess.CreateTyped.
-type RemoveSuppressionResponseSuccessCreateData struct {
-	CreatedAt *string `json:"created_at,omitempty"`
-	Email string `json:"email"`
-	Id *string `json:"id,omitempty"`
-	Origin *string `json:"origin,omitempty"`
-	SourceId *any `json:"source_id,omitempty"`
-}
-
-// RemoveSuppressionResponseSuccessRemoveMatch is the typed request payload for RemoveSuppressionResponseSuccess.RemoveTyped.
-type RemoveSuppressionResponseSuccessRemoveMatch struct {
-	Suppression string `json:"suppression"`
-}
-
-// RemoveTemplateResponseSuccess is the typed data model for the remove_template_response_success entity.
-type RemoveTemplateResponseSuccess struct {
-}
-
-// RemoveTemplateResponseSuccessListMatch is the typed request payload for RemoveTemplateResponseSuccess.ListTyped.
-type RemoveTemplateResponseSuccessListMatch struct {
-	After *string `json:"after,omitempty"`
-	Before *string `json:"before,omitempty"`
-	Limit *int `json:"limit,omitempty"`
-}
-
-// RemoveTemplateResponseSuccessCreateData is the typed request payload for RemoveTemplateResponseSuccess.CreateTyped.
-type RemoveTemplateResponseSuccessCreateData struct {
-	Alias *string `json:"alias,omitempty"`
-	CreatedAt *string `json:"created_at,omitempty"`
-	From *string `json:"from,omitempty"`
-	Html string `json:"html"`
-	Id *string `json:"id,omitempty"`
-	Name string `json:"name"`
-	PublishedAt *any `json:"published_at,omitempty"`
-	ReplyTo *[]any `json:"reply_to,omitempty"`
-	Status *string `json:"status,omitempty"`
-	Subject *string `json:"subject,omitempty"`
-	Text *string `json:"text,omitempty"`
-	UpdatedAt *string `json:"updated_at,omitempty"`
-	Variables *[]any `json:"variables,omitempty"`
-}
-
-// RemoveTemplateResponseSuccessRemoveMatch is the typed request payload for RemoveTemplateResponseSuccess.RemoveTyped.
-type RemoveTemplateResponseSuccessRemoveMatch struct {
-	Id string `json:"id"`
-}
-
-// RemoveTopicResponseSuccess is the typed data model for the remove_topic_response_success entity.
-type RemoveTopicResponseSuccess struct {
-}
-
-// RemoveTopicResponseSuccessListMatch is the typed request payload for RemoveTopicResponseSuccess.ListTyped.
-type RemoveTopicResponseSuccessListMatch struct {
-	After *string `json:"after,omitempty"`
-	Before *string `json:"before,omitempty"`
-	Limit *int `json:"limit,omitempty"`
-}
-
-// RemoveTopicResponseSuccessCreateData is the typed request payload for RemoveTopicResponseSuccess.CreateTyped.
-type RemoveTopicResponseSuccessCreateData struct {
-	CreatedAt *string `json:"created_at,omitempty"`
-	DefaultSubscription string `json:"default_subscription"`
-	Description *string `json:"description,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Name string `json:"name"`
-	Visibility *string `json:"visibility,omitempty"`
-}
-
-// RemoveTopicResponseSuccessRemoveMatch is the typed request payload for RemoveTopicResponseSuccess.RemoveTyped.
-type RemoveTopicResponseSuccessRemoveMatch struct {
-	Id string `json:"id"`
-}
-
-// RetrievedAttachment is the typed data model for the retrieved_attachment entity.
-type RetrievedAttachment struct {
-}
-
-// RetrievedAttachmentLoadMatch is the typed request payload for RetrievedAttachment.LoadTyped.
-type RetrievedAttachmentLoadMatch struct {
-	EmailId *string `json:"email_id,omitempty"`
-	Id string `json:"id"`
-	ReceivingId *string `json:"receiving_id,omitempty"`
-}
-
-// RevokeOAuthGrant is the typed data model for the revoke_o_auth_grant entity.
-type RevokeOAuthGrant struct {
-}
-
-// RevokeOAuthGrantListMatch is the typed request payload for RevokeOAuthGrant.ListTyped.
-type RevokeOAuthGrantListMatch struct {
-	After *string `json:"after,omitempty"`
-	Before *string `json:"before,omitempty"`
-	Limit *int `json:"limit,omitempty"`
-}
-
-// RevokeOAuthGrantRemoveMatch is the typed request payload for RevokeOAuthGrant.RemoveTyped.
-type RevokeOAuthGrantRemoveMatch struct {
-	Id string `json:"id"`
-}
-
-// Rotate is the typed data model for the rotate entity.
-type Rotate struct {
-}
-
-// RotateCreateData is the typed request payload for Rotate.CreateTyped.
-type RotateCreateData struct {
-	WebhookId string `json:"webhook_id"`
-	Id *string `json:"id,omitempty"`
-	Object *string `json:"object,omitempty"`
-	SigningSecret *string `json:"signing_secret,omitempty"`
 }
 
 // Segment is the typed data model for the segment entity.
@@ -1053,6 +973,50 @@ type SegmentLoadMatch struct {
 	Id string `json:"id"`
 }
 
+// SegmentListMatch is the typed request payload for Segment.ListTyped.
+type SegmentListMatch struct {
+	After *string `json:"after,omitempty"`
+	Before *string `json:"before,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+}
+
+// SegmentCreateData is the typed request payload for Segment.CreateTyped.
+type SegmentCreateData struct {
+	AudienceId *string `json:"audience_id,omitempty"`
+	CreatedAt *string `json:"created_at,omitempty"`
+	Filter *map[string]any `json:"filter,omitempty"`
+	Id *string `json:"id,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Object *string `json:"object,omitempty"`
+}
+
+// SegmentUpdateData is the typed request payload for Segment.UpdateTyped.
+type SegmentUpdateData struct {
+	Id string `json:"id"`
+	AudienceId *string `json:"audience_id,omitempty"`
+	CreatedAt *string `json:"created_at,omitempty"`
+	Filter *map[string]any `json:"filter,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Object *string `json:"object,omitempty"`
+}
+
+// SegmentRemoveMatch is the typed request payload for Segment.RemoveTyped.
+type SegmentRemoveMatch struct {
+	Id string `json:"id"`
+}
+
+// SegmentContact is the typed data model for the segment_contact entity.
+type SegmentContact struct {
+}
+
+// SegmentContactListMatch is the typed request payload for SegmentContact.ListTyped.
+type SegmentContactListMatch struct {
+	SegmentId string `json:"segment_id"`
+	After *string `json:"after,omitempty"`
+	Before *string `json:"before,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+}
+
 // Suppression is the typed data model for the suppression entity.
 type Suppression struct {
 }
@@ -1060,6 +1024,37 @@ type Suppression struct {
 // SuppressionLoadMatch is the typed request payload for Suppression.LoadTyped.
 type SuppressionLoadMatch struct {
 	Id string `json:"id"`
+}
+
+// SuppressionListMatch is the typed request payload for Suppression.ListTyped.
+type SuppressionListMatch struct {
+	After *string `json:"after,omitempty"`
+	Before *string `json:"before,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+	Origin *string `json:"origin,omitempty"`
+}
+
+// SuppressionCreateData is the typed request payload for Suppression.CreateTyped.
+type SuppressionCreateData struct {
+	CreatedAt *string `json:"created_at,omitempty"`
+	Email *string `json:"email,omitempty"`
+	Id *string `json:"id,omitempty"`
+	Object *string `json:"object,omitempty"`
+	Origin *string `json:"origin,omitempty"`
+	SourceId *any `json:"source_id,omitempty"`
+}
+
+// SuppressionRemoveMatch is the typed request payload for Suppression.RemoveTyped.
+type SuppressionRemoveMatch struct {
+	Id string `json:"id"`
+}
+
+// SuppressionBatch is the typed data model for the suppression_batch entity.
+type SuppressionBatch struct {
+}
+
+// SuppressionBatchCreateData is the typed request payload for SuppressionBatch.CreateTyped.
+type SuppressionBatchCreateData struct {
 }
 
 // Template is the typed data model for the template entity.
@@ -1071,8 +1066,35 @@ type TemplateLoadMatch struct {
 	Id string `json:"id"`
 }
 
+// TemplateListMatch is the typed request payload for Template.ListTyped.
+type TemplateListMatch struct {
+	After *string `json:"after,omitempty"`
+	Before *string `json:"before,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+}
+
 // TemplateCreateData is the typed request payload for Template.CreateTyped.
 type TemplateCreateData struct {
+	Alias *string `json:"alias,omitempty"`
+	CreatedAt *string `json:"created_at,omitempty"`
+	CurrentVersionId *string `json:"current_version_id,omitempty"`
+	From *string `json:"from,omitempty"`
+	HasUnpublishedVersions *bool `json:"has_unpublished_versions,omitempty"`
+	Html *string `json:"html,omitempty"`
+	Id *string `json:"id,omitempty"`
+	Name *string `json:"name,omitempty"`
+	Object *string `json:"object,omitempty"`
+	PublishedAt *any `json:"published_at,omitempty"`
+	ReplyTo *any `json:"reply_to,omitempty"`
+	Status *string `json:"status,omitempty"`
+	Subject *string `json:"subject,omitempty"`
+	Text *string `json:"text,omitempty"`
+	UpdatedAt *string `json:"updated_at,omitempty"`
+	Variables *[]any `json:"variables,omitempty"`
+}
+
+// TemplateUpdateData is the typed request payload for Template.UpdateTyped.
+type TemplateUpdateData struct {
 	Id string `json:"id"`
 	Alias *string `json:"alias,omitempty"`
 	CreatedAt *string `json:"created_at,omitempty"`
@@ -1091,6 +1113,11 @@ type TemplateCreateData struct {
 	Variables *[]any `json:"variables,omitempty"`
 }
 
+// TemplateRemoveMatch is the typed request payload for Template.RemoveTyped.
+type TemplateRemoveMatch struct {
+	Id string `json:"id"`
+}
+
 // Topic is the typed data model for the topic entity.
 type Topic struct {
 }
@@ -1100,252 +1127,38 @@ type TopicLoadMatch struct {
 	Id string `json:"id"`
 }
 
-// UpdateApiKey is the typed data model for the update_api_key entity.
-type UpdateApiKey struct {
+// TopicListMatch is the typed request payload for Topic.ListTyped.
+type TopicListMatch struct {
+	After *string `json:"after,omitempty"`
+	Before *string `json:"before,omitempty"`
+	Limit *int `json:"limit,omitempty"`
 }
 
-// UpdateApiKeyUpdateData is the typed request payload for UpdateApiKey.UpdateTyped.
-type UpdateApiKeyUpdateData struct {
-	Id string `json:"id"`
-	Name *string `json:"name,omitempty"`
-	Object *string `json:"object,omitempty"`
-}
-
-// UpdateBroadcastResponseSuccess is the typed data model for the update_broadcast_response_success entity.
-type UpdateBroadcastResponseSuccess struct {
-}
-
-// UpdateBroadcastResponseSuccessUpdateData is the typed request payload for UpdateBroadcastResponseSuccess.UpdateTyped.
-type UpdateBroadcastResponseSuccessUpdateData struct {
-	Id string `json:"id"`
-	AudienceId *string `json:"audience_id,omitempty"`
-	From *string `json:"from,omitempty"`
-	Html *string `json:"html,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Object *string `json:"object,omitempty"`
-	PreviewText *string `json:"preview_text,omitempty"`
-	ReplyTo *[]any `json:"reply_to,omitempty"`
-	SegmentId *string `json:"segment_id,omitempty"`
-	Subject *string `json:"subject,omitempty"`
-	Text *string `json:"text,omitempty"`
-	TopicId *string `json:"topic_id,omitempty"`
-}
-
-// UpdateContactPropertyResponseSuccess is the typed data model for the update_contact_property_response_success entity.
-type UpdateContactPropertyResponseSuccess struct {
-}
-
-// UpdateContactPropertyResponseSuccessUpdateData is the typed request payload for UpdateContactPropertyResponseSuccess.UpdateTyped.
-type UpdateContactPropertyResponseSuccessUpdateData struct {
-	Id string `json:"id"`
-	FallbackValue *any `json:"fallback_value,omitempty"`
-	Object *string `json:"object,omitempty"`
-}
-
-// UpdateContactResponseSuccess is the typed data model for the update_contact_response_success entity.
-type UpdateContactResponseSuccess struct {
-}
-
-// UpdateContactResponseSuccessUpdateData is the typed request payload for UpdateContactResponseSuccess.UpdateTyped.
-type UpdateContactResponseSuccessUpdateData struct {
-	Id string `json:"id"`
-	Email *string `json:"email,omitempty"`
-	FirstName *string `json:"first_name,omitempty"`
-	LastName *string `json:"last_name,omitempty"`
-	Object *string `json:"object,omitempty"`
-	Properties *map[string]any `json:"properties,omitempty"`
-	Unsubscribed *bool `json:"unsubscribed,omitempty"`
-}
-
-// UpdateContactTopicsResponseSuccess is the typed data model for the update_contact_topics_response_success entity.
-type UpdateContactTopicsResponseSuccess struct {
-}
-
-// UpdateContactTopicsResponseSuccessUpdateData is the typed request payload for UpdateContactTopicsResponseSuccess.UpdateTyped.
-type UpdateContactTopicsResponseSuccessUpdateData struct {
-	ContactId string `json:"contact_id"`
-	Object *string `json:"object,omitempty"`
-	Topics *[]any `json:"topics,omitempty"`
-}
-
-// UpdateDomainResponseSuccess is the typed data model for the update_domain_response_success entity.
-type UpdateDomainResponseSuccess struct {
-}
-
-// UpdateDomainResponseSuccessUpdateData is the typed request payload for UpdateDomainResponseSuccess.UpdateTyped.
-type UpdateDomainResponseSuccessUpdateData struct {
-	DomainId string `json:"domain_id"`
-	Capabilities *map[string]any `json:"capabilities,omitempty"`
-	ClickTracking *bool `json:"click_tracking,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Object *string `json:"object,omitempty"`
-	OpenTracking *bool `json:"open_tracking,omitempty"`
-	Tls *string `json:"tls,omitempty"`
-	TrackingSubdomain *string `json:"tracking_subdomain,omitempty"`
-}
-
-// UpdateEmailOption is the typed data model for the update_email_option entity.
-type UpdateEmailOption struct {
-}
-
-// UpdateEmailOptionUpdateData is the typed request payload for UpdateEmailOption.UpdateTyped.
-type UpdateEmailOptionUpdateData struct {
-	EmailId string `json:"email_id"`
-	ScheduledAt *string `json:"scheduled_at,omitempty"`
-}
-
-// UpdateEvent is the typed data model for the update_event entity.
-type UpdateEvent struct {
-}
-
-// UpdateEventUpdateData is the typed request payload for UpdateEvent.UpdateTyped.
-type UpdateEventUpdateData struct {
-	Id string `json:"id"`
-	Object *string `json:"object,omitempty"`
-	Schema *any `json:"schema,omitempty"`
-}
-
-// UpdateInboxDraftResponseSuccess is the typed data model for the update_inbox_draft_response_success entity.
-type UpdateInboxDraftResponseSuccess struct {
-}
-
-// UpdateInboxDraftResponseSuccessUpdateData is the typed request payload for UpdateInboxDraftResponseSuccess.UpdateTyped.
-type UpdateInboxDraftResponseSuccessUpdateData struct {
-	DraftId string `json:"draft_id"`
-	InboxId string `json:"inbox_id"`
-	Attachments *[]any `json:"attachments,omitempty"`
-	Bcc *[]any `json:"bcc,omitempty"`
-	Cc *[]any `json:"cc,omitempty"`
+// TopicCreateData is the typed request payload for Topic.CreateTyped.
+type TopicCreateData struct {
 	CreatedAt *string `json:"created_at,omitempty"`
-	EmailId *any `json:"email_id,omitempty"`
-	Html *any `json:"html,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Object *string `json:"object,omitempty"`
-	ReplyToEmailId *any `json:"reply_to_email_id,omitempty"`
-	Subject *any `json:"subject,omitempty"`
-	Text *any `json:"text,omitempty"`
-	ThreadId *any `json:"thread_id,omitempty"`
-	To *any `json:"to,omitempty"`
-	Type *string `json:"type,omitempty"`
-	UpdatedAt *string `json:"updated_at,omitempty"`
-}
-
-// UpdateInboxLabelResponseSuccess is the typed data model for the update_inbox_label_response_success entity.
-type UpdateInboxLabelResponseSuccess struct {
-}
-
-// UpdateInboxLabelResponseSuccessUpdateData is the typed request payload for UpdateInboxLabelResponseSuccess.UpdateTyped.
-type UpdateInboxLabelResponseSuccessUpdateData struct {
-	InboxId string `json:"inbox_id"`
-	LabelId string `json:"label_id"`
-	Color *string `json:"color,omitempty"`
+	DefaultSubscription *string `json:"default_subscription,omitempty"`
+	Description *string `json:"description,omitempty"`
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Object *string `json:"object,omitempty"`
+	Visibility *string `json:"visibility,omitempty"`
 }
 
-// UpdateInboxResponseSuccess is the typed data model for the update_inbox_response_success entity.
-type UpdateInboxResponseSuccess struct {
-}
-
-// UpdateInboxResponseSuccessUpdateData is the typed request payload for UpdateInboxResponseSuccess.UpdateTyped.
-type UpdateInboxResponseSuccessUpdateData struct {
-	InboxId string `json:"inbox_id"`
-	FromName *string `json:"from_name,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Object *string `json:"object,omitempty"`
-}
-
-// UpdateInboxThreadResponseSuccess is the typed data model for the update_inbox_thread_response_success entity.
-type UpdateInboxThreadResponseSuccess struct {
-}
-
-// UpdateInboxThreadResponseSuccessUpdateData is the typed request payload for UpdateInboxThreadResponseSuccess.UpdateTyped.
-type UpdateInboxThreadResponseSuccessUpdateData struct {
-	InboxId string `json:"inbox_id"`
-	ThreadId string `json:"thread_id"`
-	AddLabelIds *[]any `json:"add_label_ids,omitempty"`
-	Folder *string `json:"folder,omitempty"`
-	Id *string `json:"id,omitempty"`
-	Labels *[]any `json:"labels,omitempty"`
-	Object *string `json:"object,omitempty"`
-	Read *bool `json:"read,omitempty"`
-	RemoveLabelIds *[]any `json:"remove_label_ids,omitempty"`
-	Subject *any `json:"subject,omitempty"`
-}
-
-// UpdateSegmentResponseSuccess is the typed data model for the update_segment_response_success entity.
-type UpdateSegmentResponseSuccess struct {
-}
-
-// UpdateSegmentResponseSuccessUpdateData is the typed request payload for UpdateSegmentResponseSuccess.UpdateTyped.
-type UpdateSegmentResponseSuccessUpdateData struct {
+// TopicUpdateData is the typed request payload for Topic.UpdateTyped.
+type TopicUpdateData struct {
 	Id string `json:"id"`
-	Name *string `json:"name,omitempty"`
-	Object *string `json:"object,omitempty"`
-}
-
-// UpdateTemplateResponseSuccess is the typed data model for the update_template_response_success entity.
-type UpdateTemplateResponseSuccess struct {
-}
-
-// UpdateTemplateResponseSuccessUpdateData is the typed request payload for UpdateTemplateResponseSuccess.UpdateTyped.
-type UpdateTemplateResponseSuccessUpdateData struct {
-	Id string `json:"id"`
-	Alias *string `json:"alias,omitempty"`
-	From *string `json:"from,omitempty"`
-	Html *string `json:"html,omitempty"`
-	Name *string `json:"name,omitempty"`
-	Object *string `json:"object,omitempty"`
-	ReplyTo *[]any `json:"reply_to,omitempty"`
-	Subject *string `json:"subject,omitempty"`
-	Text *string `json:"text,omitempty"`
-	Variables *[]any `json:"variables,omitempty"`
-}
-
-// UpdateTopicResponseSuccess is the typed data model for the update_topic_response_success entity.
-type UpdateTopicResponseSuccess struct {
-}
-
-// UpdateTopicResponseSuccessUpdateData is the typed request payload for UpdateTopicResponseSuccess.UpdateTyped.
-type UpdateTopicResponseSuccessUpdateData struct {
-	Id string `json:"id"`
+	CreatedAt *string `json:"created_at,omitempty"`
+	DefaultSubscription *string `json:"default_subscription,omitempty"`
 	Description *string `json:"description,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Object *string `json:"object,omitempty"`
 	Visibility *string `json:"visibility,omitempty"`
 }
 
-// UpdateWebhook is the typed data model for the update_webhook entity.
-type UpdateWebhook struct {
-}
-
-// UpdateWebhookListMatch is the typed request payload for UpdateWebhook.ListTyped.
-type UpdateWebhookListMatch struct {
-	After *string `json:"after,omitempty"`
-	Before *string `json:"before,omitempty"`
-	Limit *int `json:"limit,omitempty"`
-}
-
-// UpdateWebhookCreateData is the typed request payload for UpdateWebhook.CreateTyped.
-type UpdateWebhookCreateData struct {
-	CreatedAt *string `json:"created_at,omitempty"`
-	Endpoint string `json:"endpoint"`
-	Events []any `json:"events"`
-	Id *string `json:"id,omitempty"`
-	Object *string `json:"object,omitempty"`
-	Status *string `json:"status,omitempty"`
-}
-
-// UpdateWebhookUpdateData is the typed request payload for UpdateWebhook.UpdateTyped.
-type UpdateWebhookUpdateData struct {
+// TopicRemoveMatch is the typed request payload for Topic.RemoveTyped.
+type TopicRemoveMatch struct {
 	Id string `json:"id"`
-	CreatedAt *string `json:"created_at,omitempty"`
-	Endpoint *string `json:"endpoint,omitempty"`
-	Events *[]any `json:"events,omitempty"`
-	Object *string `json:"object,omitempty"`
-	Status *string `json:"status,omitempty"`
 }
 
 // Usage is the typed data model for the usage entity.
@@ -1374,6 +1187,35 @@ type WebhookLoadMatch struct {
 	Id string `json:"id"`
 }
 
+// WebhookListMatch is the typed request payload for Webhook.ListTyped.
+type WebhookListMatch struct {
+	After *string `json:"after,omitempty"`
+	Before *string `json:"before,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+}
+
+// WebhookCreateData is the typed request payload for Webhook.CreateTyped.
+type WebhookCreateData struct {
+	CreatedAt *string `json:"created_at,omitempty"`
+	Endpoint *string `json:"endpoint,omitempty"`
+	Events *any `json:"events,omitempty"`
+	Id *string `json:"id,omitempty"`
+	Object *string `json:"object,omitempty"`
+	SigningSecret *string `json:"signing_secret,omitempty"`
+	Status *string `json:"status,omitempty"`
+}
+
+// WebhookUpdateData is the typed request payload for Webhook.UpdateTyped.
+type WebhookUpdateData struct {
+	Id string `json:"id"`
+	CreatedAt *string `json:"created_at,omitempty"`
+	Endpoint *string `json:"endpoint,omitempty"`
+	Events *any `json:"events,omitempty"`
+	Object *string `json:"object,omitempty"`
+	SigningSecret *string `json:"signing_secret,omitempty"`
+	Status *string `json:"status,omitempty"`
+}
+
 // WebhookRemoveMatch is the typed request payload for Webhook.RemoveTyped.
 type WebhookRemoveMatch struct {
 	Id string `json:"id"`
@@ -1389,6 +1231,13 @@ type WebhookEventLoadMatch struct {
 	WebhookId string `json:"webhook_id"`
 }
 
+// WebhookEventListMatch is the typed request payload for WebhookEvent.ListTyped.
+type WebhookEventListMatch struct {
+	WebhookId string `json:"webhook_id"`
+	After *string `json:"after,omitempty"`
+	Limit *int `json:"limit,omitempty"`
+}
+
 // WebhookEventCreateData is the typed request payload for WebhookEvent.CreateTyped.
 type WebhookEventCreateData struct {
 	EventId string `json:"event_id"`
@@ -1400,6 +1249,18 @@ type WebhookEventCreateData struct {
 	Payload *map[string]any `json:"payload,omitempty"`
 	Status *string `json:"status,omitempty"`
 	Type *string `json:"type,omitempty"`
+}
+
+// WebhookEventAttempt is the typed data model for the webhook_event_attempt entity.
+type WebhookEventAttempt struct {
+}
+
+// WebhookEventAttemptListMatch is the typed request payload for WebhookEventAttempt.ListTyped.
+type WebhookEventAttemptListMatch struct {
+	EventId string `json:"event_id"`
+	WebhookId string `json:"webhook_id"`
+	After *string `json:"after,omitempty"`
+	Limit *int `json:"limit,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

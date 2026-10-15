@@ -6,9 +6,9 @@ import (
 	"regexp"
 	"strings"
 
-	vs "github.com/voxgig-sdk/resend-sdk/go/utility/struct"
+	vs "github.com/mateen-ali12/resend-sdk/go/utility/struct"
 
-	"github.com/voxgig-sdk/resend-sdk/go/core"
+	"github.com/mateen-ali12/resend-sdk/go/core"
 )
 
 // The `body.<key>` form of an op's response transform: the mock wraps its

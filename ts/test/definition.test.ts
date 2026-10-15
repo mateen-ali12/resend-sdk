@@ -9,23 +9,12 @@ import { isControlSkipped } from './utility'
 // scheme names, and the definition's own response example.
 const PLAN: any[] = [
   {
-    "entity": "add_contact_to_segment_response_success",
-    "accessor": "AddContactToSegmentResponseSuccess",
+    "entity": "api_key",
+    "accessor": "ApiKey",
     "op": "create",
     "method": "POST",
-    "path": "/contacts/{contact_id}/segments/{segment_id}",
-    "args": [
-      {
-        "name": "contact_id",
-        "wire": "contact_id",
-        "value": "p1"
-      },
-      {
-        "name": "segment_id",
-        "wire": "segment_id",
-        "value": "p2"
-      }
-    ],
+    "path": "/api-keys",
+    "args": [],
     "select": {},
     "headers": [],
     "cookies": [],
@@ -43,11 +32,10 @@ const PLAN: any[] = [
         }
       ]
     ],
-    "status": 200,
+    "status": 201,
     "sample": {
-      "object": "contact_segment",
-      "contact_id": "x",
-      "segment_id": "x"
+      "id": "x",
+      "token": "x"
     },
     "idField": "id"
   },
@@ -146,6 +134,43 @@ const PLAN: any[] = [
       "object": "api_key",
       "id": "x",
       "deleted": true
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "api_key",
+    "accessor": "ApiKey",
+    "op": "update",
+    "method": "PATCH",
+    "path": "/api-keys/{api_key_id}",
+    "args": [
+      {
+        "name": "id",
+        "wire": "api_key_id",
+        "value": "p1"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "api_key",
+      "id": "x"
     },
     "idField": "id"
   },
@@ -254,6 +279,44 @@ const PLAN: any[] = [
       "object": "audience",
       "name": "Registered Users",
       "created_at": "2023-10-06 22:59:55.977+00"
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "audience",
+    "accessor": "Audience",
+    "op": "remove",
+    "method": "DELETE",
+    "path": "/audiences/{id}",
+    "args": [
+      {
+        "name": "id",
+        "wire": "id",
+        "value": "p1"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
+      "object": "audience",
+      "deleted": true
     },
     "idField": "id"
   },
@@ -565,71 +628,12 @@ const PLAN: any[] = [
   {
     "entity": "automation_run",
     "accessor": "AutomationRun",
-    "op": "load",
-    "method": "GET",
-    "path": "/automations/{automation_id}/runs/{run_id}",
-    "args": [
-      {
-        "name": "automation_id",
-        "wire": "automation_id",
-        "value": "p1"
-      },
-      {
-        "name": "id",
-        "wire": "run_id",
-        "value": "p2"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "automation_run",
-      "id": "x",
-      "status": "running",
-      "started_at": "2023-10-06 23:47:56.678+00",
-      "completed_at": "2023-10-06 23:47:56.678+00",
-      "created_at": "2023-10-06 23:47:56.678+00",
-      "steps": [
-        {
-          "key": "x",
-          "type": "trigger",
-          "status": "x",
-          "started_at": "2023-10-06 23:47:56.678+00",
-          "completed_at": "2023-10-06 23:47:56.678+00",
-          "output": {},
-          "error": {},
-          "created_at": "2023-10-06 23:47:56.678+00"
-        }
-      ]
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "automation_run_list_item",
-    "accessor": "AutomationRunListItem",
     "op": "list",
     "method": "GET",
     "path": "/automations/{automation_id}/runs",
-    "action": "runs",
     "args": [
       {
-        "name": "id",
+        "name": "automation_id",
         "wire": "automation_id",
         "value": "p1"
       }
@@ -695,47 +699,23 @@ const PLAN: any[] = [
     "idField": "id"
   },
   {
-    "entity": "batch_add_suppressions_response_success",
-    "accessor": "BatchAddSuppressionsResponseSuccess",
-    "op": "create",
-    "method": "POST",
-    "path": "/suppressions/batch/add",
-    "args": [],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
+    "entity": "automation_run",
+    "accessor": "AutomationRun",
+    "op": "load",
+    "method": "GET",
+    "path": "/automations/{automation_id}/runs/{run_id}",
+    "args": [
+      {
+        "name": "automation_id",
+        "wire": "automation_id",
+        "value": "p1"
+      },
+      {
+        "name": "id",
+        "wire": "run_id",
+        "value": "p2"
+      }
     ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 201,
-    "sample": {
-      "data": [
-        {
-          "object": "suppression",
-          "id": "e169aa45-1ecf-4183-9955-b1499d5701d3"
-        }
-      ]
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "batch_remove_suppressions_response_success",
-    "accessor": "BatchRemoveSuppressionsResponseSuccess",
-    "op": "create",
-    "method": "POST",
-    "path": "/suppressions/batch/remove",
-    "args": [],
     "select": {},
     "headers": [],
     "cookies": [],
@@ -755,11 +735,22 @@ const PLAN: any[] = [
     ],
     "status": 200,
     "sample": {
-      "data": [
+      "object": "automation_run",
+      "id": "x",
+      "status": "running",
+      "started_at": "2023-10-06 23:47:56.678+00",
+      "completed_at": "2023-10-06 23:47:56.678+00",
+      "created_at": "2023-10-06 23:47:56.678+00",
+      "steps": [
         {
-          "object": "suppression",
-          "id": "e169aa45-1ecf-4183-9955-b1499d5701d3",
-          "deleted": true
+          "key": "x",
+          "type": "trigger",
+          "status": "x",
+          "started_at": "2023-10-06 23:47:56.678+00",
+          "completed_at": "2023-10-06 23:47:56.678+00",
+          "output": {},
+          "error": {},
+          "created_at": "2023-10-06 23:47:56.678+00"
         }
       ]
     },
@@ -881,6 +872,37 @@ const PLAN: any[] = [
   {
     "entity": "broadcast",
     "accessor": "Broadcast",
+    "op": "create",
+    "method": "POST",
+    "path": "/broadcasts",
+    "args": [],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 201,
+    "sample": {
+      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
+      "object": "broadcast"
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "broadcast",
+    "accessor": "Broadcast",
     "op": "list",
     "method": "GET",
     "path": "/broadcasts",
@@ -992,6 +1014,238 @@ const PLAN: any[] = [
       "text": "Hello {{{FIRST_NAME|there}}}!",
       "html": "<p>Hello {{{FIRST_NAME|there}}}!</p>",
       "topic_id": "b6d24b8e-af0b-4c3c-be0c-359bbd97381e"
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "broadcast",
+    "accessor": "Broadcast",
+    "op": "remove",
+    "method": "DELETE",
+    "path": "/broadcasts/{id}",
+    "args": [
+      {
+        "name": "id",
+        "wire": "id",
+        "value": "p1"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
+      "object": "broadcast",
+      "deleted": true
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "broadcast",
+    "accessor": "Broadcast",
+    "op": "update",
+    "method": "PATCH",
+    "path": "/broadcasts/{id}",
+    "args": [
+      {
+        "name": "id",
+        "wire": "id",
+        "value": "p1"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
+      "object": "broadcast"
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "broadcast_clicked_link",
+    "accessor": "BroadcastClickedLink",
+    "op": "list",
+    "method": "GET",
+    "path": "/broadcasts/{id}/clicked-links",
+    "args": [
+      {
+        "name": "broadcast_id",
+        "wire": "id",
+        "value": "p1"
+      }
+    ],
+    "select": {
+      "after": "v1",
+      "before": "v1",
+      "limit": "v1"
+    },
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [
+      "limit",
+      "after",
+      "before"
+    ],
+    "queryArgs": [
+      {
+        "name": "after",
+        "wire": "after"
+      },
+      {
+        "name": "before",
+        "wire": "before"
+      },
+      {
+        "name": "limit",
+        "wire": "limit"
+      }
+    ],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "list",
+      "has_more": false,
+      "data": [
+        {
+          "id": "b2Zmc2V0OjA",
+          "url": "https://resend.com/pricing",
+          "clicks": 42,
+          "unique_clicks": 30
+        }
+      ]
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "broadcast_recipient",
+    "accessor": "BroadcastRecipient",
+    "op": "list",
+    "method": "GET",
+    "path": "/broadcasts/{id}/recipients",
+    "args": [
+      {
+        "name": "broadcast_id",
+        "wire": "id",
+        "value": "p1"
+      }
+    ],
+    "select": {
+      "type": "v1",
+      "after": "v1",
+      "before": "v1",
+      "bounce_type": "v1",
+      "email": "v1",
+      "limit": "v1"
+    },
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [
+      "type",
+      "email",
+      "bounce_type",
+      "limit",
+      "after",
+      "before"
+    ],
+    "queryArgs": [
+      {
+        "name": "after",
+        "wire": "after"
+      },
+      {
+        "name": "before",
+        "wire": "before"
+      },
+      {
+        "name": "bounce_type",
+        "wire": "bounce_type"
+      },
+      {
+        "name": "email",
+        "wire": "email"
+      },
+      {
+        "name": "limit",
+        "wire": "limit"
+      },
+      {
+        "name": "type",
+        "wire": "type"
+      }
+    ],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "list",
+      "has_more": false,
+      "data": [
+        {
+          "id": "b2Zmc2V0OjA",
+          "contact_id": "e169aa45-1ecf-4183-9955-b1499d5701d3",
+          "email": "steve.wozniak@gmail.com",
+          "count": 3,
+          "bounce_type": "permanent",
+          "clicked_links": [
+            {
+              "url": "https://resend.com/pricing",
+              "clicks": 2
+            }
+          ]
+        }
+      ]
     },
     "idField": "id"
   },
@@ -1132,8 +1386,83 @@ const PLAN: any[] = [
     "idField": "id"
   },
   {
-    "entity": "contact_import_response_success",
-    "accessor": "ContactImportResponseSuccess",
+    "entity": "contact",
+    "accessor": "Contact",
+    "op": "remove",
+    "method": "DELETE",
+    "path": "/contacts/{id}",
+    "args": [
+      {
+        "name": "id",
+        "wire": "id",
+        "value": "p1"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "contact",
+      "id": "520784e2-887d-4c25-b53c-4ad46ad38100",
+      "deleted": true
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "contact",
+    "accessor": "Contact",
+    "op": "update",
+    "method": "PATCH",
+    "path": "/contacts/{id}",
+    "args": [
+      {
+        "name": "id",
+        "wire": "id",
+        "value": "p1"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "contact",
+      "id": "479e3145-dd38-476b-932c-529ceb705947"
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "contact_import",
+    "accessor": "ContactImport",
     "op": "create",
     "method": "POST",
     "path": "/contacts/imports",
@@ -1163,8 +1492,8 @@ const PLAN: any[] = [
     "idField": "id"
   },
   {
-    "entity": "contact_import_response_success",
-    "accessor": "ContactImportResponseSuccess",
+    "entity": "contact_import",
+    "accessor": "ContactImport",
     "op": "list",
     "method": "GET",
     "path": "/contacts/imports",
@@ -1237,8 +1566,8 @@ const PLAN: any[] = [
     "idField": "id"
   },
   {
-    "entity": "contact_import_response_success",
-    "accessor": "ContactImportResponseSuccess",
+    "entity": "contact_import",
+    "accessor": "ContactImport",
     "op": "load",
     "method": "GET",
     "path": "/contacts/imports/{id}",
@@ -1417,15 +1746,241 @@ const PLAN: any[] = [
     "idField": "id"
   },
   {
-    "entity": "contact_topics_response_success",
-    "accessor": "ContactTopicsResponseSuccess",
-    "op": "list",
-    "method": "GET",
-    "path": "/contacts/{contact_id}/topics",
-    "action": "topics",
+    "entity": "contact_property",
+    "accessor": "ContactProperty",
+    "op": "remove",
+    "method": "DELETE",
+    "path": "/contact-properties/{id}",
     "args": [
       {
         "name": "id",
+        "wire": "id",
+        "value": "p1"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
+      "object": "contact_property",
+      "deleted": true
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "contact_property",
+    "accessor": "ContactProperty",
+    "op": "update",
+    "method": "PATCH",
+    "path": "/contact-properties/{id}",
+    "args": [
+      {
+        "name": "id",
+        "wire": "id",
+        "value": "p1"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
+      "object": "contact_property"
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "contact_segment",
+    "accessor": "ContactSegment",
+    "op": "create",
+    "method": "POST",
+    "path": "/contacts/{contact_id}/segments/{segment_id}",
+    "args": [
+      {
+        "name": "contact_id",
+        "wire": "contact_id",
+        "value": "p1"
+      },
+      {
+        "name": "id",
+        "wire": "segment_id",
+        "value": "p2"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "contact_segment",
+      "contact_id": "x",
+      "segment_id": "x"
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "contact_segment",
+    "accessor": "ContactSegment",
+    "op": "list",
+    "method": "GET",
+    "path": "/contacts/{contact_id}/segments",
+    "args": [
+      {
+        "name": "contact_id",
+        "wire": "contact_id",
+        "value": "p1"
+      }
+    ],
+    "select": {
+      "after": "v1",
+      "before": "v1",
+      "limit": "v1"
+    },
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [
+      "limit",
+      "after",
+      "before"
+    ],
+    "queryArgs": [
+      {
+        "name": "after",
+        "wire": "after"
+      },
+      {
+        "name": "before",
+        "wire": "before"
+      },
+      {
+        "name": "limit",
+        "wire": "limit"
+      }
+    ],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "list",
+      "has_more": true,
+      "data": [
+        {
+          "id": "x",
+          "name": "x",
+          "created_at": "2023-10-06 23:47:56.678+00"
+        }
+      ]
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "contact_segment",
+    "accessor": "ContactSegment",
+    "op": "remove",
+    "method": "DELETE",
+    "path": "/contacts/{contact_id}/segments/{segment_id}",
+    "args": [
+      {
+        "name": "contact_id",
+        "wire": "contact_id",
+        "value": "p1"
+      },
+      {
+        "name": "id",
+        "wire": "segment_id",
+        "value": "p2"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "contact_segment",
+      "contact_id": "x",
+      "segment_id": "x",
+      "deleted": true
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "contact_topic",
+    "accessor": "ContactTopic",
+    "op": "list",
+    "method": "GET",
+    "path": "/contacts/{contact_id}/topics",
+    "args": [
+      {
+        "name": "contact_id",
         "wire": "contact_id",
         "value": "p1"
       }
@@ -1484,160 +2039,15 @@ const PLAN: any[] = [
     "idField": "id"
   },
   {
-    "entity": "create_api_key",
-    "accessor": "CreateApiKey",
-    "op": "create",
-    "method": "POST",
-    "path": "/api-keys",
-    "args": [],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 201,
-    "sample": {
-      "id": "x",
-      "token": "x"
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "create_batch_email",
-    "accessor": "CreateBatchEmail",
-    "op": "create",
-    "method": "POST",
-    "path": "/emails/batch",
-    "args": [],
-    "select": {},
-    "headers": [
-      {
-        "name": "idempotency_key",
-        "wire": "Idempotency-Key",
-        "value": "h1"
-      }
-    ],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "data": [
-        {
-          "id": "x"
-        }
-      ]
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "create_broadcast_response_success",
-    "accessor": "CreateBroadcastResponseSuccess",
-    "op": "create",
-    "method": "POST",
-    "path": "/broadcasts",
-    "args": [],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 201,
-    "sample": {
-      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
-      "object": "broadcast"
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "create_inbox_draft_response_success",
-    "accessor": "CreateInboxDraftResponseSuccess",
-    "op": "create",
-    "method": "POST",
-    "path": "/inboxes/{inbox_id}/drafts",
+    "entity": "contact_topic",
+    "accessor": "ContactTopic",
+    "op": "update",
+    "method": "PATCH",
+    "path": "/contacts/{contact_id}/topics",
     "args": [
       {
-        "name": "inbox_id",
-        "wire": "inbox_id",
-        "value": "p1"
-      }
-    ],
-    "select": {},
-    "headers": [
-      {
-        "name": "idempotency_key",
-        "wire": "Idempotency-Key",
-        "value": "h1"
-      }
-    ],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "inbox_draft",
-      "id": "c3a1e8b4-2d5f-4a7c-9e10-6b8d7f5a4c32"
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "create_inbox_label_response_success",
-    "accessor": "CreateInboxLabelResponseSuccess",
-    "op": "create",
-    "method": "POST",
-    "path": "/inboxes/{inbox_id}/labels",
-    "args": [
-      {
-        "name": "inbox_id",
-        "wire": "inbox_id",
+        "name": "contact_id",
+        "wire": "contact_id",
         "value": "p1"
       }
     ],
@@ -1658,10 +2068,16 @@ const PLAN: any[] = [
         }
       ]
     ],
-    "status": 201,
+    "status": 200,
     "sample": {
-      "object": "inbox_label",
-      "id": "7f9c1d2e-4a6b-4c3d-8e15-9b0a7c6d5e34"
+      "object": "contact_topics",
+      "contact_id": "x",
+      "topics": [
+        {
+          "id": "x",
+          "subscription": "opt_in"
+        }
+      ]
     },
     "idField": "id"
   },
@@ -1916,6 +2332,43 @@ const PLAN: any[] = [
       "object": "domain",
       "id": "d91cd9bd-1176-453e-8fc1-35364d380206",
       "deleted": true
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "domain",
+    "accessor": "Domain",
+    "op": "update",
+    "method": "PATCH",
+    "path": "/domains/{domain_id}",
+    "args": [
+      {
+        "name": "id",
+        "wire": "domain_id",
+        "value": "p1"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "id": "d91cd9bd-1176-453e-8fc1-35364d380206",
+      "object": "domain"
     },
     "idField": "id"
   },
@@ -2332,6 +2785,201 @@ const PLAN: any[] = [
     "idField": "id"
   },
   {
+    "entity": "email",
+    "accessor": "Email",
+    "op": "update",
+    "method": "PATCH",
+    "path": "/emails/{email_id}",
+    "args": [
+      {
+        "name": "id",
+        "wire": "email_id",
+        "value": "p1"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "scheduled_at": "x"
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "email_attachment",
+    "accessor": "EmailAttachment",
+    "op": "list",
+    "method": "GET",
+    "path": "/emails/{email_id}/attachments",
+    "args": [
+      {
+        "name": "email_id",
+        "wire": "email_id",
+        "value": "p1"
+      }
+    ],
+    "select": {
+      "after": "v1",
+      "before": "v1",
+      "limit": "v1"
+    },
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [
+      "limit",
+      "after",
+      "before"
+    ],
+    "queryArgs": [
+      {
+        "name": "after",
+        "wire": "after"
+      },
+      {
+        "name": "before",
+        "wire": "before"
+      },
+      {
+        "name": "limit",
+        "wire": "limit"
+      }
+    ],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "list",
+      "has_more": false,
+      "data": [
+        {
+          "id": "660e8400-e29b-41d4-a716-446655440000",
+          "filename": "document.pdf",
+          "content_type": "application/pdf",
+          "content_id": "img001",
+          "content_disposition": "attachment",
+          "download_url": "https://cloudfront.example.com/path?Signature=...",
+          "expires_at": "2024-10-27T18:30:00.000Z",
+          "size": 2048
+        }
+      ]
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "email_attachment",
+    "accessor": "EmailAttachment",
+    "op": "load",
+    "method": "GET",
+    "path": "/emails/{email_id}/attachments/{attachment_id}",
+    "args": [
+      {
+        "name": "email_id",
+        "wire": "email_id",
+        "value": "p1"
+      },
+      {
+        "name": "id",
+        "wire": "attachment_id",
+        "value": "p2"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "attachment",
+      "id": "660e8400-e29b-41d4-a716-446655440000",
+      "filename": "document.pdf",
+      "content_type": "application/pdf",
+      "content_id": "img001",
+      "content_disposition": "attachment",
+      "download_url": "https://cloudfront.example.com/path?Signature=...",
+      "expires_at": "2024-10-27T18:30:00.000Z",
+      "size": 2048
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "email_batch",
+    "accessor": "EmailBatch",
+    "op": "create",
+    "method": "POST",
+    "path": "/emails/batch",
+    "args": [],
+    "select": {},
+    "headers": [
+      {
+        "name": "idempotency_key",
+        "wire": "Idempotency-Key",
+        "value": "h1"
+      }
+    ],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "data": [
+        {
+          "id": "x"
+        }
+      ]
+    },
+    "idField": "id"
+  },
+  {
     "entity": "emails_metric",
     "accessor": "EmailsMetric",
     "op": "list",
@@ -2604,6 +3252,81 @@ const PLAN: any[] = [
     "idField": "id"
   },
   {
+    "entity": "event",
+    "accessor": "Event",
+    "op": "remove",
+    "method": "DELETE",
+    "path": "/events/{identifier}",
+    "args": [
+      {
+        "name": "id",
+        "wire": "identifier",
+        "value": "p1"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "event",
+      "id": "x",
+      "deleted": true
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "event",
+    "accessor": "Event",
+    "op": "update",
+    "method": "PATCH",
+    "path": "/events/{identifier}",
+    "args": [
+      {
+        "name": "id",
+        "wire": "identifier",
+        "value": "p1"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "event",
+      "id": "x"
+    },
+    "idField": "id"
+  },
+  {
     "entity": "inbox",
     "accessor": "Inbox",
     "op": "create",
@@ -2745,15 +3468,14 @@ const PLAN: any[] = [
   {
     "entity": "inbox",
     "accessor": "Inbox",
-    "op": "update",
-    "method": "PATCH",
-    "path": "/inboxes/{inbox_id}/agent",
-    "action": "agent",
+    "op": "remove",
+    "method": "DELETE",
+    "path": "/inboxes/{inbox_id}",
     "args": [
       {
         "name": "id",
         "wire": "inbox_id",
-        "value": "p1"
+        "value": "b3e2b2b6-3f0e-4c8e-9ad3-2f43a1e2c7f1"
       }
     ],
     "select": {},
@@ -2775,21 +3497,58 @@ const PLAN: any[] = [
     ],
     "status": 200,
     "sample": {
-      "object": "inbox_agent",
-      "id": "a1f84a4e-6f2b-4f0a-9c1d-8a2e5b3c7d90"
+      "object": "inbox",
+      "id": "b3e2b2b6-3f0e-4c8e-9ad3-2f43a1e2c7f1",
+      "deleted": true
     },
     "idField": "id"
   },
   {
-    "entity": "inbox_agent_response_success",
-    "accessor": "InboxAgentResponseSuccess",
-    "op": "list",
-    "method": "GET",
-    "path": "/inboxes/{inbox_id}/agent",
-    "action": "agent",
+    "entity": "inbox",
+    "accessor": "Inbox",
+    "op": "update",
+    "method": "PATCH",
+    "path": "/inboxes/{inbox_id}",
     "args": [
       {
         "name": "id",
+        "wire": "inbox_id",
+        "value": "b3e2b2b6-3f0e-4c8e-9ad3-2f43a1e2c7f1"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "inbox",
+      "id": "b3e2b2b6-3f0e-4c8e-9ad3-2f43a1e2c7f1"
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "inbox_agent",
+    "accessor": "InboxAgent",
+    "op": "load",
+    "method": "GET",
+    "path": "/inboxes/{inbox_id}/agent",
+    "args": [
+      {
+        "name": "inbox_id",
         "wire": "inbox_id",
         "value": "p1"
       }
@@ -2824,15 +3583,142 @@ const PLAN: any[] = [
     "idField": "id"
   },
   {
-    "entity": "inbox_draft_list_item",
-    "accessor": "InboxDraftListItem",
-    "op": "list",
-    "method": "GET",
-    "path": "/inboxes/{inbox_id}/drafts",
-    "action": "drafts",
+    "entity": "inbox_agent",
+    "accessor": "InboxAgent",
+    "op": "update",
+    "method": "PATCH",
+    "path": "/inboxes/{inbox_id}/agent",
+    "args": [
+      {
+        "name": "inbox_id",
+        "wire": "inbox_id",
+        "value": "p1"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "inbox_agent",
+      "id": "a1f84a4e-6f2b-4f0a-9c1d-8a2e5b3c7d90"
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "inbox_draft",
+    "accessor": "InboxDraft",
+    "op": "create",
+    "method": "POST",
+    "path": "/inboxes/{inbox_id}/drafts/{draft_id}/send",
+    "action": "send",
     "args": [
       {
         "name": "id",
+        "wire": "draft_id",
+        "value": "p1"
+      },
+      {
+        "name": "inbox_id",
+        "wire": "inbox_id",
+        "value": "p2"
+      }
+    ],
+    "select": {},
+    "headers": [
+      {
+        "name": "idempotency_key",
+        "wire": "Idempotency-Key",
+        "value": "h1"
+      }
+    ],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "id": "6a0c8e58-3d9e-4f7a-8b14-2e3f4a5b6c71"
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "inbox_draft",
+    "accessor": "InboxDraft",
+    "op": "create",
+    "method": "POST",
+    "path": "/inboxes/{inbox_id}/drafts",
+    "args": [
+      {
+        "name": "inbox_id",
+        "wire": "inbox_id",
+        "value": "p1"
+      }
+    ],
+    "select": {},
+    "headers": [
+      {
+        "name": "idempotency_key",
+        "wire": "Idempotency-Key",
+        "value": "h1"
+      }
+    ],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "inbox_draft",
+      "id": "c3a1e8b4-2d5f-4a7c-9e10-6b8d7f5a4c32"
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "inbox_draft",
+    "accessor": "InboxDraft",
+    "op": "list",
+    "method": "GET",
+    "path": "/inboxes/{inbox_id}/drafts",
+    "args": [
+      {
+        "name": "inbox_id",
         "wire": "inbox_id",
         "value": "p1"
       }
@@ -2907,15 +3793,14 @@ const PLAN: any[] = [
     "idField": "id"
   },
   {
-    "entity": "inbox_draft_response_success",
-    "accessor": "InboxDraftResponseSuccess",
-    "op": "create",
-    "method": "POST",
-    "path": "/inboxes/{inbox_id}/drafts/{draft_id}/send",
-    "action": "send",
+    "entity": "inbox_draft",
+    "accessor": "InboxDraft",
+    "op": "load",
+    "method": "GET",
+    "path": "/inboxes/{inbox_id}/drafts/{draft_id}",
     "args": [
       {
-        "name": "draft_id",
+        "name": "id",
         "wire": "draft_id",
         "value": "p1"
       },
@@ -2926,13 +3811,7 @@ const PLAN: any[] = [
       }
     ],
     "select": {},
-    "headers": [
-      {
-        "name": "idempotency_key",
-        "wire": "Idempotency-Key",
-        "value": "h1"
-      }
-    ],
+    "headers": [],
     "cookies": [],
     "responseMedia": [
       "application/json"
@@ -2950,19 +3829,85 @@ const PLAN: any[] = [
     ],
     "status": 200,
     "sample": {
-      "id": "6a0c8e58-3d9e-4f7a-8b14-2e3f4a5b6c71"
+      "object": "inbox_draft",
+      "id": "c3a1e8b4-2d5f-4a7c-9e10-6b8d7f5a4c32",
+      "type": "standalone",
+      "to": [
+        "ada@example.org"
+      ],
+      "cc": [],
+      "bcc": [],
+      "subject": "Refund for order 1041",
+      "html": "<p>Refund issued for order 1041.</p>",
+      "text": "Refund issued for order 1041.",
+      "thread_id": null,
+      "reply_to_email_id": null,
+      "email_id": null,
+      "created_at": "2026-08-05T14:12:04.110Z",
+      "updated_at": "2026-08-05T14:12:04.110Z",
+      "attachments": [
+        {
+          "id": "5c1e9d2a-7b3f-4e8a-9c6d-2f0a1b3c4d5e",
+          "filename": "receipt.pdf",
+          "content_type": "application/pdf",
+          "size": 20841
+        }
+      ]
     },
     "idField": "id"
   },
   {
-    "entity": "inbox_draft_response_success",
-    "accessor": "InboxDraftResponseSuccess",
-    "op": "load",
-    "method": "GET",
+    "entity": "inbox_draft",
+    "accessor": "InboxDraft",
+    "op": "remove",
+    "method": "DELETE",
     "path": "/inboxes/{inbox_id}/drafts/{draft_id}",
     "args": [
       {
-        "name": "draft_id",
+        "name": "id",
+        "wire": "draft_id",
+        "value": "p1"
+      },
+      {
+        "name": "inbox_id",
+        "wire": "inbox_id",
+        "value": "p2"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "inbox_draft",
+      "id": "c3a1e8b4-2d5f-4a7c-9e10-6b8d7f5a4c32",
+      "deleted": true
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "inbox_draft",
+    "accessor": "InboxDraft",
+    "op": "update",
+    "method": "PATCH",
+    "path": "/inboxes/{inbox_id}/drafts/{draft_id}",
+    "args": [
+      {
+        "name": "id",
         "wire": "draft_id",
         "value": "p1"
       },
@@ -3021,6 +3966,43 @@ const PLAN: any[] = [
   {
     "entity": "inbox_label",
     "accessor": "InboxLabel",
+    "op": "create",
+    "method": "POST",
+    "path": "/inboxes/{inbox_id}/labels",
+    "args": [
+      {
+        "name": "id",
+        "wire": "inbox_id",
+        "value": "p1"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 201,
+    "sample": {
+      "object": "inbox_label",
+      "id": "7f9c1d2e-4a6b-4c3d-8e15-9b0a7c6d5e34"
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "inbox_label",
+    "accessor": "InboxLabel",
     "op": "list",
     "method": "GET",
     "path": "/inboxes/{inbox_id}/labels",
@@ -3059,6 +4041,91 @@ const PLAN: any[] = [
           "created_at": "2026-08-05T14:07:42.881Z"
         }
       ]
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "inbox_label",
+    "accessor": "InboxLabel",
+    "op": "remove",
+    "method": "DELETE",
+    "path": "/inboxes/{inbox_id}/labels/{label_id}",
+    "args": [
+      {
+        "name": "id",
+        "wire": "label_id",
+        "value": "p1"
+      },
+      {
+        "name": "inbox_id",
+        "wire": "inbox_id",
+        "value": "p2"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "inbox_label",
+      "id": "7f9c1d2e-4a6b-4c3d-8e15-9b0a7c6d5e34",
+      "deleted": true
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "inbox_label",
+    "accessor": "InboxLabel",
+    "op": "update",
+    "method": "PATCH",
+    "path": "/inboxes/{inbox_id}/labels/{label_id}",
+    "args": [
+      {
+        "name": "id",
+        "wire": "label_id",
+        "value": "p1"
+      },
+      {
+        "name": "inbox_id",
+        "wire": "inbox_id",
+        "value": "p2"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "inbox_label",
+      "id": "7f9c1d2e-4a6b-4c3d-8e15-9b0a7c6d5e34"
     },
     "idField": "id"
   },
@@ -3322,6 +4389,259 @@ const PLAN: any[] = [
     "idField": "id"
   },
   {
+    "entity": "inbox_thread",
+    "accessor": "InboxThread",
+    "op": "load",
+    "method": "GET",
+    "path": "/inboxes/{inbox_id}/threads/{thread_id}",
+    "args": [
+      {
+        "name": "id",
+        "wire": "thread_id",
+        "value": "p1"
+      },
+      {
+        "name": "inbox_id",
+        "wire": "inbox_id",
+        "value": "p2"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "inbox_thread",
+      "id": "4d8e2a1c-9b3f-4c6d-8a21-3e5f7c9c0d12",
+      "subject": "Refund for order 1041",
+      "folder": "inbox",
+      "labels": [
+        {
+          "id": "7f9c1d2e-4a6b-4c3d-8e15-9b0a7c6d5e34",
+          "name": "Urgent",
+          "color": "#E93D82"
+        }
+      ],
+      "read": false
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "inbox_thread",
+    "accessor": "InboxThread",
+    "op": "remove",
+    "method": "DELETE",
+    "path": "/inboxes/{inbox_id}/threads/{thread_id}",
+    "args": [
+      {
+        "name": "id",
+        "wire": "thread_id",
+        "value": "p1"
+      },
+      {
+        "name": "inbox_id",
+        "wire": "inbox_id",
+        "value": "p2"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "inbox_thread",
+      "id": "4d8e2a1c-9b3f-4c6d-8a21-3e5f7c9c0d12",
+      "deleted": true
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "inbox_thread",
+    "accessor": "InboxThread",
+    "op": "update",
+    "method": "PATCH",
+    "path": "/inboxes/{inbox_id}/threads/{thread_id}",
+    "args": [
+      {
+        "name": "id",
+        "wire": "thread_id",
+        "value": "p1"
+      },
+      {
+        "name": "inbox_id",
+        "wire": "inbox_id",
+        "value": "p2"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "inbox_thread",
+      "id": "4d8e2a1c-9b3f-4c6d-8a21-3e5f7c9c0d12",
+      "subject": "Refund for order 1041",
+      "folder": "inbox",
+      "labels": [
+        {
+          "id": "7f9c1d2e-4a6b-4c3d-8e15-9b0a7c6d5e34",
+          "name": "Urgent",
+          "color": "#E93D82"
+        }
+      ],
+      "read": false
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "inbox_thread_email",
+    "accessor": "InboxThreadEmail",
+    "op": "create",
+    "method": "POST",
+    "path": "/inboxes/{inbox_id}/threads/{thread_id}/emails/{email_id}/forward",
+    "action": "forward",
+    "args": [
+      {
+        "name": "id",
+        "wire": "email_id",
+        "value": "p1"
+      },
+      {
+        "name": "inbox_id",
+        "wire": "inbox_id",
+        "value": "p2"
+      },
+      {
+        "name": "thread_id",
+        "wire": "thread_id",
+        "value": "p3"
+      }
+    ],
+    "select": {},
+    "headers": [
+      {
+        "name": "idempotency_key",
+        "wire": "Idempotency-Key",
+        "value": "h1"
+      }
+    ],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "id": "6a0c8e58-3d9e-4f7a-8b14-2e3f4a5b6c71"
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "inbox_thread_email",
+    "accessor": "InboxThreadEmail",
+    "op": "create",
+    "method": "POST",
+    "path": "/inboxes/{inbox_id}/threads/{thread_id}/emails/{email_id}/reply",
+    "action": "reply",
+    "args": [
+      {
+        "name": "id",
+        "wire": "email_id",
+        "value": "p1"
+      },
+      {
+        "name": "inbox_id",
+        "wire": "inbox_id",
+        "value": "p2"
+      },
+      {
+        "name": "thread_id",
+        "wire": "thread_id",
+        "value": "p3"
+      }
+    ],
+    "select": {},
+    "headers": [
+      {
+        "name": "idempotency_key",
+        "wire": "Idempotency-Key",
+        "value": "h1"
+      }
+    ],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "id": "6a0c8e58-3d9e-4f7a-8b14-2e3f4a5b6c71"
+    },
+    "idField": "id"
+  },
+  {
     "entity": "inbox_thread_email",
     "accessor": "InboxThreadEmail",
     "op": "list",
@@ -3413,120 +4733,14 @@ const PLAN: any[] = [
     "idField": "id"
   },
   {
-    "entity": "inbox_thread_email_response_success",
-    "accessor": "InboxThreadEmailResponseSuccess",
-    "op": "create",
-    "method": "POST",
-    "path": "/inboxes/{inbox_id}/threads/{thread_id}/emails/{email_id}/forward",
-    "action": "forward",
-    "args": [
-      {
-        "name": "email_id",
-        "wire": "email_id",
-        "value": "p1"
-      },
-      {
-        "name": "inbox_id",
-        "wire": "inbox_id",
-        "value": "p2"
-      },
-      {
-        "name": "thread_id",
-        "wire": "thread_id",
-        "value": "p3"
-      }
-    ],
-    "select": {},
-    "headers": [
-      {
-        "name": "idempotency_key",
-        "wire": "Idempotency-Key",
-        "value": "h1"
-      }
-    ],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "id": "6a0c8e58-3d9e-4f7a-8b14-2e3f4a5b6c71"
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "inbox_thread_email_response_success",
-    "accessor": "InboxThreadEmailResponseSuccess",
-    "op": "create",
-    "method": "POST",
-    "path": "/inboxes/{inbox_id}/threads/{thread_id}/emails/{email_id}/reply",
-    "action": "reply",
-    "args": [
-      {
-        "name": "email_id",
-        "wire": "email_id",
-        "value": "p1"
-      },
-      {
-        "name": "inbox_id",
-        "wire": "inbox_id",
-        "value": "p2"
-      },
-      {
-        "name": "thread_id",
-        "wire": "thread_id",
-        "value": "p3"
-      }
-    ],
-    "select": {},
-    "headers": [
-      {
-        "name": "idempotency_key",
-        "wire": "Idempotency-Key",
-        "value": "h1"
-      }
-    ],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "id": "6a0c8e58-3d9e-4f7a-8b14-2e3f4a5b6c71"
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "inbox_thread_email_response_success",
-    "accessor": "InboxThreadEmailResponseSuccess",
+    "entity": "inbox_thread_email",
+    "accessor": "InboxThreadEmail",
     "op": "load",
     "method": "GET",
     "path": "/inboxes/{inbox_id}/threads/{thread_id}/emails/{email_id}",
     "args": [
       {
-        "name": "email_id",
+        "name": "id",
         "wire": "email_id",
         "value": "p1"
       },
@@ -3584,613 +4798,6 @@ const PLAN: any[] = [
       ],
       "read": false,
       "received_at": "2026-08-05T14:03:11.229Z"
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "inbox_thread_response_success",
-    "accessor": "InboxThreadResponseSuccess",
-    "op": "load",
-    "method": "GET",
-    "path": "/inboxes/{inbox_id}/threads/{thread_id}",
-    "args": [
-      {
-        "name": "inbox_id",
-        "wire": "inbox_id",
-        "value": "p1"
-      },
-      {
-        "name": "thread_id",
-        "wire": "thread_id",
-        "value": "p2"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "inbox_thread",
-      "id": "4d8e2a1c-9b3f-4c6d-8a21-3e5f7c9c0d12",
-      "subject": "Refund for order 1041",
-      "folder": "inbox",
-      "labels": [
-        {
-          "id": "7f9c1d2e-4a6b-4c3d-8e15-9b0a7c6d5e34",
-          "name": "Urgent",
-          "color": "#E93D82"
-        }
-      ],
-      "read": false
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "list_attachment",
-    "accessor": "ListAttachment",
-    "op": "list",
-    "method": "GET",
-    "path": "/emails/{email_id}/attachments",
-    "args": [
-      {
-        "name": "email_id",
-        "wire": "email_id",
-        "value": "p1"
-      }
-    ],
-    "select": {
-      "after": "v1",
-      "before": "v1",
-      "limit": "v1"
-    },
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [
-      "limit",
-      "after",
-      "before"
-    ],
-    "queryArgs": [
-      {
-        "name": "after",
-        "wire": "after"
-      },
-      {
-        "name": "before",
-        "wire": "before"
-      },
-      {
-        "name": "limit",
-        "wire": "limit"
-      }
-    ],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "list",
-      "has_more": false,
-      "data": [
-        {
-          "id": "660e8400-e29b-41d4-a716-446655440000",
-          "filename": "document.pdf",
-          "content_type": "application/pdf",
-          "content_id": "img001",
-          "content_disposition": "attachment",
-          "download_url": "https://cloudfront.example.com/path?Signature=...",
-          "expires_at": "2024-10-27T18:30:00.000Z",
-          "size": 2048
-        }
-      ]
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "list_attachment",
-    "accessor": "ListAttachment",
-    "op": "list",
-    "method": "GET",
-    "path": "/emails/receiving/{email_id}/attachments",
-    "args": [
-      {
-        "name": "receiving_id",
-        "wire": "email_id",
-        "value": "p1"
-      }
-    ],
-    "select": {
-      "after": "v1",
-      "before": "v1",
-      "limit": "v1"
-    },
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [
-      "limit",
-      "after",
-      "before"
-    ],
-    "queryArgs": [
-      {
-        "name": "after",
-        "wire": "after"
-      },
-      {
-        "name": "before",
-        "wire": "before"
-      },
-      {
-        "name": "limit",
-        "wire": "limit"
-      }
-    ],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "list",
-      "has_more": false,
-      "data": [
-        {
-          "id": "660e8400-e29b-41d4-a716-446655440000",
-          "filename": "document.pdf",
-          "content_type": "application/pdf",
-          "content_id": "img001",
-          "content_disposition": "attachment",
-          "download_url": "https://cloudfront.example.com/path?Signature=...",
-          "expires_at": "2024-10-27T18:30:00.000Z",
-          "size": 2048
-        }
-      ]
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "list_broadcast_clicked_links_response_success",
-    "accessor": "ListBroadcastClickedLinksResponseSuccess",
-    "op": "list",
-    "method": "GET",
-    "path": "/broadcasts/{id}/clicked-links",
-    "args": [
-      {
-        "name": "broadcast_id",
-        "wire": "id",
-        "value": "p1"
-      }
-    ],
-    "select": {
-      "after": "v1",
-      "before": "v1",
-      "limit": "v1"
-    },
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [
-      "limit",
-      "after",
-      "before"
-    ],
-    "queryArgs": [
-      {
-        "name": "after",
-        "wire": "after"
-      },
-      {
-        "name": "before",
-        "wire": "before"
-      },
-      {
-        "name": "limit",
-        "wire": "limit"
-      }
-    ],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "list",
-      "has_more": false,
-      "data": [
-        {
-          "id": "b2Zmc2V0OjA",
-          "url": "https://resend.com/pricing",
-          "clicks": 42,
-          "unique_clicks": 30
-        }
-      ]
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "list_broadcast_recipients_response_success",
-    "accessor": "ListBroadcastRecipientsResponseSuccess",
-    "op": "list",
-    "method": "GET",
-    "path": "/broadcasts/{id}/recipients",
-    "args": [
-      {
-        "name": "broadcast_id",
-        "wire": "id",
-        "value": "p1"
-      }
-    ],
-    "select": {
-      "type": "v1",
-      "after": "v1",
-      "before": "v1",
-      "bounce_type": "v1",
-      "email": "v1",
-      "limit": "v1"
-    },
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [
-      "type",
-      "email",
-      "bounce_type",
-      "limit",
-      "after",
-      "before"
-    ],
-    "queryArgs": [
-      {
-        "name": "after",
-        "wire": "after"
-      },
-      {
-        "name": "before",
-        "wire": "before"
-      },
-      {
-        "name": "bounce_type",
-        "wire": "bounce_type"
-      },
-      {
-        "name": "email",
-        "wire": "email"
-      },
-      {
-        "name": "limit",
-        "wire": "limit"
-      },
-      {
-        "name": "type",
-        "wire": "type"
-      }
-    ],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "list",
-      "has_more": false,
-      "data": [
-        {
-          "id": "b2Zmc2V0OjA",
-          "contact_id": "e169aa45-1ecf-4183-9955-b1499d5701d3",
-          "email": "steve.wozniak@gmail.com",
-          "count": 3,
-          "bounce_type": "permanent",
-          "clicked_links": [
-            {
-              "url": "https://resend.com/pricing",
-              "clicks": 2
-            }
-          ]
-        }
-      ]
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "list_contact_segments_response_success",
-    "accessor": "ListContactSegmentsResponseSuccess",
-    "op": "list",
-    "method": "GET",
-    "path": "/contacts/{contact_id}/segments",
-    "args": [
-      {
-        "name": "contact_id",
-        "wire": "contact_id",
-        "value": "p1"
-      }
-    ],
-    "select": {
-      "after": "v1",
-      "before": "v1",
-      "limit": "v1"
-    },
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [
-      "limit",
-      "after",
-      "before"
-    ],
-    "queryArgs": [
-      {
-        "name": "after",
-        "wire": "after"
-      },
-      {
-        "name": "before",
-        "wire": "before"
-      },
-      {
-        "name": "limit",
-        "wire": "limit"
-      }
-    ],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "list",
-      "has_more": true,
-      "data": [
-        {
-          "id": "x",
-          "name": "x",
-          "created_at": "2023-10-06 23:47:56.678+00"
-        }
-      ]
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "list_contacts_response_success",
-    "accessor": "ListContactsResponseSuccess",
-    "op": "list",
-    "method": "GET",
-    "path": "/segments/{id}/contacts",
-    "args": [
-      {
-        "name": "segment_id",
-        "wire": "id",
-        "value": "p1"
-      }
-    ],
-    "select": {
-      "after": "v1",
-      "before": "v1",
-      "limit": "v1"
-    },
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [
-      "limit",
-      "after",
-      "before"
-    ],
-    "queryArgs": [
-      {
-        "name": "after",
-        "wire": "after"
-      },
-      {
-        "name": "before",
-        "wire": "before"
-      },
-      {
-        "name": "limit",
-        "wire": "limit"
-      }
-    ],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "list",
-      "has_more": false,
-      "data": [
-        {
-          "id": "e169aa45-1ecf-4183-9955-b1499d5701d3",
-          "email": "steve.wozniak@gmail.com",
-          "first_name": "Steve",
-          "last_name": "Wozniak",
-          "created_at": "2023-10-06 23:47:56.678+00",
-          "unsubscribed": false
-        }
-      ]
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "list_webhook_event",
-    "accessor": "ListWebhookEvent",
-    "op": "list",
-    "method": "GET",
-    "path": "/webhooks/{webhook_id}/events",
-    "args": [
-      {
-        "name": "webhook_id",
-        "wire": "webhook_id",
-        "value": "p1"
-      }
-    ],
-    "select": {
-      "after": "v1",
-      "limit": "v1"
-    },
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [
-      "limit",
-      "after"
-    ],
-    "queryArgs": [
-      {
-        "name": "after",
-        "wire": "after"
-      },
-      {
-        "name": "limit",
-        "wire": "limit"
-      }
-    ],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "list",
-      "has_more": false,
-      "data": [
-        {
-          "id": "msg_1srOrx2ZWZBpBUvZwXKQmoEYga2",
-          "type": "email.sent",
-          "created_at": "2026-08-22T15:28:00.000Z",
-          "status": "success"
-        }
-      ]
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "list_webhook_event_attempt",
-    "accessor": "ListWebhookEventAttempt",
-    "op": "list",
-    "method": "GET",
-    "path": "/webhooks/{webhook_id}/events/{event_id}/attempts",
-    "args": [
-      {
-        "name": "event_id",
-        "wire": "event_id",
-        "value": "p1"
-      },
-      {
-        "name": "webhook_id",
-        "wire": "webhook_id",
-        "value": "p2"
-      }
-    ],
-    "select": {
-      "after": "v1",
-      "limit": "v1"
-    },
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [
-      "limit",
-      "after"
-    ],
-    "queryArgs": [
-      {
-        "name": "after",
-        "wire": "after"
-      },
-      {
-        "name": "limit",
-        "wire": "limit"
-      }
-    ],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "list",
-      "has_more": false,
-      "data": [
-        {
-          "id": "atmpt_1srOrx2ZWZBpBUvZwXKQmoEYga2",
-          "http_status_code": 200,
-          "response": "{\"ok\":true}",
-          "sent_at": "2026-08-22T15:33:12.000Z"
-        }
-      ]
     },
     "idField": "id"
   },
@@ -4297,6 +4904,113 @@ const PLAN: any[] = [
       "user_agent": "x",
       "request_body": {},
       "response_body": {}
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "oauth_grant",
+    "accessor": "OauthGrant",
+    "op": "list",
+    "method": "GET",
+    "path": "/oauth/grants",
+    "args": [],
+    "select": {
+      "after": "v1",
+      "before": "v1",
+      "limit": "v1"
+    },
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [
+      "limit",
+      "after",
+      "before"
+    ],
+    "queryArgs": [
+      {
+        "name": "after",
+        "wire": "after"
+      },
+      {
+        "name": "before",
+        "wire": "before"
+      },
+      {
+        "name": "limit",
+        "wire": "limit"
+      }
+    ],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "list",
+      "has_more": false,
+      "data": [
+        {
+          "id": "x",
+          "client_id": "x",
+          "scopes": [
+            "x"
+          ],
+          "created_at": "2023-10-06 23:47:56.678+00",
+          "revoked_at": "2023-10-06 23:47:56.678+00",
+          "revoked_reason": "x",
+          "client": {
+            "name": "x",
+            "logo_uri": "x"
+          }
+        }
+      ]
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "oauth_grant",
+    "accessor": "OauthGrant",
+    "op": "remove",
+    "method": "DELETE",
+    "path": "/oauth/grants/{oauth_grant_id}",
+    "args": [
+      {
+        "name": "id",
+        "wire": "oauth_grant_id",
+        "value": "p1"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "oauth_grant",
+      "id": "x",
+      "revoked_at": "2023-10-06T23:47:56.678Z",
+      "revoked_reason": "x"
     },
     "idField": "id"
   },
@@ -4449,26 +5163,47 @@ const PLAN: any[] = [
     "idField": "id"
   },
   {
-    "entity": "remove_audience_response_success",
-    "accessor": "RemoveAudienceResponseSuccess",
-    "op": "remove",
-    "method": "DELETE",
-    "path": "/audiences/{id}",
+    "entity": "received_email_attachment",
+    "accessor": "ReceivedEmailAttachment",
+    "op": "list",
+    "method": "GET",
+    "path": "/emails/receiving/{email_id}/attachments",
     "args": [
       {
-        "name": "id",
-        "wire": "id",
+        "name": "email_id",
+        "wire": "email_id",
         "value": "p1"
       }
     ],
-    "select": {},
+    "select": {
+      "after": "v1",
+      "before": "v1",
+      "limit": "v1"
+    },
     "headers": [],
     "cookies": [],
     "responseMedia": [
       "application/json"
     ],
-    "query": [],
-    "queryArgs": [],
+    "query": [
+      "limit",
+      "after",
+      "before"
+    ],
+    "queryArgs": [
+      {
+        "name": "after",
+        "wire": "after"
+      },
+      {
+        "name": "before",
+        "wire": "before"
+      },
+      {
+        "name": "limit",
+        "wire": "limit"
+      }
+    ],
     "auth": [
       [
         {
@@ -4480,65 +5215,38 @@ const PLAN: any[] = [
     ],
     "status": 200,
     "sample": {
-      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
-      "object": "audience",
-      "deleted": true
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "remove_broadcast_response_success",
-    "accessor": "RemoveBroadcastResponseSuccess",
-    "op": "remove",
-    "method": "DELETE",
-    "path": "/broadcasts/{id}",
-    "args": [
-      {
-        "name": "id",
-        "wire": "id",
-        "value": "p1"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
+      "object": "list",
+      "has_more": false,
+      "data": [
         {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
+          "id": "660e8400-e29b-41d4-a716-446655440000",
+          "filename": "document.pdf",
+          "content_type": "application/pdf",
+          "content_id": "img001",
+          "content_disposition": "attachment",
+          "download_url": "https://cloudfront.example.com/path?Signature=...",
+          "expires_at": "2024-10-27T18:30:00.000Z",
+          "size": 2048
         }
       ]
-    ],
-    "status": 200,
-    "sample": {
-      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
-      "object": "broadcast",
-      "deleted": true
     },
     "idField": "id"
   },
   {
-    "entity": "remove_contact_from_segment_response_success",
-    "accessor": "RemoveContactFromSegmentResponseSuccess",
-    "op": "remove",
-    "method": "DELETE",
-    "path": "/contacts/{contact_id}/segments/{segment_id}",
+    "entity": "received_email_attachment",
+    "accessor": "ReceivedEmailAttachment",
+    "op": "load",
+    "method": "GET",
+    "path": "/emails/receiving/{email_id}/attachments/{attachment_id}",
     "args": [
       {
-        "name": "contact_id",
-        "wire": "contact_id",
+        "name": "email_id",
+        "wire": "email_id",
         "value": "p1"
       },
       {
-        "name": "segment_id",
-        "wire": "segment_id",
+        "name": "id",
+        "wire": "attachment_id",
         "value": "p2"
       }
     ],
@@ -4561,297 +5269,21 @@ const PLAN: any[] = [
     ],
     "status": 200,
     "sample": {
-      "object": "contact_segment",
-      "contact_id": "x",
-      "segment_id": "x",
-      "deleted": true
+      "object": "attachment",
+      "id": "660e8400-e29b-41d4-a716-446655440000",
+      "filename": "document.pdf",
+      "content_type": "application/pdf",
+      "content_id": "img001",
+      "content_disposition": "attachment",
+      "download_url": "https://cloudfront.example.com/path?Signature=...",
+      "expires_at": "2024-10-27T18:30:00.000Z",
+      "size": 2048
     },
     "idField": "id"
   },
   {
-    "entity": "remove_contact_property_response_success",
-    "accessor": "RemoveContactPropertyResponseSuccess",
-    "op": "remove",
-    "method": "DELETE",
-    "path": "/contact-properties/{id}",
-    "args": [
-      {
-        "name": "id",
-        "wire": "id",
-        "value": "p1"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
-      "object": "contact_property",
-      "deleted": true
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "remove_contact_response_success",
-    "accessor": "RemoveContactResponseSuccess",
-    "op": "remove",
-    "method": "DELETE",
-    "path": "/contacts/{id}",
-    "args": [
-      {
-        "name": "id",
-        "wire": "id",
-        "value": "p1"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "contact",
-      "id": "520784e2-887d-4c25-b53c-4ad46ad38100",
-      "deleted": true
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "remove_event",
-    "accessor": "RemoveEvent",
-    "op": "remove",
-    "method": "DELETE",
-    "path": "/events/{identifier}",
-    "args": [
-      {
-        "name": "id",
-        "wire": "identifier",
-        "value": "p1"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "event",
-      "id": "x",
-      "deleted": true
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "remove_inbox_draft_response_success",
-    "accessor": "RemoveInboxDraftResponseSuccess",
-    "op": "remove",
-    "method": "DELETE",
-    "path": "/inboxes/{inbox_id}/drafts/{draft_id}",
-    "args": [
-      {
-        "name": "draft_id",
-        "wire": "draft_id",
-        "value": "p1"
-      },
-      {
-        "name": "inbox_id",
-        "wire": "inbox_id",
-        "value": "p2"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "inbox_draft",
-      "id": "c3a1e8b4-2d5f-4a7c-9e10-6b8d7f5a4c32",
-      "deleted": true
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "remove_inbox_label_response_success",
-    "accessor": "RemoveInboxLabelResponseSuccess",
-    "op": "remove",
-    "method": "DELETE",
-    "path": "/inboxes/{inbox_id}/labels/{label_id}",
-    "args": [
-      {
-        "name": "inbox_id",
-        "wire": "inbox_id",
-        "value": "p1"
-      },
-      {
-        "name": "label_id",
-        "wire": "label_id",
-        "value": "p2"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "inbox_label",
-      "id": "7f9c1d2e-4a6b-4c3d-8e15-9b0a7c6d5e34",
-      "deleted": true
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "remove_inbox_response_success",
-    "accessor": "RemoveInboxResponseSuccess",
-    "op": "remove",
-    "method": "DELETE",
-    "path": "/inboxes/{inbox_id}",
-    "args": [
-      {
-        "name": "inbox_id",
-        "wire": "inbox_id",
-        "value": "b3e2b2b6-3f0e-4c8e-9ad3-2f43a1e2c7f1"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "inbox",
-      "id": "b3e2b2b6-3f0e-4c8e-9ad3-2f43a1e2c7f1",
-      "deleted": true
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "remove_inbox_thread_response_success",
-    "accessor": "RemoveInboxThreadResponseSuccess",
-    "op": "remove",
-    "method": "DELETE",
-    "path": "/inboxes/{inbox_id}/threads/{thread_id}",
-    "args": [
-      {
-        "name": "inbox_id",
-        "wire": "inbox_id",
-        "value": "p1"
-      },
-      {
-        "name": "thread_id",
-        "wire": "thread_id",
-        "value": "p2"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "inbox_thread",
-      "id": "4d8e2a1c-9b3f-4c6d-8a21-3e5f7c9c0d12",
-      "deleted": true
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "remove_segment_response_success",
-    "accessor": "RemoveSegmentResponseSuccess",
+    "entity": "segment",
+    "accessor": "Segment",
     "op": "create",
     "method": "POST",
     "path": "/segments",
@@ -4881,8 +5313,8 @@ const PLAN: any[] = [
     "idField": "id"
   },
   {
-    "entity": "remove_segment_response_success",
-    "accessor": "RemoveSegmentResponseSuccess",
+    "entity": "segment",
+    "accessor": "Segment",
     "op": "list",
     "method": "GET",
     "path": "/segments",
@@ -4941,8 +5373,49 @@ const PLAN: any[] = [
     "idField": "id"
   },
   {
-    "entity": "remove_segment_response_success",
-    "accessor": "RemoveSegmentResponseSuccess",
+    "entity": "segment",
+    "accessor": "Segment",
+    "op": "load",
+    "method": "GET",
+    "path": "/segments/{id}",
+    "args": [
+      {
+        "name": "id",
+        "wire": "id",
+        "value": "p1"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
+      "object": "segment",
+      "name": "Active Users",
+      "audience_id": "x",
+      "filter": {},
+      "created_at": "2023-10-06 23:47:56.678+00"
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "segment",
+    "accessor": "Segment",
     "op": "remove",
     "method": "DELETE",
     "path": "/segments/{id}",
@@ -4979,8 +5452,113 @@ const PLAN: any[] = [
     "idField": "id"
   },
   {
-    "entity": "remove_suppression_response_success",
-    "accessor": "RemoveSuppressionResponseSuccess",
+    "entity": "segment",
+    "accessor": "Segment",
+    "op": "update",
+    "method": "PATCH",
+    "path": "/segments/{id}",
+    "args": [
+      {
+        "name": "id",
+        "wire": "id",
+        "value": "p1"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
+      "object": "segment"
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "segment_contact",
+    "accessor": "SegmentContact",
+    "op": "list",
+    "method": "GET",
+    "path": "/segments/{id}/contacts",
+    "args": [
+      {
+        "name": "segment_id",
+        "wire": "id",
+        "value": "p1"
+      }
+    ],
+    "select": {
+      "after": "v1",
+      "before": "v1",
+      "limit": "v1"
+    },
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [
+      "limit",
+      "after",
+      "before"
+    ],
+    "queryArgs": [
+      {
+        "name": "after",
+        "wire": "after"
+      },
+      {
+        "name": "before",
+        "wire": "before"
+      },
+      {
+        "name": "limit",
+        "wire": "limit"
+      }
+    ],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "list",
+      "has_more": false,
+      "data": [
+        {
+          "id": "e169aa45-1ecf-4183-9955-b1499d5701d3",
+          "email": "steve.wozniak@gmail.com",
+          "first_name": "Steve",
+          "last_name": "Wozniak",
+          "created_at": "2023-10-06 23:47:56.678+00",
+          "unsubscribed": false
+        }
+      ]
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "suppression",
+    "accessor": "Suppression",
     "op": "create",
     "method": "POST",
     "path": "/suppressions",
@@ -5010,8 +5588,8 @@ const PLAN: any[] = [
     "idField": "id"
   },
   {
-    "entity": "remove_suppression_response_success",
-    "accessor": "RemoveSuppressionResponseSuccess",
+    "entity": "suppression",
+    "accessor": "Suppression",
     "op": "list",
     "method": "GET",
     "path": "/suppressions",
@@ -5077,591 +5655,6 @@ const PLAN: any[] = [
     "idField": "id"
   },
   {
-    "entity": "remove_suppression_response_success",
-    "accessor": "RemoveSuppressionResponseSuccess",
-    "op": "remove",
-    "method": "DELETE",
-    "path": "/suppressions/{suppression}",
-    "args": [
-      {
-        "name": "suppression",
-        "wire": "suppression",
-        "value": "p1"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "suppression",
-      "id": "e169aa45-1ecf-4183-9955-b1499d5701d3",
-      "deleted": true
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "remove_template_response_success",
-    "accessor": "RemoveTemplateResponseSuccess",
-    "op": "create",
-    "method": "POST",
-    "path": "/templates",
-    "args": [],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 201,
-    "sample": {
-      "id": "x",
-      "object": "template"
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "remove_template_response_success",
-    "accessor": "RemoveTemplateResponseSuccess",
-    "op": "list",
-    "method": "GET",
-    "path": "/templates",
-    "args": [],
-    "select": {
-      "after": "v1",
-      "before": "v1",
-      "limit": "v1"
-    },
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [
-      "limit",
-      "after",
-      "before"
-    ],
-    "queryArgs": [
-      {
-        "name": "after",
-        "wire": "after"
-      },
-      {
-        "name": "before",
-        "wire": "before"
-      },
-      {
-        "name": "limit",
-        "wire": "limit"
-      }
-    ],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "list",
-      "data": [
-        {
-          "id": "x",
-          "name": "x",
-          "status": "draft",
-          "published_at": "2023-10-06 23:47:56.678+00",
-          "created_at": "2023-10-06 23:47:56.678+00",
-          "updated_at": "2023-10-06 23:47:56.678+00",
-          "alias": "x"
-        }
-      ],
-      "has_more": true
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "remove_template_response_success",
-    "accessor": "RemoveTemplateResponseSuccess",
-    "op": "remove",
-    "method": "DELETE",
-    "path": "/templates/{id}",
-    "args": [
-      {
-        "name": "id",
-        "wire": "id",
-        "value": "p1"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "template",
-      "id": "x",
-      "deleted": true
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "remove_topic_response_success",
-    "accessor": "RemoveTopicResponseSuccess",
-    "op": "create",
-    "method": "POST",
-    "path": "/topics",
-    "args": [],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 201,
-    "sample": {
-      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
-      "object": "topic"
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "remove_topic_response_success",
-    "accessor": "RemoveTopicResponseSuccess",
-    "op": "list",
-    "method": "GET",
-    "path": "/topics",
-    "args": [],
-    "select": {
-      "after": "v1",
-      "before": "v1",
-      "limit": "v1"
-    },
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [
-      "limit",
-      "after",
-      "before"
-    ],
-    "queryArgs": [
-      {
-        "name": "after",
-        "wire": "after"
-      },
-      {
-        "name": "before",
-        "wire": "before"
-      },
-      {
-        "name": "limit",
-        "wire": "limit"
-      }
-    ],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "list",
-      "has_more": true,
-      "data": [
-        {
-          "id": "x",
-          "name": "x",
-          "description": "x",
-          "default_subscription": "opt_in",
-          "visibility": "public",
-          "created_at": "2023-10-06 23:47:56.678+00"
-        }
-      ]
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "remove_topic_response_success",
-    "accessor": "RemoveTopicResponseSuccess",
-    "op": "remove",
-    "method": "DELETE",
-    "path": "/topics/{id}",
-    "args": [
-      {
-        "name": "id",
-        "wire": "id",
-        "value": "p1"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
-      "object": "topic",
-      "deleted": true
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "retrieved_attachment",
-    "accessor": "RetrievedAttachment",
-    "op": "load",
-    "method": "GET",
-    "path": "/emails/{email_id}/attachments/{attachment_id}",
-    "args": [
-      {
-        "name": "email_id",
-        "wire": "email_id",
-        "value": "p1"
-      },
-      {
-        "name": "id",
-        "wire": "attachment_id",
-        "value": "p2"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "attachment",
-      "id": "660e8400-e29b-41d4-a716-446655440000",
-      "filename": "document.pdf",
-      "content_type": "application/pdf",
-      "content_id": "img001",
-      "content_disposition": "attachment",
-      "download_url": "https://cloudfront.example.com/path?Signature=...",
-      "expires_at": "2024-10-27T18:30:00.000Z",
-      "size": 2048
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "retrieved_attachment",
-    "accessor": "RetrievedAttachment",
-    "op": "load",
-    "method": "GET",
-    "path": "/emails/receiving/{email_id}/attachments/{attachment_id}",
-    "args": [
-      {
-        "name": "id",
-        "wire": "attachment_id",
-        "value": "p1"
-      },
-      {
-        "name": "receiving_id",
-        "wire": "email_id",
-        "value": "p2"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "attachment",
-      "id": "660e8400-e29b-41d4-a716-446655440000",
-      "filename": "document.pdf",
-      "content_type": "application/pdf",
-      "content_id": "img001",
-      "content_disposition": "attachment",
-      "download_url": "https://cloudfront.example.com/path?Signature=...",
-      "expires_at": "2024-10-27T18:30:00.000Z",
-      "size": 2048
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "revoke_o_auth_grant",
-    "accessor": "RevokeOAuthGrant",
-    "op": "list",
-    "method": "GET",
-    "path": "/oauth/grants",
-    "args": [],
-    "select": {
-      "after": "v1",
-      "before": "v1",
-      "limit": "v1"
-    },
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [
-      "limit",
-      "after",
-      "before"
-    ],
-    "queryArgs": [
-      {
-        "name": "after",
-        "wire": "after"
-      },
-      {
-        "name": "before",
-        "wire": "before"
-      },
-      {
-        "name": "limit",
-        "wire": "limit"
-      }
-    ],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "list",
-      "has_more": false,
-      "data": [
-        {
-          "id": "x",
-          "client_id": "x",
-          "scopes": [
-            "x"
-          ],
-          "created_at": "2023-10-06 23:47:56.678+00",
-          "revoked_at": "2023-10-06 23:47:56.678+00",
-          "revoked_reason": "x",
-          "client": {
-            "name": "x",
-            "logo_uri": "x"
-          }
-        }
-      ]
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "revoke_o_auth_grant",
-    "accessor": "RevokeOAuthGrant",
-    "op": "remove",
-    "method": "DELETE",
-    "path": "/oauth/grants/{oauth_grant_id}",
-    "args": [
-      {
-        "name": "id",
-        "wire": "oauth_grant_id",
-        "value": "p1"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "oauth_grant",
-      "id": "x",
-      "revoked_at": "2023-10-06T23:47:56.678Z",
-      "revoked_reason": "x"
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "rotate",
-    "accessor": "Rotate",
-    "op": "create",
-    "method": "POST",
-    "path": "/webhooks/{webhook_id}/signing-secret/rotate",
-    "args": [
-      {
-        "name": "webhook_id",
-        "wire": "webhook_id",
-        "value": "p1"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "webhook",
-      "id": "479e3145-dd38-476b-932c-529ceb705947",
-      "signing_secret": "whsec_..."
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "segment",
-    "accessor": "Segment",
-    "op": "load",
-    "method": "GET",
-    "path": "/segments/{id}",
-    "args": [
-      {
-        "name": "id",
-        "wire": "id",
-        "value": "p1"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
-      "object": "segment",
-      "name": "Active Users",
-      "audience_id": "x",
-      "filter": {},
-      "created_at": "2023-10-06 23:47:56.678+00"
-    },
-    "idField": "id"
-  },
-  {
     "entity": "suppression",
     "accessor": "Suppression",
     "op": "load",
@@ -5699,6 +5692,117 @@ const PLAN: any[] = [
       "origin": "manual",
       "source_id": "479e3145-dd38-476b-932c-529ceb705947",
       "created_at": "2023-10-06 23:47:56.678+00"
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "suppression",
+    "accessor": "Suppression",
+    "op": "remove",
+    "method": "DELETE",
+    "path": "/suppressions/{suppression}",
+    "args": [
+      {
+        "name": "id",
+        "wire": "suppression",
+        "value": "p1"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "suppression",
+      "id": "e169aa45-1ecf-4183-9955-b1499d5701d3",
+      "deleted": true
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "suppression_batch",
+    "accessor": "SuppressionBatch",
+    "op": "create",
+    "method": "POST",
+    "path": "/suppressions/batch/add",
+    "action": "add",
+    "args": [],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 201,
+    "sample": {
+      "data": [
+        {
+          "object": "suppression",
+          "id": "e169aa45-1ecf-4183-9955-b1499d5701d3"
+        }
+      ]
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "suppression_batch",
+    "accessor": "SuppressionBatch",
+    "op": "create",
+    "method": "POST",
+    "path": "/suppressions/batch/remove",
+    "action": "remove",
+    "args": [],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "data": [
+        {
+          "object": "suppression",
+          "id": "e169aa45-1ecf-4183-9955-b1499d5701d3",
+          "deleted": true
+        }
+      ]
     },
     "idField": "id"
   },
@@ -5781,6 +5885,100 @@ const PLAN: any[] = [
   {
     "entity": "template",
     "accessor": "Template",
+    "op": "create",
+    "method": "POST",
+    "path": "/templates",
+    "args": [],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 201,
+    "sample": {
+      "id": "x",
+      "object": "template"
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "template",
+    "accessor": "Template",
+    "op": "list",
+    "method": "GET",
+    "path": "/templates",
+    "args": [],
+    "select": {
+      "after": "v1",
+      "before": "v1",
+      "limit": "v1"
+    },
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [
+      "limit",
+      "after",
+      "before"
+    ],
+    "queryArgs": [
+      {
+        "name": "after",
+        "wire": "after"
+      },
+      {
+        "name": "before",
+        "wire": "before"
+      },
+      {
+        "name": "limit",
+        "wire": "limit"
+      }
+    ],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "list",
+      "data": [
+        {
+          "id": "x",
+          "name": "x",
+          "status": "draft",
+          "published_at": "2023-10-06 23:47:56.678+00",
+          "created_at": "2023-10-06 23:47:56.678+00",
+          "updated_at": "2023-10-06 23:47:56.678+00",
+          "alias": "x"
+        }
+      ],
+      "has_more": true
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "template",
+    "accessor": "Template",
     "op": "load",
     "method": "GET",
     "path": "/templates/{id}",
@@ -5841,11 +6039,11 @@ const PLAN: any[] = [
     "idField": "id"
   },
   {
-    "entity": "topic",
-    "accessor": "Topic",
-    "op": "load",
-    "method": "GET",
-    "path": "/topics/{id}",
+    "entity": "template",
+    "accessor": "Template",
+    "op": "remove",
+    "method": "DELETE",
+    "path": "/templates/{id}",
     "args": [
       {
         "name": "id",
@@ -5872,552 +6070,15 @@ const PLAN: any[] = [
     ],
     "status": 200,
     "sample": {
-      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
-      "object": "topic",
-      "name": "Newsletter",
-      "description": "x",
-      "default_subscription": "opt_in",
-      "visibility": "public",
-      "created_at": "2023-10-06 23:47:56.678+00"
+      "object": "template",
+      "id": "x",
+      "deleted": true
     },
     "idField": "id"
   },
   {
-    "entity": "update_api_key",
-    "accessor": "UpdateApiKey",
-    "op": "update",
-    "method": "PATCH",
-    "path": "/api-keys/{api_key_id}",
-    "args": [
-      {
-        "name": "id",
-        "wire": "api_key_id",
-        "value": "p1"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "api_key",
-      "id": "x"
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "update_broadcast_response_success",
-    "accessor": "UpdateBroadcastResponseSuccess",
-    "op": "update",
-    "method": "PATCH",
-    "path": "/broadcasts/{id}",
-    "args": [
-      {
-        "name": "id",
-        "wire": "id",
-        "value": "p1"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
-      "object": "broadcast"
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "update_contact_property_response_success",
-    "accessor": "UpdateContactPropertyResponseSuccess",
-    "op": "update",
-    "method": "PATCH",
-    "path": "/contact-properties/{id}",
-    "args": [
-      {
-        "name": "id",
-        "wire": "id",
-        "value": "p1"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
-      "object": "contact_property"
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "update_contact_response_success",
-    "accessor": "UpdateContactResponseSuccess",
-    "op": "update",
-    "method": "PATCH",
-    "path": "/contacts/{id}",
-    "args": [
-      {
-        "name": "id",
-        "wire": "id",
-        "value": "p1"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "contact",
-      "id": "479e3145-dd38-476b-932c-529ceb705947"
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "update_contact_topics_response_success",
-    "accessor": "UpdateContactTopicsResponseSuccess",
-    "op": "update",
-    "method": "PATCH",
-    "path": "/contacts/{contact_id}/topics",
-    "args": [
-      {
-        "name": "contact_id",
-        "wire": "contact_id",
-        "value": "p1"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "contact_topics",
-      "contact_id": "x",
-      "topics": [
-        {
-          "id": "x",
-          "subscription": "opt_in"
-        }
-      ]
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "update_domain_response_success",
-    "accessor": "UpdateDomainResponseSuccess",
-    "op": "update",
-    "method": "PATCH",
-    "path": "/domains/{domain_id}",
-    "args": [
-      {
-        "name": "domain_id",
-        "wire": "domain_id",
-        "value": "p1"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "id": "d91cd9bd-1176-453e-8fc1-35364d380206",
-      "object": "domain"
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "update_email_option",
-    "accessor": "UpdateEmailOption",
-    "op": "update",
-    "method": "PATCH",
-    "path": "/emails/{email_id}",
-    "args": [
-      {
-        "name": "email_id",
-        "wire": "email_id",
-        "value": "p1"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "scheduled_at": "x"
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "update_event",
-    "accessor": "UpdateEvent",
-    "op": "update",
-    "method": "PATCH",
-    "path": "/events/{identifier}",
-    "args": [
-      {
-        "name": "id",
-        "wire": "identifier",
-        "value": "p1"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "event",
-      "id": "x"
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "update_inbox_draft_response_success",
-    "accessor": "UpdateInboxDraftResponseSuccess",
-    "op": "update",
-    "method": "PATCH",
-    "path": "/inboxes/{inbox_id}/drafts/{draft_id}",
-    "args": [
-      {
-        "name": "draft_id",
-        "wire": "draft_id",
-        "value": "p1"
-      },
-      {
-        "name": "inbox_id",
-        "wire": "inbox_id",
-        "value": "p2"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "inbox_draft",
-      "id": "c3a1e8b4-2d5f-4a7c-9e10-6b8d7f5a4c32",
-      "type": "standalone",
-      "to": [
-        "ada@example.org"
-      ],
-      "cc": [],
-      "bcc": [],
-      "subject": "Refund for order 1041",
-      "html": "<p>Refund issued for order 1041.</p>",
-      "text": "Refund issued for order 1041.",
-      "thread_id": null,
-      "reply_to_email_id": null,
-      "email_id": null,
-      "created_at": "2026-08-05T14:12:04.110Z",
-      "updated_at": "2026-08-05T14:12:04.110Z",
-      "attachments": [
-        {
-          "id": "5c1e9d2a-7b3f-4e8a-9c6d-2f0a1b3c4d5e",
-          "filename": "receipt.pdf",
-          "content_type": "application/pdf",
-          "size": 20841
-        }
-      ]
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "update_inbox_label_response_success",
-    "accessor": "UpdateInboxLabelResponseSuccess",
-    "op": "update",
-    "method": "PATCH",
-    "path": "/inboxes/{inbox_id}/labels/{label_id}",
-    "args": [
-      {
-        "name": "inbox_id",
-        "wire": "inbox_id",
-        "value": "p1"
-      },
-      {
-        "name": "label_id",
-        "wire": "label_id",
-        "value": "p2"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "inbox_label",
-      "id": "7f9c1d2e-4a6b-4c3d-8e15-9b0a7c6d5e34"
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "update_inbox_response_success",
-    "accessor": "UpdateInboxResponseSuccess",
-    "op": "update",
-    "method": "PATCH",
-    "path": "/inboxes/{inbox_id}",
-    "args": [
-      {
-        "name": "inbox_id",
-        "wire": "inbox_id",
-        "value": "b3e2b2b6-3f0e-4c8e-9ad3-2f43a1e2c7f1"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "inbox",
-      "id": "b3e2b2b6-3f0e-4c8e-9ad3-2f43a1e2c7f1"
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "update_inbox_thread_response_success",
-    "accessor": "UpdateInboxThreadResponseSuccess",
-    "op": "update",
-    "method": "PATCH",
-    "path": "/inboxes/{inbox_id}/threads/{thread_id}",
-    "args": [
-      {
-        "name": "inbox_id",
-        "wire": "inbox_id",
-        "value": "p1"
-      },
-      {
-        "name": "thread_id",
-        "wire": "thread_id",
-        "value": "p2"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "object": "inbox_thread",
-      "id": "4d8e2a1c-9b3f-4c6d-8a21-3e5f7c9c0d12",
-      "subject": "Refund for order 1041",
-      "folder": "inbox",
-      "labels": [
-        {
-          "id": "7f9c1d2e-4a6b-4c3d-8e15-9b0a7c6d5e34",
-          "name": "Urgent",
-          "color": "#E93D82"
-        }
-      ],
-      "read": false
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "update_segment_response_success",
-    "accessor": "UpdateSegmentResponseSuccess",
-    "op": "update",
-    "method": "PATCH",
-    "path": "/segments/{id}",
-    "args": [
-      {
-        "name": "id",
-        "wire": "id",
-        "value": "p1"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
-      "object": "segment"
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "update_template_response_success",
-    "accessor": "UpdateTemplateResponseSuccess",
+    "entity": "template",
+    "accessor": "Template",
     "op": "update",
     "method": "PATCH",
     "path": "/templates/{id}",
@@ -6453,48 +6114,11 @@ const PLAN: any[] = [
     "idField": "id"
   },
   {
-    "entity": "update_topic_response_success",
-    "accessor": "UpdateTopicResponseSuccess",
-    "op": "update",
-    "method": "PATCH",
-    "path": "/topics/{id}",
-    "args": [
-      {
-        "name": "id",
-        "wire": "id",
-        "value": "p1"
-      }
-    ],
-    "select": {},
-    "headers": [],
-    "cookies": [],
-    "responseMedia": [
-      "application/json"
-    ],
-    "query": [],
-    "queryArgs": [],
-    "auth": [
-      [
-        {
-          "in": "header",
-          "name": "authorization",
-          "scheme": "bearer"
-        }
-      ]
-    ],
-    "status": 200,
-    "sample": {
-      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
-      "object": "topic"
-    },
-    "idField": "id"
-  },
-  {
-    "entity": "update_webhook",
-    "accessor": "UpdateWebhook",
+    "entity": "topic",
+    "accessor": "Topic",
     "op": "create",
     "method": "POST",
-    "path": "/webhooks",
+    "path": "/topics",
     "args": [],
     "select": {},
     "headers": [],
@@ -6515,18 +6139,17 @@ const PLAN: any[] = [
     ],
     "status": 201,
     "sample": {
-      "object": "webhook",
-      "id": "479e3145-dd38-476b-932c-529ceb705947",
-      "signing_secret": "whsec_..."
+      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
+      "object": "topic"
     },
     "idField": "id"
   },
   {
-    "entity": "update_webhook",
-    "accessor": "UpdateWebhook",
+    "entity": "topic",
+    "accessor": "Topic",
     "op": "list",
     "method": "GET",
-    "path": "/webhooks",
+    "path": "/topics",
     "args": [],
     "select": {
       "after": "v1",
@@ -6569,15 +6192,14 @@ const PLAN: any[] = [
     "status": 200,
     "sample": {
       "object": "list",
-      "has_more": false,
+      "has_more": true,
       "data": [
         {
-          "id": "479e3145-dd38-476b-932c-529ceb705947",
-          "endpoint": "https://webhook.example.com/handler",
-          "events": [
-            "email.sent"
-          ],
-          "status": "enabled",
+          "id": "x",
+          "name": "x",
+          "description": "x",
+          "default_subscription": "opt_in",
+          "visibility": "public",
           "created_at": "2023-10-06 23:47:56.678+00"
         }
       ]
@@ -6585,15 +6207,15 @@ const PLAN: any[] = [
     "idField": "id"
   },
   {
-    "entity": "update_webhook",
-    "accessor": "UpdateWebhook",
-    "op": "update",
-    "method": "PATCH",
-    "path": "/webhooks/{webhook_id}",
+    "entity": "topic",
+    "accessor": "Topic",
+    "op": "load",
+    "method": "GET",
+    "path": "/topics/{id}",
     "args": [
       {
         "name": "id",
-        "wire": "webhook_id",
+        "wire": "id",
         "value": "p1"
       }
     ],
@@ -6616,8 +6238,88 @@ const PLAN: any[] = [
     ],
     "status": 200,
     "sample": {
-      "object": "webhook",
-      "id": "479e3145-dd38-476b-932c-529ceb705947"
+      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
+      "object": "topic",
+      "name": "Newsletter",
+      "description": "x",
+      "default_subscription": "opt_in",
+      "visibility": "public",
+      "created_at": "2023-10-06 23:47:56.678+00"
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "topic",
+    "accessor": "Topic",
+    "op": "remove",
+    "method": "DELETE",
+    "path": "/topics/{id}",
+    "args": [
+      {
+        "name": "id",
+        "wire": "id",
+        "value": "p1"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
+      "object": "topic",
+      "deleted": true
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "topic",
+    "accessor": "Topic",
+    "op": "update",
+    "method": "PATCH",
+    "path": "/topics/{id}",
+    "args": [
+      {
+        "name": "id",
+        "wire": "id",
+        "value": "p1"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "id": "78261eea-8f8b-4381-83c6-79fa7120f1cf",
+      "object": "topic"
     },
     "idField": "id"
   },
@@ -6693,6 +6395,140 @@ const PLAN: any[] = [
         "limit": 1,
         "duration": "x"
       }
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "webhook",
+    "accessor": "Webhook",
+    "op": "create",
+    "method": "POST",
+    "path": "/webhooks/{webhook_id}/signing-secret/rotate",
+    "action": "rotate",
+    "args": [
+      {
+        "name": "id",
+        "wire": "webhook_id",
+        "value": "p1"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "webhook",
+      "id": "479e3145-dd38-476b-932c-529ceb705947",
+      "signing_secret": "whsec_..."
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "webhook",
+    "accessor": "Webhook",
+    "op": "create",
+    "method": "POST",
+    "path": "/webhooks",
+    "args": [],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 201,
+    "sample": {
+      "object": "webhook",
+      "id": "479e3145-dd38-476b-932c-529ceb705947",
+      "signing_secret": "whsec_..."
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "webhook",
+    "accessor": "Webhook",
+    "op": "list",
+    "method": "GET",
+    "path": "/webhooks",
+    "args": [],
+    "select": {
+      "after": "v1",
+      "before": "v1",
+      "limit": "v1"
+    },
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [
+      "limit",
+      "after",
+      "before"
+    ],
+    "queryArgs": [
+      {
+        "name": "after",
+        "wire": "after"
+      },
+      {
+        "name": "before",
+        "wire": "before"
+      },
+      {
+        "name": "limit",
+        "wire": "limit"
+      }
+    ],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "list",
+      "has_more": false,
+      "data": [
+        {
+          "id": "479e3145-dd38-476b-932c-529ceb705947",
+          "endpoint": "https://webhook.example.com/handler",
+          "events": [
+            "email.sent"
+          ],
+          "status": "enabled",
+          "created_at": "2023-10-06 23:47:56.678+00"
+        }
+      ]
     },
     "idField": "id"
   },
@@ -6780,6 +6616,43 @@ const PLAN: any[] = [
     "idField": "id"
   },
   {
+    "entity": "webhook",
+    "accessor": "Webhook",
+    "op": "update",
+    "method": "PATCH",
+    "path": "/webhooks/{webhook_id}",
+    "args": [
+      {
+        "name": "id",
+        "wire": "webhook_id",
+        "value": "p1"
+      }
+    ],
+    "select": {},
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [],
+    "queryArgs": [],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "webhook",
+      "id": "479e3145-dd38-476b-932c-529ceb705947"
+    },
+    "idField": "id"
+  },
+  {
     "entity": "webhook_event",
     "accessor": "WebhookEvent",
     "op": "create",
@@ -6819,6 +6692,66 @@ const PLAN: any[] = [
     "sample": {
       "object": "webhook_event",
       "id": "msg_1srOrx2ZWZBpBUvZwXKQmoEYga2"
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "webhook_event",
+    "accessor": "WebhookEvent",
+    "op": "list",
+    "method": "GET",
+    "path": "/webhooks/{webhook_id}/events",
+    "args": [
+      {
+        "name": "webhook_id",
+        "wire": "webhook_id",
+        "value": "p1"
+      }
+    ],
+    "select": {
+      "after": "v1",
+      "limit": "v1"
+    },
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [
+      "limit",
+      "after"
+    ],
+    "queryArgs": [
+      {
+        "name": "after",
+        "wire": "after"
+      },
+      {
+        "name": "limit",
+        "wire": "limit"
+      }
+    ],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "list",
+      "has_more": false,
+      "data": [
+        {
+          "id": "msg_1srOrx2ZWZBpBUvZwXKQmoEYga2",
+          "type": "email.sent",
+          "created_at": "2026-08-22T15:28:00.000Z",
+          "status": "success"
+        }
+      ]
     },
     "idField": "id"
   },
@@ -6878,6 +6811,71 @@ const PLAN: any[] = [
           "created_at": "2026-08-22T15:27:59.000Z"
         }
       }
+    },
+    "idField": "id"
+  },
+  {
+    "entity": "webhook_event_attempt",
+    "accessor": "WebhookEventAttempt",
+    "op": "list",
+    "method": "GET",
+    "path": "/webhooks/{webhook_id}/events/{event_id}/attempts",
+    "args": [
+      {
+        "name": "event_id",
+        "wire": "event_id",
+        "value": "p1"
+      },
+      {
+        "name": "webhook_id",
+        "wire": "webhook_id",
+        "value": "p2"
+      }
+    ],
+    "select": {
+      "after": "v1",
+      "limit": "v1"
+    },
+    "headers": [],
+    "cookies": [],
+    "responseMedia": [
+      "application/json"
+    ],
+    "query": [
+      "limit",
+      "after"
+    ],
+    "queryArgs": [
+      {
+        "name": "after",
+        "wire": "after"
+      },
+      {
+        "name": "limit",
+        "wire": "limit"
+      }
+    ],
+    "auth": [
+      [
+        {
+          "in": "header",
+          "name": "authorization",
+          "scheme": "bearer"
+        }
+      ]
+    ],
+    "status": 200,
+    "sample": {
+      "object": "list",
+      "has_more": false,
+      "data": [
+        {
+          "id": "atmpt_1srOrx2ZWZBpBUvZwXKQmoEYga2",
+          "http_status_code": 200,
+          "response": "{\"ok\":true}",
+          "sent_at": "2026-08-22T15:33:12.000Z"
+        }
+      ]
     },
     "idField": "id"
   }

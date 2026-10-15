@@ -5,6 +5,13 @@ main: kit: entity: inbox_thread: {
   alias: field: {}
 
   fields: {
+    add_label_ids: {
+      h: "Add Label Ids"
+      n: "add_label_ids"
+      r: false
+      sh: "Label IDs to apply to the thread."
+      t: "`$ARRAY`"
+    }
     bcc: {
       h: "Bcc"
       n: "bcc"
@@ -29,6 +36,12 @@ main: kit: entity: inbox_thread: {
     folder: {
       h: "Folder"
       n: "folder"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
       r: true
       sh: "The folder the thread is in."
       t: "`$STRING`"
@@ -96,9 +109,22 @@ main: kit: entity: inbox_thread: {
         ]
       ]
     }
+    object: {
+      h: "Object"
+      n: "object"
+      r: true
+      sh: "The object type."
+      t: "`$STRING`"
+    }
     read: {
       h: "Read"
       n: "read"
+      op: {
+        update: {
+          req: false
+          type: "`$BOOLEAN`"
+        }
+      }
       r: true
       sh: "True only when every email in the thread is read."
       t: "`$BOOLEAN`"
@@ -110,6 +136,13 @@ main: kit: entity: inbox_thread: {
       r: true
       sh: "Timestamp when the thread was last active."
       t: "`$STRING`"
+    }
+    remove_label_ids: {
+      h: "Remove Label Ids"
+      n: "remove_label_ids"
+      r: false
+      sh: "Label IDs to remove from the thread."
+      t: "`$ARRAY`"
     }
     subject: {
       h: "Subject"
@@ -402,6 +435,207 @@ main: kit: entity: inbox_thread: {
           t: {
             req: "`reqdata`"
             res: "`body.data`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /inboxes/{inbox_id}/threads/{thread_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "thread_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "inbox_id"
+                or: "inbox_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/inboxes/{inbox_id}/threads/{thread_id}"
+          q: {
+            exist: [
+              "id"
+              "inbox_id"
+            ]
+          }
+          r: {
+            param: {
+              thread_id: "id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "inboxes"
+            }
+            {
+              var: "inbox_id"
+            }
+            {
+              lit: "threads"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /inboxes/{inbox_id}/threads/{thread_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "thread_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "inbox_id"
+                or: "inbox_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/inboxes/{inbox_id}/threads/{thread_id}"
+          q: {
+            exist: [
+              "id"
+              "inbox_id"
+            ]
+          }
+          r: {
+            param: {
+              thread_id: "id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "inboxes"
+            }
+            {
+              var: "inbox_id"
+            }
+            {
+              lit: "threads"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          bf: [
+            "add_label_ids"
+            "folder"
+            "read"
+            "remove_label_ids"
+          ]
+          co: {
+            id: "PATCH /inboxes/{inbox_id}/threads/{thread_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "id"
+                or: "thread_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "inbox_id"
+                or: "inbox_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/inboxes/{inbox_id}/threads/{thread_id}"
+          q: {
+            exist: [
+              "id"
+              "inbox_id"
+            ]
+          }
+          r: {
+            param: {
+              thread_id: "id"
+            }
+          }
+          rs: {
+            kind: "json"
+            media: "application/json"
+          }
+          s: [
+            {
+              lit: "inboxes"
+            }
+            {
+              var: "inbox_id"
+            }
+            {
+              lit: "threads"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
           }
         }
       ]

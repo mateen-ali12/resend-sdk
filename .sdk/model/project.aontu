@@ -23,3 +23,18 @@
 # A published package name that does not follow the derivation:
 #
 #   main: kit: target: ts: publish: registry: package: '@scope/name'
+
+
+# Published from the author's own GitHub account, not the voxgig-sdk org.
+main: kit: repo: path: 'mateen-ali12/resend-sdk'
+
+main: kit: publisher: {
+  name: 'Mateen Ali'
+  url: 'https://github.com/mateen-ali12'
+  security: 'https://github.com/mateen-ali12/resend-sdk/security/advisories/new'
+}
+
+main: kit: contributor: mateen: {
+  name: 'Mateen Ali'
+  url: 'https://github.com/mateen-ali12'
+}

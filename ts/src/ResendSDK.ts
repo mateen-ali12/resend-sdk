@@ -1,86 +1,44 @@
 // Resend Ts SDK
 
-import { AddContactToSegmentResponseSuccessEntity } from './entity/AddContactToSegmentResponseSuccessEntity'
 import { ApiKeyEntity } from './entity/ApiKeyEntity'
 import { AudienceEntity } from './entity/AudienceEntity'
 import { AutomationEntity } from './entity/AutomationEntity'
 import { AutomationRunEntity } from './entity/AutomationRunEntity'
-import { AutomationRunListItemEntity } from './entity/AutomationRunListItemEntity'
-import { BatchAddSuppressionsResponseSuccessEntity } from './entity/BatchAddSuppressionsResponseSuccessEntity'
-import { BatchRemoveSuppressionsResponseSuccessEntity } from './entity/BatchRemoveSuppressionsResponseSuccessEntity'
 import { BroadcastEntity } from './entity/BroadcastEntity'
+import { BroadcastClickedLinkEntity } from './entity/BroadcastClickedLinkEntity'
+import { BroadcastRecipientEntity } from './entity/BroadcastRecipientEntity'
 import { ContactEntity } from './entity/ContactEntity'
-import { ContactImportResponseSuccessEntity } from './entity/ContactImportResponseSuccessEntity'
+import { ContactImportEntity } from './entity/ContactImportEntity'
 import { ContactPropertyEntity } from './entity/ContactPropertyEntity'
-import { ContactTopicsResponseSuccessEntity } from './entity/ContactTopicsResponseSuccessEntity'
-import { CreateApiKeyEntity } from './entity/CreateApiKeyEntity'
-import { CreateBatchEmailEntity } from './entity/CreateBatchEmailEntity'
-import { CreateBroadcastResponseSuccessEntity } from './entity/CreateBroadcastResponseSuccessEntity'
-import { CreateInboxDraftResponseSuccessEntity } from './entity/CreateInboxDraftResponseSuccessEntity'
-import { CreateInboxLabelResponseSuccessEntity } from './entity/CreateInboxLabelResponseSuccessEntity'
+import { ContactSegmentEntity } from './entity/ContactSegmentEntity'
+import { ContactTopicEntity } from './entity/ContactTopicEntity'
 import { DomainEntity } from './entity/DomainEntity'
 import { DomainClaimEntity } from './entity/DomainClaimEntity'
 import { EmailEntity } from './entity/EmailEntity'
+import { EmailAttachmentEntity } from './entity/EmailAttachmentEntity'
+import { EmailBatchEntity } from './entity/EmailBatchEntity'
 import { EmailsMetricEntity } from './entity/EmailsMetricEntity'
 import { EventEntity } from './entity/EventEntity'
 import { InboxEntity } from './entity/InboxEntity'
-import { InboxAgentResponseSuccessEntity } from './entity/InboxAgentResponseSuccessEntity'
-import { InboxDraftListItemEntity } from './entity/InboxDraftListItemEntity'
-import { InboxDraftResponseSuccessEntity } from './entity/InboxDraftResponseSuccessEntity'
+import { InboxAgentEntity } from './entity/InboxAgentEntity'
+import { InboxDraftEntity } from './entity/InboxDraftEntity'
 import { InboxLabelEntity } from './entity/InboxLabelEntity'
 import { InboxThreadEntity } from './entity/InboxThreadEntity'
 import { InboxThreadEmailEntity } from './entity/InboxThreadEmailEntity'
-import { InboxThreadEmailResponseSuccessEntity } from './entity/InboxThreadEmailResponseSuccessEntity'
-import { InboxThreadResponseSuccessEntity } from './entity/InboxThreadResponseSuccessEntity'
-import { ListAttachmentEntity } from './entity/ListAttachmentEntity'
-import { ListBroadcastClickedLinksResponseSuccessEntity } from './entity/ListBroadcastClickedLinksResponseSuccessEntity'
-import { ListBroadcastRecipientsResponseSuccessEntity } from './entity/ListBroadcastRecipientsResponseSuccessEntity'
-import { ListContactSegmentsResponseSuccessEntity } from './entity/ListContactSegmentsResponseSuccessEntity'
-import { ListContactsResponseSuccessEntity } from './entity/ListContactsResponseSuccessEntity'
-import { ListWebhookEventEntity } from './entity/ListWebhookEventEntity'
-import { ListWebhookEventAttemptEntity } from './entity/ListWebhookEventAttemptEntity'
 import { LogEntity } from './entity/LogEntity'
+import { OauthGrantEntity } from './entity/OauthGrantEntity'
 import { ReceivedEmailEntity } from './entity/ReceivedEmailEntity'
-import { RemoveAudienceResponseSuccessEntity } from './entity/RemoveAudienceResponseSuccessEntity'
-import { RemoveBroadcastResponseSuccessEntity } from './entity/RemoveBroadcastResponseSuccessEntity'
-import { RemoveContactFromSegmentResponseSuccessEntity } from './entity/RemoveContactFromSegmentResponseSuccessEntity'
-import { RemoveContactPropertyResponseSuccessEntity } from './entity/RemoveContactPropertyResponseSuccessEntity'
-import { RemoveContactResponseSuccessEntity } from './entity/RemoveContactResponseSuccessEntity'
-import { RemoveEventEntity } from './entity/RemoveEventEntity'
-import { RemoveInboxDraftResponseSuccessEntity } from './entity/RemoveInboxDraftResponseSuccessEntity'
-import { RemoveInboxLabelResponseSuccessEntity } from './entity/RemoveInboxLabelResponseSuccessEntity'
-import { RemoveInboxResponseSuccessEntity } from './entity/RemoveInboxResponseSuccessEntity'
-import { RemoveInboxThreadResponseSuccessEntity } from './entity/RemoveInboxThreadResponseSuccessEntity'
-import { RemoveSegmentResponseSuccessEntity } from './entity/RemoveSegmentResponseSuccessEntity'
-import { RemoveSuppressionResponseSuccessEntity } from './entity/RemoveSuppressionResponseSuccessEntity'
-import { RemoveTemplateResponseSuccessEntity } from './entity/RemoveTemplateResponseSuccessEntity'
-import { RemoveTopicResponseSuccessEntity } from './entity/RemoveTopicResponseSuccessEntity'
-import { RetrievedAttachmentEntity } from './entity/RetrievedAttachmentEntity'
-import { RevokeOAuthGrantEntity } from './entity/RevokeOAuthGrantEntity'
-import { RotateEntity } from './entity/RotateEntity'
+import { ReceivedEmailAttachmentEntity } from './entity/ReceivedEmailAttachmentEntity'
 import { SegmentEntity } from './entity/SegmentEntity'
+import { SegmentContactEntity } from './entity/SegmentContactEntity'
 import { SuppressionEntity } from './entity/SuppressionEntity'
+import { SuppressionBatchEntity } from './entity/SuppressionBatchEntity'
 import { TemplateEntity } from './entity/TemplateEntity'
 import { TopicEntity } from './entity/TopicEntity'
-import { UpdateApiKeyEntity } from './entity/UpdateApiKeyEntity'
-import { UpdateBroadcastResponseSuccessEntity } from './entity/UpdateBroadcastResponseSuccessEntity'
-import { UpdateContactPropertyResponseSuccessEntity } from './entity/UpdateContactPropertyResponseSuccessEntity'
-import { UpdateContactResponseSuccessEntity } from './entity/UpdateContactResponseSuccessEntity'
-import { UpdateContactTopicsResponseSuccessEntity } from './entity/UpdateContactTopicsResponseSuccessEntity'
-import { UpdateDomainResponseSuccessEntity } from './entity/UpdateDomainResponseSuccessEntity'
-import { UpdateEmailOptionEntity } from './entity/UpdateEmailOptionEntity'
-import { UpdateEventEntity } from './entity/UpdateEventEntity'
-import { UpdateInboxDraftResponseSuccessEntity } from './entity/UpdateInboxDraftResponseSuccessEntity'
-import { UpdateInboxLabelResponseSuccessEntity } from './entity/UpdateInboxLabelResponseSuccessEntity'
-import { UpdateInboxResponseSuccessEntity } from './entity/UpdateInboxResponseSuccessEntity'
-import { UpdateInboxThreadResponseSuccessEntity } from './entity/UpdateInboxThreadResponseSuccessEntity'
-import { UpdateSegmentResponseSuccessEntity } from './entity/UpdateSegmentResponseSuccessEntity'
-import { UpdateTemplateResponseSuccessEntity } from './entity/UpdateTemplateResponseSuccessEntity'
-import { UpdateTopicResponseSuccessEntity } from './entity/UpdateTopicResponseSuccessEntity'
-import { UpdateWebhookEntity } from './entity/UpdateWebhookEntity'
 import { UsageEntity } from './entity/UsageEntity'
 import { WebhookEntity } from './entity/WebhookEntity'
 import { WebhookEventEntity } from './entity/WebhookEventEntity'
+import { WebhookEventAttemptEntity } from './entity/WebhookEventAttemptEntity'
 
 export type * from './ResendTypes'
 
@@ -399,15 +357,6 @@ class ResendSDK {
 
 
 
-  // Entity access: `client.AddContactToSegmentResponseSuccess().list()` / `client.AddContactToSegmentResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  AddContactToSegmentResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new AddContactToSegmentResponseSuccessEntity(self, entopts)
-  }
-
-
   // Entity access: `client.ApiKey().list()` / `client.ApiKey().load({ id })`.
   // The argument is the entity OPTIONS object (passed to the entity
   // constructor as entopts), not initial entity data.
@@ -444,39 +393,30 @@ class ResendSDK {
   }
 
 
-  // Entity access: `client.AutomationRunListItem().list()` / `client.AutomationRunListItem().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  AutomationRunListItem(entopts?: Record<string, any>) {
-    const self = this
-    return new AutomationRunListItemEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.BatchAddSuppressionsResponseSuccess().list()` / `client.BatchAddSuppressionsResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  BatchAddSuppressionsResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new BatchAddSuppressionsResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.BatchRemoveSuppressionsResponseSuccess().list()` / `client.BatchRemoveSuppressionsResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  BatchRemoveSuppressionsResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new BatchRemoveSuppressionsResponseSuccessEntity(self, entopts)
-  }
-
-
   // Entity access: `client.Broadcast().list()` / `client.Broadcast().load({ id })`.
   // The argument is the entity OPTIONS object (passed to the entity
   // constructor as entopts), not initial entity data.
   Broadcast(entopts?: Record<string, any>) {
     const self = this
     return new BroadcastEntity(self, entopts)
+  }
+
+
+  // Entity access: `client.BroadcastClickedLink().list()` / `client.BroadcastClickedLink().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  BroadcastClickedLink(entopts?: Record<string, any>) {
+    const self = this
+    return new BroadcastClickedLinkEntity(self, entopts)
+  }
+
+
+  // Entity access: `client.BroadcastRecipient().list()` / `client.BroadcastRecipient().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  BroadcastRecipient(entopts?: Record<string, any>) {
+    const self = this
+    return new BroadcastRecipientEntity(self, entopts)
   }
 
 
@@ -489,12 +429,12 @@ class ResendSDK {
   }
 
 
-  // Entity access: `client.ContactImportResponseSuccess().list()` / `client.ContactImportResponseSuccess().load({ id })`.
+  // Entity access: `client.ContactImport().list()` / `client.ContactImport().load({ id })`.
   // The argument is the entity OPTIONS object (passed to the entity
   // constructor as entopts), not initial entity data.
-  ContactImportResponseSuccess(entopts?: Record<string, any>) {
+  ContactImport(entopts?: Record<string, any>) {
     const self = this
-    return new ContactImportResponseSuccessEntity(self, entopts)
+    return new ContactImportEntity(self, entopts)
   }
 
 
@@ -507,57 +447,21 @@ class ResendSDK {
   }
 
 
-  // Entity access: `client.ContactTopicsResponseSuccess().list()` / `client.ContactTopicsResponseSuccess().load({ id })`.
+  // Entity access: `client.ContactSegment().list()` / `client.ContactSegment().load({ id })`.
   // The argument is the entity OPTIONS object (passed to the entity
   // constructor as entopts), not initial entity data.
-  ContactTopicsResponseSuccess(entopts?: Record<string, any>) {
+  ContactSegment(entopts?: Record<string, any>) {
     const self = this
-    return new ContactTopicsResponseSuccessEntity(self, entopts)
+    return new ContactSegmentEntity(self, entopts)
   }
 
 
-  // Entity access: `client.CreateApiKey().list()` / `client.CreateApiKey().load({ id })`.
+  // Entity access: `client.ContactTopic().list()` / `client.ContactTopic().load({ id })`.
   // The argument is the entity OPTIONS object (passed to the entity
   // constructor as entopts), not initial entity data.
-  CreateApiKey(entopts?: Record<string, any>) {
+  ContactTopic(entopts?: Record<string, any>) {
     const self = this
-    return new CreateApiKeyEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.CreateBatchEmail().list()` / `client.CreateBatchEmail().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  CreateBatchEmail(entopts?: Record<string, any>) {
-    const self = this
-    return new CreateBatchEmailEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.CreateBroadcastResponseSuccess().list()` / `client.CreateBroadcastResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  CreateBroadcastResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new CreateBroadcastResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.CreateInboxDraftResponseSuccess().list()` / `client.CreateInboxDraftResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  CreateInboxDraftResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new CreateInboxDraftResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.CreateInboxLabelResponseSuccess().list()` / `client.CreateInboxLabelResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  CreateInboxLabelResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new CreateInboxLabelResponseSuccessEntity(self, entopts)
+    return new ContactTopicEntity(self, entopts)
   }
 
 
@@ -588,6 +492,24 @@ class ResendSDK {
   }
 
 
+  // Entity access: `client.EmailAttachment().list()` / `client.EmailAttachment().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  EmailAttachment(entopts?: Record<string, any>) {
+    const self = this
+    return new EmailAttachmentEntity(self, entopts)
+  }
+
+
+  // Entity access: `client.EmailBatch().list()` / `client.EmailBatch().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  EmailBatch(entopts?: Record<string, any>) {
+    const self = this
+    return new EmailBatchEntity(self, entopts)
+  }
+
+
   // Entity access: `client.EmailsMetric().list()` / `client.EmailsMetric().load({ id })`.
   // The argument is the entity OPTIONS object (passed to the entity
   // constructor as entopts), not initial entity data.
@@ -615,30 +537,21 @@ class ResendSDK {
   }
 
 
-  // Entity access: `client.InboxAgentResponseSuccess().list()` / `client.InboxAgentResponseSuccess().load({ id })`.
+  // Entity access: `client.InboxAgent().list()` / `client.InboxAgent().load({ id })`.
   // The argument is the entity OPTIONS object (passed to the entity
   // constructor as entopts), not initial entity data.
-  InboxAgentResponseSuccess(entopts?: Record<string, any>) {
+  InboxAgent(entopts?: Record<string, any>) {
     const self = this
-    return new InboxAgentResponseSuccessEntity(self, entopts)
+    return new InboxAgentEntity(self, entopts)
   }
 
 
-  // Entity access: `client.InboxDraftListItem().list()` / `client.InboxDraftListItem().load({ id })`.
+  // Entity access: `client.InboxDraft().list()` / `client.InboxDraft().load({ id })`.
   // The argument is the entity OPTIONS object (passed to the entity
   // constructor as entopts), not initial entity data.
-  InboxDraftListItem(entopts?: Record<string, any>) {
+  InboxDraft(entopts?: Record<string, any>) {
     const self = this
-    return new InboxDraftListItemEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.InboxDraftResponseSuccess().list()` / `client.InboxDraftResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  InboxDraftResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new InboxDraftResponseSuccessEntity(self, entopts)
+    return new InboxDraftEntity(self, entopts)
   }
 
 
@@ -669,93 +582,21 @@ class ResendSDK {
   }
 
 
-  // Entity access: `client.InboxThreadEmailResponseSuccess().list()` / `client.InboxThreadEmailResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  InboxThreadEmailResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new InboxThreadEmailResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.InboxThreadResponseSuccess().list()` / `client.InboxThreadResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  InboxThreadResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new InboxThreadResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.ListAttachment().list()` / `client.ListAttachment().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  ListAttachment(entopts?: Record<string, any>) {
-    const self = this
-    return new ListAttachmentEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.ListBroadcastClickedLinksResponseSuccess().list()` / `client.ListBroadcastClickedLinksResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  ListBroadcastClickedLinksResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new ListBroadcastClickedLinksResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.ListBroadcastRecipientsResponseSuccess().list()` / `client.ListBroadcastRecipientsResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  ListBroadcastRecipientsResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new ListBroadcastRecipientsResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.ListContactSegmentsResponseSuccess().list()` / `client.ListContactSegmentsResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  ListContactSegmentsResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new ListContactSegmentsResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.ListContactsResponseSuccess().list()` / `client.ListContactsResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  ListContactsResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new ListContactsResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.ListWebhookEvent().list()` / `client.ListWebhookEvent().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  ListWebhookEvent(entopts?: Record<string, any>) {
-    const self = this
-    return new ListWebhookEventEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.ListWebhookEventAttempt().list()` / `client.ListWebhookEventAttempt().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  ListWebhookEventAttempt(entopts?: Record<string, any>) {
-    const self = this
-    return new ListWebhookEventAttemptEntity(self, entopts)
-  }
-
-
   // Entity access: `client.Log().list()` / `client.Log().load({ id })`.
   // The argument is the entity OPTIONS object (passed to the entity
   // constructor as entopts), not initial entity data.
   Log(entopts?: Record<string, any>) {
     const self = this
     return new LogEntity(self, entopts)
+  }
+
+
+  // Entity access: `client.OauthGrant().list()` / `client.OauthGrant().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  OauthGrant(entopts?: Record<string, any>) {
+    const self = this
+    return new OauthGrantEntity(self, entopts)
   }
 
 
@@ -768,156 +609,12 @@ class ResendSDK {
   }
 
 
-  // Entity access: `client.RemoveAudienceResponseSuccess().list()` / `client.RemoveAudienceResponseSuccess().load({ id })`.
+  // Entity access: `client.ReceivedEmailAttachment().list()` / `client.ReceivedEmailAttachment().load({ id })`.
   // The argument is the entity OPTIONS object (passed to the entity
   // constructor as entopts), not initial entity data.
-  RemoveAudienceResponseSuccess(entopts?: Record<string, any>) {
+  ReceivedEmailAttachment(entopts?: Record<string, any>) {
     const self = this
-    return new RemoveAudienceResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.RemoveBroadcastResponseSuccess().list()` / `client.RemoveBroadcastResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  RemoveBroadcastResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new RemoveBroadcastResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.RemoveContactFromSegmentResponseSuccess().list()` / `client.RemoveContactFromSegmentResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  RemoveContactFromSegmentResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new RemoveContactFromSegmentResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.RemoveContactPropertyResponseSuccess().list()` / `client.RemoveContactPropertyResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  RemoveContactPropertyResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new RemoveContactPropertyResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.RemoveContactResponseSuccess().list()` / `client.RemoveContactResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  RemoveContactResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new RemoveContactResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.RemoveEvent().list()` / `client.RemoveEvent().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  RemoveEvent(entopts?: Record<string, any>) {
-    const self = this
-    return new RemoveEventEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.RemoveInboxDraftResponseSuccess().list()` / `client.RemoveInboxDraftResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  RemoveInboxDraftResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new RemoveInboxDraftResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.RemoveInboxLabelResponseSuccess().list()` / `client.RemoveInboxLabelResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  RemoveInboxLabelResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new RemoveInboxLabelResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.RemoveInboxResponseSuccess().list()` / `client.RemoveInboxResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  RemoveInboxResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new RemoveInboxResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.RemoveInboxThreadResponseSuccess().list()` / `client.RemoveInboxThreadResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  RemoveInboxThreadResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new RemoveInboxThreadResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.RemoveSegmentResponseSuccess().list()` / `client.RemoveSegmentResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  RemoveSegmentResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new RemoveSegmentResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.RemoveSuppressionResponseSuccess().list()` / `client.RemoveSuppressionResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  RemoveSuppressionResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new RemoveSuppressionResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.RemoveTemplateResponseSuccess().list()` / `client.RemoveTemplateResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  RemoveTemplateResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new RemoveTemplateResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.RemoveTopicResponseSuccess().list()` / `client.RemoveTopicResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  RemoveTopicResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new RemoveTopicResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.RetrievedAttachment().list()` / `client.RetrievedAttachment().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  RetrievedAttachment(entopts?: Record<string, any>) {
-    const self = this
-    return new RetrievedAttachmentEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.RevokeOAuthGrant().list()` / `client.RevokeOAuthGrant().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  RevokeOAuthGrant(entopts?: Record<string, any>) {
-    const self = this
-    return new RevokeOAuthGrantEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.Rotate().list()` / `client.Rotate().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  Rotate(entopts?: Record<string, any>) {
-    const self = this
-    return new RotateEntity(self, entopts)
+    return new ReceivedEmailAttachmentEntity(self, entopts)
   }
 
 
@@ -930,12 +627,30 @@ class ResendSDK {
   }
 
 
+  // Entity access: `client.SegmentContact().list()` / `client.SegmentContact().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  SegmentContact(entopts?: Record<string, any>) {
+    const self = this
+    return new SegmentContactEntity(self, entopts)
+  }
+
+
   // Entity access: `client.Suppression().list()` / `client.Suppression().load({ id })`.
   // The argument is the entity OPTIONS object (passed to the entity
   // constructor as entopts), not initial entity data.
   Suppression(entopts?: Record<string, any>) {
     const self = this
     return new SuppressionEntity(self, entopts)
+  }
+
+
+  // Entity access: `client.SuppressionBatch().list()` / `client.SuppressionBatch().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  SuppressionBatch(entopts?: Record<string, any>) {
+    const self = this
+    return new SuppressionBatchEntity(self, entopts)
   }
 
 
@@ -954,150 +669,6 @@ class ResendSDK {
   Topic(entopts?: Record<string, any>) {
     const self = this
     return new TopicEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.UpdateApiKey().list()` / `client.UpdateApiKey().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  UpdateApiKey(entopts?: Record<string, any>) {
-    const self = this
-    return new UpdateApiKeyEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.UpdateBroadcastResponseSuccess().list()` / `client.UpdateBroadcastResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  UpdateBroadcastResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new UpdateBroadcastResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.UpdateContactPropertyResponseSuccess().list()` / `client.UpdateContactPropertyResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  UpdateContactPropertyResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new UpdateContactPropertyResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.UpdateContactResponseSuccess().list()` / `client.UpdateContactResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  UpdateContactResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new UpdateContactResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.UpdateContactTopicsResponseSuccess().list()` / `client.UpdateContactTopicsResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  UpdateContactTopicsResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new UpdateContactTopicsResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.UpdateDomainResponseSuccess().list()` / `client.UpdateDomainResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  UpdateDomainResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new UpdateDomainResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.UpdateEmailOption().list()` / `client.UpdateEmailOption().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  UpdateEmailOption(entopts?: Record<string, any>) {
-    const self = this
-    return new UpdateEmailOptionEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.UpdateEvent().list()` / `client.UpdateEvent().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  UpdateEvent(entopts?: Record<string, any>) {
-    const self = this
-    return new UpdateEventEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.UpdateInboxDraftResponseSuccess().list()` / `client.UpdateInboxDraftResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  UpdateInboxDraftResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new UpdateInboxDraftResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.UpdateInboxLabelResponseSuccess().list()` / `client.UpdateInboxLabelResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  UpdateInboxLabelResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new UpdateInboxLabelResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.UpdateInboxResponseSuccess().list()` / `client.UpdateInboxResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  UpdateInboxResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new UpdateInboxResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.UpdateInboxThreadResponseSuccess().list()` / `client.UpdateInboxThreadResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  UpdateInboxThreadResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new UpdateInboxThreadResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.UpdateSegmentResponseSuccess().list()` / `client.UpdateSegmentResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  UpdateSegmentResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new UpdateSegmentResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.UpdateTemplateResponseSuccess().list()` / `client.UpdateTemplateResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  UpdateTemplateResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new UpdateTemplateResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.UpdateTopicResponseSuccess().list()` / `client.UpdateTopicResponseSuccess().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  UpdateTopicResponseSuccess(entopts?: Record<string, any>) {
-    const self = this
-    return new UpdateTopicResponseSuccessEntity(self, entopts)
-  }
-
-
-  // Entity access: `client.UpdateWebhook().list()` / `client.UpdateWebhook().load({ id })`.
-  // The argument is the entity OPTIONS object (passed to the entity
-  // constructor as entopts), not initial entity data.
-  UpdateWebhook(entopts?: Record<string, any>) {
-    const self = this
-    return new UpdateWebhookEntity(self, entopts)
   }
 
 
@@ -1125,6 +696,15 @@ class ResendSDK {
   WebhookEvent(entopts?: Record<string, any>) {
     const self = this
     return new WebhookEventEntity(self, entopts)
+  }
+
+
+  // Entity access: `client.WebhookEventAttempt().list()` / `client.WebhookEventAttempt().load({ id })`.
+  // The argument is the entity OPTIONS object (passed to the entity
+  // constructor as entopts), not initial entity data.
+  WebhookEventAttempt(entopts?: Record<string, any>) {
+    const self = this
+    return new WebhookEventAttemptEntity(self, entopts)
   }
 
 

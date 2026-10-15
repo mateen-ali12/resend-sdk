@@ -2,56 +2,65 @@
   "existing": {
     "inbox_thread": {
       "INBOX_THREAD00": {
+        "add_label_ids": [],
         "bcc": [],
         "cc": [],
-        "email_count": 152,
-        "folder": "s99",
-        "from": "s9a",
-        "has_attachment": false,
-        "has_draft": true,
+        "email_count": 183,
+        "folder": "sb8",
+        "from": "sb9",
+        "has_attachment": true,
+        "has_draft": false,
         "highlights": {},
         "id": "INBOX_THREAD00",
         "labels": [],
         "matched_email_id": "MATCHED_EMAIL01",
+        "object": "sc0",
         "read": false,
-        "received_at": "sa2",
-        "subject": "sa3",
+        "received_at": "sc2",
+        "remove_label_ids": [],
+        "subject": "sc4",
         "to": [],
         "inbox_id": "INBOX01"
       },
       "INBOX_THREAD01": {
+        "add_label_ids": [],
         "bcc": [],
         "cc": [],
-        "email_count": 302,
-        "folder": "s12f",
-        "from": "s130",
-        "has_attachment": false,
-        "has_draft": true,
+        "email_count": 363,
+        "folder": "s16c",
+        "from": "s16d",
+        "has_attachment": true,
+        "has_draft": false,
         "highlights": {},
         "id": "INBOX_THREAD01",
         "labels": [],
         "matched_email_id": "MATCHED_EMAIL01",
+        "object": "s174",
         "read": false,
-        "received_at": "s138",
-        "subject": "s139",
+        "received_at": "s176",
+        "remove_label_ids": [],
+        "subject": "s178",
         "to": [],
         "inbox_id": "INBOX01"
       },
       "INBOX_THREAD02": {
+        "add_label_ids": [],
         "bcc": [],
         "cc": [],
-        "email_count": 452,
-        "folder": "s1c5",
-        "from": "s1c6",
-        "has_attachment": false,
-        "has_draft": true,
+        "email_count": 543,
+        "folder": "s220",
+        "from": "s221",
+        "has_attachment": true,
+        "has_draft": false,
         "highlights": {},
         "id": "INBOX_THREAD02",
         "labels": [],
         "matched_email_id": "MATCHED_EMAIL01",
+        "object": "s228",
         "read": false,
-        "received_at": "s1ce",
-        "subject": "s1cf",
+        "received_at": "s22a",
+        "remove_label_ids": [],
+        "subject": "s22c",
         "to": [],
         "inbox_id": "INBOX01"
       }
@@ -60,19 +69,22 @@
   "new": {
     "inbox_thread": {
       "inbox_thread_ref01": {
+        "add_label_ids": [],
         "bcc": [],
         "cc": [],
-        "email_count": 602,
-        "folder": "s25b",
-        "from": "s25c",
-        "has_attachment": false,
-        "has_draft": true,
+        "email_count": 723,
+        "folder": "s2d4",
+        "from": "s2d5",
+        "has_attachment": true,
+        "has_draft": false,
         "highlights": {},
         "labels": [],
         "matched_email_id": "MATCHED_EMAIL01",
+        "object": "s2dc",
         "read": false,
-        "received_at": "s264",
-        "subject": "s265",
+        "received_at": "s2de",
+        "remove_label_ids": [],
+        "subject": "s2e0",
         "to": []
       }
     }
@@ -84,6 +96,21 @@
       "source": "openapi3"
     },
     "GET /inboxes/{inbox_id}/threads/search": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /inboxes/{inbox_id}/threads/{thread_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /inboxes/{inbox_id}/threads/{thread_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /inboxes/{inbox_id}/threads/{thread_id}": {
       "provenance": "operation-contract",
       "version": 2,
       "source": "openapi3"
